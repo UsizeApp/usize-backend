@@ -40,13 +40,52 @@ app.config.update(
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+from flask_restful import Resource, Api, reqparse, abort
+api = Api(app)
+
+# Logger
+LOG = 1
+DEFAULT_LOG = "Default"
+LOGIN_LOG = "Login"
+
+def logger(logtype=DEFAULT_LOG, logmsg=""):
+	if LOG: print(">>> [%s] %s" % (logtype, logmsg))
+
+parser = reqparse.RequestParser()
+parser.add_argument('email', required=True, help="email")
+parser.add_argument('pwd', required=True, help="pwd")
+
+class v2Login(Resource):
+	def get(self):
+		return {'hello': 'world'}
+	def post(self):
+		args = parser.parse_args()
+		email = args['email']
+		pwd = args['pwd']
+
+		logger(LOGIN_LOG, "%s:%s" % (email, pwd))
+
+		u = Usuario.getUsuarioByEmail(email)
+		if u is None:
+			logger(LOGIN_LOG, "Email no existe")
+			return abort(401, message="Bad login")
+		if not u.validPassword(pwd):
+			logger(LOGIN_LOG, "Password incorrecta")
+			return abort(401, message="Bad login")
+		logger(LOGIN_LOG, "%s autenticado" % u)		
+		return {"response": "logueado", "token": str(u.id)}
+
+
+api.add_resource(v2Login, '/v2/login')
+
+
 ################################################
 # TensorFlow
 # Se instancia a la clase tfManager() para inicializar el modelo retinanet de deteccion de personas
 # TF_ENABLED indica si es que se va a usar TF o no, para ganar tiempo en caso de debugging
 # TODO Requests queue, since TF person_detector can't handle simultaneous requests
 ################################################
-TF_ENABLED = 1
+TF_ENABLED = 0
 from tf import tfManager
 tf = tfManager(TF_ENABLED)
 #from scripts.testpersona2 import a, b
@@ -67,7 +106,7 @@ from model import initModel, Usuario
 # Rutas de Flask
 ################################################
 WEB_MODE = 1 # Activar si vamos a hacer GETs y POSTs desde la web; desactivar si se deben devolver solo JSONs
-IGNORE_FORM_VALIDATE = 0 # Activar para ignorar la validacion de las formas recibidas en POST
+IGNORE_FORM_VALIDATE = 1 # Activar para ignorar la validacion de las formas recibidas en POST
 
 LOG_REQUESTS = 1
 FAKE_TIMEOUT = 0
@@ -114,8 +153,8 @@ class LoginForm(FlaskForm):
 		#defaultemail = 'example@email.com'
 		#defaultpwd = 'holahola'
 
-	email = StringField('email', validators=[DataRequired()], default=defaultemail)
-	pwd = PasswordField('pwd', validators=[DataRequired()], default=defaultpwd)
+	email = StringField('email', validators=[DataRequired()])
+	pwd = PasswordField('pwd', validators=[DataRequired()])
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -147,6 +186,7 @@ def login():
 			else:
 				resul = 'email no existe'
 		else:
+			if LOG_REQUESTS: print('>>> Login: Errors: ', form.errors)
 			resul = 'bad_POST_request'
 		
 		return responder(resul)

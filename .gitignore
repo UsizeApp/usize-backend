@@ -1,4 +1,4 @@
 *.h5
-datapickles/
+datapickles/*
 models/*.h5
 Usize_front_images_dataset/Images/

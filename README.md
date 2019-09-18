@@ -25,6 +25,8 @@ Descargar archivos a la carpeta datapickles:
 + [Imagenes frontales con ruido (opcional)](https://drive.google.com/file/d/1yH9E5uAeWv9HVilKXZENn5phSFidwVIU/view?usp=sharing)
 
 
+### Redes
+
 Descargar modelo a la raiz y renombrar como "UsizeNetConvolutional_front.h5".
 
 NOTA: solo descargar uno. Vienen ordenados en relacion al rendimiento que nosotros consideramos (primero es mejor).

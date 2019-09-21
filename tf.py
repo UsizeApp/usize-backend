@@ -32,7 +32,8 @@ class tfManager:
 
 
 	def handle_photo(self, photo, height):
-		if not self.TF_ENABLED: return None
+		medidas = None
+		mensaje = None
 
 		szNow = dt.now().strftime("%Y-%m-%d %H.%M.%S")
 		photo_path = "%s\\photo_%s.jpg" % (self.PHOTO_FOLDER, szNow)
@@ -40,7 +41,8 @@ class tfManager:
 		full_path = os.path.abspath(photo_path)
 		print(">> Saved: %s" % full_path)
 
-		result = None
+		if not self.TF_ENABLED:
+			return medidas, "TensorFlow desactivado"
 
 		EXTRA_TRIES = 3
 		TRIES = 1 or EXTRA_TRIES
@@ -55,28 +57,20 @@ class tfManager:
 					medidas = self.open_pose_image(full_path, height)
 					if DBG: print(medidas)
 
-					medidas['result'] = 'success'
-					result = medidas
+					mensaje = 'success',
 					break
 				# Si la medicion falla...
 				except Exception as e:
-					if (DBG): print(e)
+					mensaje = "No pudimos tomar las medidas. ¡Intenta otra vez!"
 
-					s = "No pudimos tomar las medidas. ¡Intenta otra vez!"
-					result = {
-						'result': 'sys_error',
-						'reason': s,
-						'exception': str(e)
-					}
+					if (DBG):
+						print(e)
+						mensaje = "%s %s" % (mensaje, str(e))
 		# Si pPersona < 0.7
 		else:
-			if DBG: print('no_human')
-
-			s = "No pudimos detectar a una persona."
-			result = {
-				'result': 'no_human',
-				'reason': s,
-				'exception': "none"
-			}
-
-		return result
+			mensaje = "No pudimos detectar a una persona."
+			if DBG:
+				print('no_human')
+				mensaje = "%s %s" % (mensaje, 'no_human')
+		
+		return medidas, mensaje

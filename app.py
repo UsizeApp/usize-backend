@@ -140,7 +140,7 @@ class v2Upload(NewResource):
 
 	def post(self):
 		parser = reqparse.RequestParser()
-		parser.add_argument('token', help="token missing", required=False, location='headers')
+		parser.add_argument('token', required=False, location='headers')
 		from werkzeug.datastructures import FileStorage
 		parser.add_argument("photo", help="photo missing", type=FileStorage, required=True, location='files')
 		parser.add_argument("height", help="height missing", required=True)
@@ -151,15 +151,15 @@ class v2Upload(NewResource):
 
 		self.log("Photo: %s, height: %s, token: %s" % (photo.filename, height, token))
 		
-		result = tf.handle_photo(photo, height)
+		medidas, mensaje = tf.handle_photo(photo, height)
 		
-		if result is not None and token is not None:
+		if medidas is not None and token is not None:
 			u = decodeToken(token)
 			if u is not None:
-				u.guardarMedidas(result)
-				#self.log("Usuario no encontrado")
+				u.guardarMedidas(medidas)
+			#self.log("Usuario no encontrado")
 		
-		return {"response": "upload", "result": result}
+		return {"response": "upload", "medidas": medidas, "mensaje": mensaje}
 
 
 class v2Register(NewResource):

@@ -15,16 +15,23 @@ import pickle
 import sys
 import time
 import datetime
+from sklearn.model_selection import train_test_split
 
+#Parameters
 nn_image_width = 160
 nn_image_height = 160
-split = 1800
+split = 0.8
+epochs = 5
+show = 0
 
 #Chose images to train model
 NORMAL = 1
-NOISE = 1
+NOISE = 0
 MIRRORED = 0
-MIRRORED_NOISE = 0
+MIRRORED_NOISE = 1
+
+#Chose model to create:
+MODEL = "side" #front o side
 
 train_images = []
 test_images = []
@@ -32,19 +39,20 @@ train_keypoints = []
 test_keypoints = []
 
 if NORMAL:
-    with open('datapickles/front_images_arms_and_lower.pkl', 'rb') as file:
+    with open('datapickles/'+ MODEL +'_normal_images.pkl', 'rb') as file:
         normal_images, normal_keypoints = pickle.load(file)
         if split == -1:
             train_images.append(normal_images)
             train_keypoints.append(normal_keypoints)
         else:
-            train_images.append(normal_images[:split])
-            train_keypoints.append(normal_keypoints[:split])
-            test_images.append(normal_images[split:])
-            test_keypoints.append(normal_keypoints[split:])
+            normal_images_train, normal_images_test, normal_keypoints_train, normal_keypoints_test = train_test_split(normal_images, normal_keypoints, train_size=split, random_state=42) 
+            train_images.append(normal_images_train)
+            train_keypoints.append(normal_keypoints_train)
+            test_images.append(normal_images_test)
+            test_keypoints.append(normal_keypoints_test)
 
 if NOISE:
-    with open('datapickles/noise_front_images_arms_and_lower.pkl', 'rb') as file:
+    with open('datapickles/'+ MODEL +'_noise_images.pkl', 'rb') as file:
         noise_images, noise_keypoints = pickle.load(file)
         if split == -1:
             train_images.append(noise_images)
@@ -56,7 +64,7 @@ if NOISE:
             test_keypoints.append(noise_keypoints[split:])
 
 if MIRRORED:
-    with open('datapickles/mirrored_front_images_arms_and_lower.pkl', 'rb') as file:
+    with open('datapickles/'+ MODEL +'_mirrored_images.pkl', 'rb') as file:
         mirrored_images, mirrored_keypoints = pickle.load(file)
         if split == -1:
             train_images.append(mirrored_images)
@@ -68,16 +76,17 @@ if MIRRORED:
             test_keypoints.append(mirrored_keypoints[split:])
 
 if MIRRORED_NOISE:
-    with open('datapickles/mirrored_noise_front_images_arms_and_lower.pkl', 'rb') as file:
+    with open('datapickles/'+ MODEL +'_mirrored_noise_images.pkl', 'rb') as file:
         mirrored_noise_images, mirrored_noise_keypoints = pickle.load(file)
         if split == -1:
-            train_images.append(mirrored_images)
-            train_keypoints.append(mirrored_keypoints)
+            train_images.append(mirrored_noise_images)
+            train_keypoints.append(mirrored_noise_keypoints)
         else:
-            train_images.append(mirrored_noise_images[:split])
-            train_keypoints.append(mirrored_noise_keypoints[:split])
-            test_images.append(mirrored_noise_images[split:])
-            test_keypoints.append(mirrored_noise_keypoints[split:])
+            mirrored_noise_images_train, mirrored_noise_images_test, mirrored_noise_keypoints_train, mirrored_noise_keypoints_test = train_test_split(mirrored_noise_images, mirrored_noise_keypoints, train_size=split, random_state=42) 
+            train_images.append(mirrored_noise_images_train)
+            train_keypoints.append(mirrored_noise_keypoints_train)
+            test_images.append(mirrored_noise_images_test)
+            test_keypoints.append(mirrored_noise_keypoints_test)
 
 if not train_images:
     sys.exit()
@@ -176,21 +185,33 @@ if split != -1:
     test_keypoints = test_keypoints.reshape((n_dataset*n_images,n_points))
     print(test_keypoints.shape)
 
-epochs = 2000
+#epochs = 2000
 t_fit_inicial = time.time()
-model.fit(train_images,train_keypoints, epochs = epochs, validation_data=None if split == -1 else (test_images, test_keypoints))
+history = model.fit(train_images,train_keypoints, epochs = epochs, validation_data=None if split == -1 else (test_images, test_keypoints))
 t_fit_final = time.time()
 segundos = t_fit_final - t_fit_inicial
-print("\nModel fit duró: {}\n".format(datetime.timedelta(seconds=segundos)))
+print("\nModel fit duró: {}\n".format(datetime.timedelta(seconds = segundos)))
 
 #t_test_inicial = time.time()
-#test_loss, test_acc = model.evaluate(test_images, test_keypoints)
+#test_loss, test_acc = model.evaluate(test_images,test_keypoints)
 #t_test_final = time.time()
-#
-#print('Test accuracy:', test_acc)
-#print("\nTest duró: ", strftime("%H:%M:%S", t_test_final - t_test_inicial))
-timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-model.save('models/UsizeNetConvolutional_front_{}-epochs_{}.h5'.format(epochs, timestamp))
 
+if show:
+    n_epochs = epochs
+    acc = history.history['acc']
+    val_acc = history.history['val_acc']
+    plt.plot(np.arange(1,n_epochs + 1),acc, label = 'acc')
+    plt.plot(np.arange(1,n_epochs + 1),val_acc, label = 'val_acc')
+    plt.legend()
+    plt.show()
+
+#test_loss,test_mae_loss,test_acc = model.evaluate(test_images, test_keypoints)
+
+#print('Test accuracy:', test_acc)
+#print(\nTest duró: ", strftime.strftime("%H:%M:%S", t_test_final - t_test_inicial))
+timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H_%M_%S")
+
+model.save('models/UsizeNetConvolutional_'+ MODEL + '_{}-epochs_{}.h5'.format(epochs,timestamp))
+print(MODEL + " model created")
 
 

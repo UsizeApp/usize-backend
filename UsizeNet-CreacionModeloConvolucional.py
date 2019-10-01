@@ -21,7 +21,7 @@ from sklearn.model_selection import train_test_split
 nn_image_width = 160
 nn_image_height = 160
 split = 0.8
-epochs = 5
+epochs = 3000
 show = 0
 
 #Chose images to train model
@@ -185,7 +185,6 @@ if split != -1:
     test_keypoints = test_keypoints.reshape((n_dataset*n_images,n_points))
     print(test_keypoints.shape)
 
-#epochs = 2000
 t_fit_inicial = time.time()
 history = model.fit(train_images,train_keypoints, epochs = epochs, validation_data=None if split == -1 else (test_images, test_keypoints))
 t_fit_final = time.time()

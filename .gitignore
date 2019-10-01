@@ -2,3 +2,4 @@
 datapickles/*.pkl
 models/*.h5
 Usize_front_images_dataset/Images/
+Usize_side_images_dataset/Images/

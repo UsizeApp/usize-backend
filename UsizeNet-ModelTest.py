@@ -61,7 +61,7 @@ def get_front_measurements(file, body_height_cm, show = False):
         return
 
     if MODE == "KEYPOINTS":
-        model = keras.models.load_model('models/UsizeNetConvolutional_front_4-channels_10-epochs_2019-09-29 18_04_09.h5')    
+        model = keras.models.load_model('models/UsizeNetConvolutional_front_4-channels_500-epochs_2019-10-01 14_48_59.h5')    
         predicted_keypoints = model.predict(feeded_image)
         predicted_keypoints = predicted_keypoints[0]
 
@@ -168,7 +168,7 @@ def get_front_measurements(file, body_height_cm, show = False):
         
         #Front bust line
         plot_line(right_bust,left_bust)
-
+        plt.savefig('test_front.png', dpi=300)
         plt.show()
 
     front_measures = {
@@ -201,7 +201,7 @@ def get_side_measurements(file, body_height_cm, show = False):
     t = time.time()
 
     if MODE == "KEYPOINTS":
-        model = keras.models.load_model('models/UsizeNetConvolutional_side_4-channels_10-epochs_2019-09-29 20_05_19.h5')    
+        model = keras.models.load_model('models/UsizeNetConvolutional_side_4-channels_500-epochs_2019-10-01 04_38_13.h5')    
         predicted_keypoints = model.predict(feeded_image)
         predicted_keypoints = predicted_keypoints[0]
 
@@ -259,7 +259,7 @@ def get_side_measurements(file, body_height_cm, show = False):
 
         #Bust line
         plot_line(upper_bust, lower_back)
-
+        plt.savefig('test_side.png', dpi=300)
         plt.show()
         
     side_measures = {
@@ -283,7 +283,8 @@ def get_all_measurements(front_measures, side_measures, gender):
     
 #front_measures = get_front_measurements("test_images/front/jara_test.jpg", 175, True)
 #print(front_measures)
-side_measures = get_side_measurements("test_images/side/leo_test2_right.jpg", 181, True)
+#side_measures = get_side_measurements("test_images/side/leo_test2_right.jpg", 181, True)
+side_measures = get_side_measurements("test_images/jara_test_side_3.jpg", 174, True)
 #measures = get_all_measurements(front_measures,side_measures, "male")
 #print("Medidas finales:")
 #for key,value in measures.items():

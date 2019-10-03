@@ -142,16 +142,18 @@ class v2Upload(NewResource):
 		parser = reqparse.RequestParser()
 		parser.add_argument('token', required=False, location='headers')
 		from werkzeug.datastructures import FileStorage
-		parser.add_argument("photo", help="photo missing", type=FileStorage, required=True, location='files')
+		parser.add_argument("frontalphoto", help="photo missing", type=FileStorage, required=True, location='files')
+		parser.add_argument("lateralphoto", help="photo missing", type=FileStorage, required=True, location='files')
 		parser.add_argument("height", help="height missing", required=True)
 		args = parser.parse_args()
 		token = args['token']
-		photo = args['photo']
+		frontal_photo = args['frontalphoto']
+		lateral_photo = args['lateralphoto']
 		height = args['height']
 
-		self.log("Photo: %s, height: %s, token: %s" % (photo.filename, height, token))
+		self.log("Frontal photo: %s,Lateral photo: %s,height: %s, token: %s" % (frontal_photo.filename, lateral_photo.filename, height, token))
 		
-		medidas, mensaje = tf.handle_photo(photo, height)
+		medidas, mensaje = tf.handle_photo(frontal_photo, lateral_photo, height)
 		
 		if medidas is not None and token is not None:
 			u = decodeToken(token)
@@ -209,7 +211,7 @@ from tf import tfManager
 # TF_ENABLED indica si es que se va a usar TF o no, para ganar tiempo en caso de debugging
 # TODO Requests queue, since TF person_detector can't handle simultaneous requests
 ################################################
-TF_ENABLED = 0
+TF_ENABLED = 1
 tf = tfManager(TF_ENABLED)
 #from scripts.testpersona2 import a, b
 #x = person_detector(photo)

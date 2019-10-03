@@ -173,20 +173,22 @@ class v2Register(NewResource):
 		parser.add_argument('pwd', help="pwd missing", required=True)
 		parser.add_argument('nombre')
 		parser.add_argument('rut')
+		parser.add_argument('gender')
 		args = parser.parse_args()
 		email = args['email']
 		pwd = args['pwd']
 		nombre = args['nombre']
 		rut = args['rut']
+		gender = args['gender']
 
-		self.log("%s:%s:%s:%s" % (email, pwd, nombre, rut))
+		self.log("%s:%s:%s:%s:%s" % (email, pwd, nombre, rut, gender))
 
 		u = Usuario.getUsuarioByEmail(email)
 		if u is not None:
 			self.log("Email ya existe")
 			return abort(400, message="Email already exists")
 		
-		u = Usuario.addUsuario(email=email, pwd=pwd, nombre=nombre, rut=rut)
+		u = Usuario.addUsuario(email=email, pwd=pwd, nombre=nombre, rut=rut, gender=gender)
 		token = makeToken(u)
 		self.log("%s registrado" % u)		
 		return {"response": "registrado", "token": token}

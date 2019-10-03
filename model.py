@@ -21,6 +21,7 @@ class Usuario(db.Model):
 
 	nombre = db.Column(db.String(80))
 	rut = db.Column(db.Integer)
+	gender = db.Column(db.String(10))
 
 	# Setea el hash de la contraseña del usuario
 	def set_pwd(self, pwd):
@@ -76,12 +77,13 @@ class Usuario(db.Model):
 		return q
 
 	@staticmethod
-	def addUsuario(email, pwd, nombre='', rut=0):
+	def addUsuario(email, pwd, nombre='', rut=0, gender):
 		u = Usuario(email=email.lower())
 		u.set_pwd(pwd)
 
 		u.nombre = nombre
 		u.rut = rut
+		u.gender = gender
 
 		db.session.add(u)
 		db.session.commit()

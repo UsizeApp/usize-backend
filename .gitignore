@@ -6,6 +6,10 @@ __pycache__/
 # usize-backend
 input/
 resources/
+face/
+hand/
+datapickles/
+models/
 
 SECRET_KEY
 usize.sqlite

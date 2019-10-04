@@ -77,7 +77,7 @@ class Usuario(db.Model):
 		return q
 
 	@staticmethod
-	def addUsuario(email, pwd, nombre='', rut=0, gender):
+	def addUsuario(email, pwd, nombre='', rut=0, gender=None):
 		u = Usuario(email=email.lower())
 		u.set_pwd(pwd)
 

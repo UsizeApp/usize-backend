@@ -4,6 +4,7 @@ from time import sleep
 import flask_wtf
 import flask_wtf.file
 import wtforms
+import pandas as pd
 
 from flask import (Flask, escape, jsonify, redirect, render_template, request, session, url_for)
 from flask_migrate import Migrate
@@ -110,6 +111,23 @@ class v2Medidas(NewResource):
 					'bust': u.bust,}
 		}
 
+class v2Tallas(NewResource):
+	LOG_TAG = "Tallas"
+
+	def post(self):
+		parser = reqparse.RequestParser()
+		parser.add_argument('token', help="token missing", required=True, location='headers')
+		args = parser.parse_args()
+		token = args['token']
+
+		self.log("Token %s" % (token))
+
+		u = decodeToken(token)
+		if u is None:
+			self.log("Usuario no encontrado")
+			return abort(401, message="Bad token")
+		self.log("%s autorizado" % u)
+		return getTallas(u)
 
 class v2Perfil(NewResource):
 	LOG_TAG = "Perfil"
@@ -128,9 +146,10 @@ class v2Perfil(NewResource):
 			return abort(401, message="Bad token")
 		self.log("%s autorizado" % u)
 		return {"perfil": {
-					'email': u.email,
 					'nombre': u.nombre,
-					'rut': u.rut,}
+					'rut': u.rut,
+					'email': u.email,
+					'genero': u.gender}
 		}
 
 
@@ -197,6 +216,7 @@ class v2Register(NewResource):
 api.add_resource(v2Login, '/login')
 api.add_resource(v2Perfil, '/perfil')
 api.add_resource(v2Medidas, '/medidas')
+api.add_resource(v2Tallas, '/tallas')
 api.add_resource(v2Upload, '/upload')
 api.add_resource(v2Register, '/register')
 
@@ -224,6 +244,10 @@ tf = tfManager(TF_ENABLED)
 
 #initModel() # Si no existe el .sqlite, usar esta funcion para crear la BD segun los modelos definidos
 
+# deja abierto csv de tallas para consultas
+df = pd.read_csv('tallas.csv')
+
+
 # Tokens extremadamente basicos: solo la id del usuario
 def makeToken(user):
 	return str(user.id)
@@ -237,6 +261,21 @@ def decodeToken(token=None):
 		return Usuario.getUsuarioByID(id)
 	except:
 		return None
+
+def getTallas(usuario):
+	print("buscando tallas")
+	right_arm = float(usuario.right_arm)
+	left_arm = float(usuario.left_arm)
+	right_leg = float(usuario.right_leg)
+	left_leg = float(usuario.left_leg)
+	waist = float(usuario.waist)
+	hip = float(usuario.hip)
+	chest = float(usuario.chest)
+	bust = float(usuario.bust)
+	gender = usuario.gender
+	table = df.loc[df['genero'] == gender].values.tolist()
+	print(table)
+	return 0
 
 
 @app.errorhandler(404)

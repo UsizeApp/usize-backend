@@ -4,7 +4,7 @@ Backend para la aplicación movil de Usize
 
 ### Setup
 ```
-pip install tensorflow keras numpy==1.16.4 pandas matplotlib pillow scikit-image scikit-learn
+pip install tensorflow-gpu==1.15 keras numpy==1.16.4 pandas matplotlib pillow scikit-image scikit-learn opencv-python
 ```
 
 ### Uso

@@ -79,12 +79,24 @@ def horizontal_flip(image_array: ndarray):
 
 
 def main(num_files_desired):
-    if MODEL == "front":
-        folder_path = 'Usize_front_images_dataset/Images'
-        keypoints_df = pd.read_csv('Usize_front_images_dataset/frontal_images_20_keypoints.csv')
-    elif MODEL == "side":
-        folder_path = 'Usize_side_images_dataset/Images'
-        keypoints_df = pd.read_csv('Usize_side_images_dataset/side_images_9_keypoints.csv')
+    if EXTRA:
+        if MODEL == "front":
+            folder_path = 'extra_dataset/front'
+            keypoints_df = pd.read_csv('extra_dataset/frontal_images_extra_dataset_22_keypoints.csv')
+            columns = ["id", "x1", "y1", "x2", "y2", "x3", "y3", "x4", "y4", "x5", "y5", "x6", "y6", "x7", "y7", "x8", "y8", "x9", "y9", "x10", "y10", "x11", "y11", "x12", "y12", "x13", "y13", "x14", "y14", "x15", "y15", "x16", "y16", "x17", "y17", "x18", "y18", "x19", "y19", "x20", "y20", "x21", "y21", "x22", "y22"]
+        elif MODEL == "side":
+            folder_path = 'extra_dataset/side'
+            keypoints_df = pd.read_csv('extra_dataset/side_images_extra_dataset_11_keypoints.csv')
+            columns = ["id", "x1", "y1", "x2", "y2", "x3", "y3", "x4", "y4", "x5", "y5", "x6", "y6", "x7", "y7", "x8", "y8", "x9", "y9", "x10", "y10", "x11", "y11"]
+    else:
+        if MODEL == "front":
+            folder_path = 'Usize_front_images_dataset/Images'
+            keypoints_df = pd.read_csv('Usize_front_images_dataset/frontal_images_20_keypoints.csv')
+            columns = ["id", "x1", "y1", "x2", "y2", "x3", "y3", "x4", "y4", "x5", "y5", "x6", "y6", "x7", "y7", "x8", "y8", "x9", "y9", "x10", "y10", "x11", "y11", "x12", "y12", "x13", "y13", "x14", "y14", "x15", "y15", "x16", "y16", "x17", "y17", "x18", "y18", "x19", "y19", "x20", "y20"]
+        elif MODEL == "side":
+            folder_path = 'Usize_side_images_dataset/Images'
+            keypoints_df = pd.read_csv('Usize_side_images_dataset/side_images_9_keypoints.csv')
+            columns = ["id", "x1", "y1", "x2", "y2", "x3", "y3", "x4", "y4", "x5", "y5", "x6", "y6", "x7", "y7", "x8", "y8", "x9", "y9"]
 
     # find all files paths from the folder
     normal_path = os.path.join(folder_path, "normal")
@@ -92,17 +104,24 @@ def main(num_files_desired):
     total = len(images)
     current = 1
     new_points = []
+    error_count = 0
     for image_path in images:
         if num_files_desired == 0: break
         print("{}/{}".format(current, total))
 
         # image_id
-        image_id = int(Path(image_path).stem)
+        image_id = int(Path(image_path.replace("_{}".format(MODEL),"")).stem)
         #image_id = int(image_path.replace(".png","").replace("Usize_side_images_dataset/side_images/",""))
 
         # read image as an two dimensional array of pixels
-        image_to_transform = sk.io.imread(image_path)
-
+        try:
+            image_to_transform = sk.io.imread(image_path)
+        except:
+            print("Error al abrir imagen: {}".format(image_id))
+            error_count += 1
+            num_files_desired -= 1
+            current += 1
+            continue
         if EFFECT == "mirror" or EFFECT == "all":
             mirrored = horizontal_flip(image_to_transform)
             mirrored_noise = random_noise(mirrored)
@@ -156,23 +175,24 @@ def main(num_files_desired):
         current += 1
 
     if EFFECT == "rotation" or EFFECT == "all":
-        if MODEL == "front":
-            columns = ["id", "x1", "y1", "x2", "y2", "x3", "y3", "x4", "y4", "x5", "y5", "x6", "y6", "x7", "y7", "x8", "y8", "x9", "y9", "x10", "y10", "x11", "y11", "x12", "y12", "x13", "y13", "x14", "y14", "x15", "y15", "x16", "y16", "x17", "y17", "x18", "y18", "x19", "y19", "x20", "y20"]
-        elif MODEL == "side":
-            columns = ["id", "x1", "y1", "x2", "y2", "x3", "y3", "x4", "y4", "x5", "y5", "x6", "y6", "x7", "y7", "x8", "y8", "x9", "y9"]
-        
         new_df = pd.DataFrame(new_points, columns = columns)
-        if MODEL == "front":
-            new_df.to_csv('Usize_front_images_dataset/rotated_frontal_images_20_keypoints.csv', index=False)
-        elif MODEL == "side":
-            new_df.to_csv('Usize_side_images_dataset/rotated_side_images_9_keypoints.csv', index=False)
-
-
+        if EXTRA:
+            if MODEL == "front":
+                new_df.to_csv('Usize_front_images_dataset/rotated_frontal_images_22_keypoints.csv', index=False)
+            elif MODEL == "side":
+                new_df.to_csv('Usize_side_images_dataset/rotated_side_images_11_keypoints.csv', index=False)
+        else:
+            if MODEL == "front":
+                new_df.to_csv('Usize_front_images_dataset/rotated_frontal_images_20_keypoints.csv', index=False)
+            elif MODEL == "side":
+                new_df.to_csv('Usize_side_images_dataset/rotated_side_images_9_keypoints.csv', index=False)
+    print("Cantidad de fotos con error: {}".format(error_count))
 
 
 
 
 MODEL = "side" # front o side
-EFFECT = "mirror" # mirror o rotation o all
+EFFECT = "rotation" # mirror o rotation o all
+EXTRA = 1 #0 o 1
 num_files_desired = -1 # -1 para todas las imagenes en la carpeta
 main(num_files_desired)

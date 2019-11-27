@@ -1,9 +1,5 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-# TensorFlow and tf.keras
-import tensorflow as tf
-from tensorflow import keras
-
 # Helper libraries
 import numpy as np
 import pandas as pd
@@ -80,9 +76,9 @@ def reflect_keypoints_csv(path, side = 0):
     with open(path + 'REFLECTED' + '.csv', mode='w') as file:
         file_writer = csv.writer(file, delimiter=',')
         if side:
-            row = ['id','x1','y1','x2','y2', 'x3','y3','x4','y4','x5','y5','x6','y6','x7','y7','x8','y8','x9','y9']
+            row = ['id','x1','y1','x2','y2', 'x3','y3','x4','y4','x5','y5','x6','y6','x7','y7','x8','y8','x9','y9','x10','y10','x11','y11']
         else:
-            row = ['id','x1','y1','x2','y2', 'x3','y3','x4','y4','x5','y5','x6','y6','x7','y7','x8','y8','x9','y9','x10','y10', 'x11','y11','x12','y12','x13','y13','x14','y14','x15','y15','x16','y16']
+            row = ['id','x1','y1','x2','y2', 'x3','y3','x4','y4','x5','y5','x6','y6','x7','y7','x8','y8','x9','y9','x10','y10', 'x11','y11','x12','y12','x13','y13','x14','y14','x15','y15','x16','y16','x17','y17','x18','y18','x19','y19','x20','y20','x21','y21','x22','y22']
         file_writer.writerow(row)
         for data in key_pts_frame.values:
             person_id = data[0]
@@ -91,13 +87,14 @@ def reflect_keypoints_csv(path, side = 0):
             points = data[1:]
             keypoints = np.copy(points)
             if side:
-                im = Image.open("Usize_side_images_dataset/side_images/" + str(int(person_id)) + ".png")
+                im = Image.open("extra_dataset/side/normal/" + str(int(person_id)) + "_side.jpg")
             else:
+                #ACTUALIZAR ANTES DE CORRER PARA EL EXTRA DATASET FRONTAL
                 im = Image.open("Usize_front_images_dataset/Images/" + str(int(person_id)) + ".png")
             width, height = im.size
             data[1:] = reflect_points(float(width/2), keypoints)
             file_writer.writerow(data)
     return
 
-reflect_keypoints_csv('Usize_side_images_dataset/side_images_9_keypoints', 1)
-        
+#reflect_keypoints_csv('Usize_side_images_dataset/side_images_9_keypoints', 1)
+reflect_keypoints_csv('extra_dataset/side_images_extra_dataset_11_keypoints', 1)

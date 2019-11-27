@@ -61,7 +61,7 @@ def get_front_measurements(file, body_height_cm, show = False):
         return
 
     if MODE == "KEYPOINTS":
-        model = keras.models.load_model('models/UsizeNetConvolutional_front_4-channels_500-epochs_2019-10-01 14_48_59.h5')    
+        model = keras.models.load_model('models/UsizeNetConvolutional_front_4-channels_1000-epochs_2019-11-02 06_08_57.h5')    
         predicted_keypoints = model.predict(feeded_image)
         predicted_keypoints = predicted_keypoints[0]
 
@@ -74,26 +74,28 @@ def get_front_measurements(file, body_height_cm, show = False):
 
         #What is each point:
 
-        right_wrist = [predicted_keypoints[0],predicted_keypoints[1]]
-        right_elbow = [predicted_keypoints[2],predicted_keypoints[3]]
-        right_shoulder1 = [predicted_keypoints[4],predicted_keypoints[5]]
-        right_shoulder2 = [predicted_keypoints[6],predicted_keypoints[7]]
-        head_right = [predicted_keypoints[8],predicted_keypoints[9]]
-        head_left = [predicted_keypoints[10],predicted_keypoints[11]]
-        left_shoulder2 = [predicted_keypoints[12],predicted_keypoints[13]]
-        left_shoulder1 = [predicted_keypoints[14],predicted_keypoints[15]]
-        left_elbow = [predicted_keypoints[16],predicted_keypoints[17]]
-        left_wrist = [predicted_keypoints[18],predicted_keypoints[19]]
-        left_chest = [predicted_keypoints[20],predicted_keypoints[21]]
-        left_bust = [predicted_keypoints[22],predicted_keypoints[23]] 
-        left_hip = [predicted_keypoints[24],predicted_keypoints[25]]
-        left_knee = [predicted_keypoints[26],predicted_keypoints[27]]
-        outer_left_ankle = [predicted_keypoints[28],predicted_keypoints[29]]
-        outer_right_ankle = [predicted_keypoints[30],predicted_keypoints[31]]
-        right_knee = [predicted_keypoints[32],predicted_keypoints[33]]
-        right_hip = [predicted_keypoints[34],predicted_keypoints[35]]
-        right_bust = [predicted_keypoints[36],predicted_keypoints[37]]
-        right_chest = [predicted_keypoints[38],predicted_keypoints[39]]
+        right_wrist = [predicted_keypoints[0],predicted_keypoints[1]]#1
+        right_elbow = [predicted_keypoints[2],predicted_keypoints[3]]#2
+        right_shoulder1 = [predicted_keypoints[4],predicted_keypoints[5]]#3
+        right_shoulder2 = [predicted_keypoints[6],predicted_keypoints[7]]#4
+        head_right = [predicted_keypoints[8],predicted_keypoints[9]]#5
+        head_left = [predicted_keypoints[10],predicted_keypoints[11]]#6
+        left_shoulder2 = [predicted_keypoints[12],predicted_keypoints[13]]#7
+        left_shoulder1 = [predicted_keypoints[14],predicted_keypoints[15]]#8
+        left_elbow = [predicted_keypoints[16],predicted_keypoints[17]]#9
+        left_wrist = [predicted_keypoints[18],predicted_keypoints[19]]#10
+        left_chest = [predicted_keypoints[20],predicted_keypoints[21]]#11
+        left_bust = [predicted_keypoints[22],predicted_keypoints[23]]#12
+        left_waist = [predicted_keypoints[24],predicted_keypoints[25]]#13
+        left_hip = [predicted_keypoints[26],predicted_keypoints[27]]#14
+        left_knee = [predicted_keypoints[28],predicted_keypoints[29]]#15
+        outer_left_ankle = [predicted_keypoints[30],predicted_keypoints[31]]#16
+        outer_right_ankle = [predicted_keypoints[32],predicted_keypoints[33]]#17
+        right_knee = [predicted_keypoints[34],predicted_keypoints[35]]#18
+        right_hip = [predicted_keypoints[36],predicted_keypoints[37]]#19
+        right_waist = [predicted_keypoints[38],predicted_keypoints[39]]#20
+        right_bust = [predicted_keypoints[40],predicted_keypoints[41]]#21
+        right_chest = [predicted_keypoints[42],predicted_keypoints[43]]#22
 
     #Extra points:
 
@@ -122,6 +124,9 @@ def get_front_measurements(file, body_height_cm, show = False):
     right_leg = (right_femur + right_shin) / pixelsPerMetric
     left_leg = (left_femur + left_shin) / pixelsPerMetric
 
+    #Waist
+    waist_length = dist.euclidean(right_waist,left_waist) / pixelsPerMetric
+
     #Hips
     hip_length = dist.euclidean(right_hip,left_hip) / pixelsPerMetric
 
@@ -135,6 +140,7 @@ def get_front_measurements(file, body_height_cm, show = False):
     print("Brazo izquierdo: " + str(left_arm))
     print("Pierna derecha: " + str(right_leg))
     print("Pierna izquierda: " + str(left_leg))
+    print("Cintura: " + str(waist_length)) 
     print("Caderas: " + str(hip_length))
     print("Pecho frontal: " + str(front_chest_length))
     print("Busto frontal: " + str(front_bust_length))
@@ -144,7 +150,7 @@ def get_front_measurements(file, body_height_cm, show = False):
         plt.imshow(original_image)
         plt.scatter(predicted_keypoints[::2], predicted_keypoints[1::2], s=20, marker='.', c='m')
         #plt.scatter(original_keypoints[1::2], original_keypoints[::2], s=20, marker='.', c='orange')
-
+        
         #Height line
         plot_line(floor,head_upper)
 
@@ -163,6 +169,9 @@ def get_front_measurements(file, body_height_cm, show = False):
         #Front hip line
         plot_line(right_hip,left_hip)
 
+        #Front waist line
+        plot_line(right_waist,left_waist)
+
         #Front chest line
         plot_line(right_chest,left_chest)
         
@@ -176,6 +185,7 @@ def get_front_measurements(file, body_height_cm, show = False):
         "left_arm": left_arm,
         "right_leg": right_leg,
         "left_leg": left_leg,
+        "waist_length": waist_length,
         "hip_length": hip_length,
         "front_chest_length": front_chest_length,
         "front_bust_length": front_bust_length,
@@ -201,7 +211,7 @@ def get_side_measurements(file, body_height_cm, show = False):
     t = time.time()
 
     if MODE == "KEYPOINTS":
-        model = keras.models.load_model('models/UsizeNetConvolutional_side_4-channels_500-epochs_2019-10-01 04_38_13.h5')    
+        model = keras.models.load_model('models/UsizeNetConvolutional_side_4-channels_100-epochs_2019-11-23 19_15_11.h5')    
         predicted_keypoints = model.predict(feeded_image)
         predicted_keypoints = predicted_keypoints[0]
 
@@ -214,58 +224,69 @@ def get_side_measurements(file, body_height_cm, show = False):
 
         #What is each point:
 
-        chest = [predicted_keypoints[0],predicted_keypoints[1]]
-        upper_bust = [predicted_keypoints[2],predicted_keypoints[3]]
-        lower_bust = [predicted_keypoints[4],predicted_keypoints[5]]
-        front_hip = [predicted_keypoints[6],predicted_keypoints[7]]
-        heel = [predicted_keypoints[8],predicted_keypoints[9]]
-        back_hip = [predicted_keypoints[10],predicted_keypoints[11]]
-        lower_back = [predicted_keypoints[12],predicted_keypoints[13]]
-        upper_back = [predicted_keypoints[14],predicted_keypoints[15]]
-        head = [predicted_keypoints[16],predicted_keypoints[17]]
+        chest = [predicted_keypoints[0],predicted_keypoints[1]]#1
+        upper_bust = [predicted_keypoints[2],predicted_keypoints[3]]#2
+        lower_bust = [predicted_keypoints[4],predicted_keypoints[5]]#3
+        front_waist = [predicted_keypoints[6],predicted_keypoints[7]]#4
+        front_hip = [predicted_keypoints[8],predicted_keypoints[9]]#5
+        heel = [predicted_keypoints[10],predicted_keypoints[11]]#6
+        back_hip = [predicted_keypoints[12],predicted_keypoints[13]]#7
+        back_waist = [predicted_keypoints[14],predicted_keypoints[15]]#8
+        lower_back = [predicted_keypoints[16],predicted_keypoints[17]]#9
+        upper_back = [predicted_keypoints[18],predicted_keypoints[19]]#10
+        head = [predicted_keypoints[20],predicted_keypoints[21]]#11
 
     #Height:
     height_in_pixels = dist.euclidean(heel, head)
     pixelsPerMetric = height_in_pixels/body_height_cm
 
     #Lengths:
-
-    #Side hip
-    hip_side_length = dist.euclidean(front_hip, back_hip)/pixelsPerMetric
     
     #Side chest
     chest_depth = dist.euclidean(chest, upper_back)/pixelsPerMetric
 
-    #Bust
+    #Side Bust
     bust_depth = dist.euclidean(upper_bust, lower_back)/pixelsPerMetric
 
-    print("Cadera lateral: " + str(hip_side_length))
+    #Side waist
+    waist_side_length = dist.euclidean(front_waist, back_waist)/pixelsPerMetric
+
+    #Side hip
+    hip_side_length = dist.euclidean(front_hip, back_hip)/pixelsPerMetric
+
     print("Pecho: " + str(chest_depth))
     print("Busto: " + str(bust_depth))
+    print("Cintura lateral: " + str(waist_side_length))
+    print("Cadera lateral: " + str(hip_side_length))
     
     if show:
         plt.imshow(original_image)
         plt.scatter(predicted_keypoints[::2], predicted_keypoints[1::2], s=20, marker='.', c='m')
         #plt.scatter(original_keypoints[1::2], original_keypoints[::2], s=20, marker='.', c='orange')
-
+        
         #Height line
         plot_line(heel,head)
-
-        #Hip line
-        plot_line(front_hip, back_hip)
 
         #Chest line
         plot_line(chest, upper_back)
 
         #Bust line
         plot_line(upper_bust, lower_back)
+
+        #Waist line
+        plot_line(front_waist, back_waist)
+
+        #Hip line
+        plot_line(front_hip, back_hip)
+
         plt.savefig('test_side.png', dpi=300)
         plt.show()
         
     side_measures = {
-        "hip_side_length": hip_side_length,
         "chest_depth": chest_depth,
         "bust_depth": bust_depth,
+        "waist_side_length": waist_side_length,
+        "hip_side_length": hip_side_length,
         "path": os.path.abspath('output/Output-Skeleton.jpg'),
         "time": "{:.3f}".format(time.time() - t)
     }
@@ -273,18 +294,20 @@ def get_side_measurements(file, body_height_cm, show = False):
 
 def get_all_measurements(front_measures, side_measures, gender):
     measures = front_measures
-    hip_total_length = calculate_ellipse_perimeter(front_measures["hip_length"]/2,side_measures["hip_side_length"]/2)
     chest_total_length = calculate_ellipse_perimeter(front_measures["front_chest_length"]/2,side_measures["chest_depth"]/2)
     bust_total_length = calculate_ellipse_perimeter(front_measures["front_bust_length"]/2,side_measures["bust_depth"]/2)
-    measures["hip_length"] = hip_total_length
+    waist_total_length = calculate_ellipse_perimeter(front_measures["waist_length"]/2,side_measures["waist_side_length"]/2)
+    hip_total_length = calculate_ellipse_perimeter(front_measures["hip_length"]/2,side_measures["hip_side_length"]/2)
     measures["chest_length"] = chest_total_length
     measures["bust_length"] = bust_total_length
+    measures["waist_length"] = waist_total_length
+    measures["hip_length"] = hip_total_length
     return measures
     
-#front_measures = get_front_measurements("test_images/front/jara_test.jpg", 175, True)
+#front_measures = get_front_measurements("test_images/front/jara_test_front_2.jpg", 175, True)
 #print(front_measures)
-#side_measures = get_side_measurements("test_images/side/leo_test2_right.jpg", 181, True)
-side_measures = get_side_measurements("test_images/jara_test_side_3.jpg", 174, True)
+side_measures = get_side_measurements("test_images/side/leo_test_left.jpg", 181, True)
+side_measures = get_side_measurements("test_images/side/leo_test_right.jpg", 181, True)
 #measures = get_all_measurements(front_measures,side_measures, "male")
 #print("Medidas finales:")
 #for key,value in measures.items():

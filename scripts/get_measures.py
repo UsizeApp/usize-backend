@@ -49,25 +49,29 @@ def set_body_points(frontal_points, lateral_points):
             "left_wrist" : [frontal_points[18],frontal_points[19]],
             "left_chest" : [frontal_points[20],frontal_points[21]],
             "left_bust" : [frontal_points[22],frontal_points[23]],
-            "left_hips" : [frontal_points[24],frontal_points[25]],
-            "left_knee" : [frontal_points[26],frontal_points[27]],
-            "outer_left_ankle" : [frontal_points[28],frontal_points[29]],
-            "outer_right_ankle" : [frontal_points[30],frontal_points[31]],
-            "right_knee" : [frontal_points[32],frontal_points[33]],
-            "right_hips" : [frontal_points[34],frontal_points[35]],
-            "right_bust" : [frontal_points[36],frontal_points[37]],
-            "right_chest" : [frontal_points[38],frontal_points[39]]
+            "left_waist" : [frontal_points[24],frontal_points[25]],
+            "left_hips" : [frontal_points[26],frontal_points[27]],
+            "left_knee" : [frontal_points[28],frontal_points[29]],
+            "outer_left_ankle" : [frontal_points[30],frontal_points[31]],
+            "outer_right_ankle" : [frontal_points[32],frontal_points[33]],
+            "right_knee" : [frontal_points[34],frontal_points[35]],
+            "right_hips" : [frontal_points[36],frontal_points[37]],
+            "right_waist" : [frontal_points[38],frontal_points[39]],
+            "right_bust" : [frontal_points[40],frontal_points[41]],
+            "right_chest" : [frontal_points[42],frontal_points[43]]
         },
         "lateral_points": {
             "chest" : [lateral_points[0],lateral_points[1]],
             "upper_bust" : [lateral_points[2],lateral_points[3]],
             "lower_bust" : [lateral_points[4],lateral_points[5]],
-            "frontal_hips" : [lateral_points[6],lateral_points[7]],
-            "heel" : [lateral_points[8],lateral_points[9]],
-            "back_hips" : [lateral_points[10],lateral_points[11]],
-            "lower_back" : [lateral_points[12],lateral_points[13]],
-            "upper_back" : [lateral_points[14],lateral_points[15]],
-            "head" : [lateral_points[16],lateral_points[17]]
+            "frontal_waist" : [lateral_points[6],lateral_points[7]],
+            "frontal_hips" : [lateral_points[8],lateral_points[9]],
+            "heel" : [lateral_points[10],lateral_points[11]],
+            "back_hips" : [lateral_points[12],lateral_points[13]],
+            "back_waist" : [lateral_points[14],lateral_points[15]],
+            "lower_back" : [lateral_points[16],lateral_points[17]],
+            "upper_back" : [lateral_points[18],lateral_points[19]],
+            "head" : [lateral_points[20],lateral_points[21]]
         }
     }
     return body
@@ -91,7 +95,9 @@ def calculate(body_part, body, frontal_pixelsPerMetric, lateral_pixelsPerMetric)
         left_tibia = dist.euclidean(body["frontal_points"]["left_knee"], body["frontal_points"]["outer_left_ankle"])
         measure = (left_femur + left_tibia) / frontal_pixelsPerMetric
     elif body_part == "waist":
-        measure = 0.0
+        frontal_waist = dist.euclidean(body["frontal_points"]["right_waist"], body["frontal_points"]["left_waist"]) / frontal_pixelsPerMetric
+        lateral_waist = dist.euclidean(body["lateral_points"]["frontal_waist"], body["lateral_points"]["back_waist"]) / lateral_pixelsPerMetric
+        measure = calculate_ellipse_perimeter(frontal_waist/2,lateral_waist/2)
     elif body_part == "hips":
         frontal_hips = dist.euclidean(body["frontal_points"]["right_hips"], body["frontal_points"]["left_hips"]) / frontal_pixelsPerMetric 
         lateral_hips = dist.euclidean(body["lateral_points"]["frontal_hips"], body["lateral_points"]["back_hips"]) / lateral_pixelsPerMetric
@@ -174,6 +180,7 @@ nn_image_height = 160
 def transform_image(image,width,height,channels):
     frame = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
     edges_channel = cv2.Canny(frame, int(max(0, np.mean(frame))), int(min(255, np.mean(frame))))
+    edges_channel = np.expand_dims(edges_channel,axis = 2)
     feeded_image = np.asarray(image)
     feeded_image = np.concatenate((feeded_image,edges_channel),axis = 2)
     feeded_image = cv2.resize(feeded_image,(nn_image_width,nn_image_height))
@@ -197,8 +204,8 @@ def get_measurements(frontal_file, lateral_file, body_height_cm, show = False):
     t = time.time()
     
     #Load Models
-    frontal_model = keras.models.load_model('models/UsizeNetConvolutional_front_4-channels_10-epochs_2019-09-29 18_04_09.h5')    
-    lateral_model = keras.models.load_model('models/UsizeNetConvolutional_side_4-channels_500-epochs_2019-10-01 04_38_13.h5')  
+    frontal_model = keras.models.load_model('../models/(BEST_FRONT)UsizeNetConvolutional_front_4-channels_1000-epochs_2019-11-02 06_08_57.h5')    
+    lateral_model = keras.models.load_model('../models/(BEST_SIDE)UsizeNetConvolutional_side_4-channels_100-epochs_2019-11-23 19_15_11.h5')  
     
     #Predict Keypoints
     predicted_frontal_keypoints = frontal_model.predict(feeded_frontal_image)
@@ -301,6 +308,7 @@ def get_measurements(frontal_file, lateral_file, body_height_cm, show = False):
         "left_arm": left_arm,
         "right_leg": right_leg,
         "left_leg": left_leg,
+        "waist_length": waist,
         "hips_length": hips,
         "chest_length": chest,
         "bust_length": bust,

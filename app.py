@@ -16,6 +16,16 @@ from wtforms import IntegerField, PasswordField, StringField
 from wtforms.validators import DataRequired
 
 ################################################
+# Mensaje de inicio
+################################################
+print(
+'''
+===========================
+Usize - API
+===========================
+''')
+
+################################################
 # Flask
 ################################################
 DBG = 1
@@ -52,6 +62,7 @@ LOG_ENABLED = 1
 # Nuevo resource con GET por defecto y sistema de logging
 class NewResource(Resource):
     LOG_TAG = "Default"
+    bMostrarSolicitud = False
 
     def log(self, msg=""):
         if LOG_ENABLED: print(">>> [%s] %s" % (self.LOG_TAG, msg))
@@ -61,6 +72,12 @@ class NewResource(Resource):
         
     def post(self):
         self.log('POST %s' % self.__class__.__name__)
+
+        if self.bMostrarSolicitud:
+            self.log(request)
+            self.log(request.args)
+            self.log(request.values)
+            self.log(request.headers)
     
 
 class v2Login(NewResource):
@@ -68,23 +85,30 @@ class v2Login(NewResource):
 
     def post(self):
         parser = reqparse.RequestParser()
+        
         parser.add_argument('email', help="email missing", required=True)
         parser.add_argument('pwd', help="pwd missing", required=True)
+
         args = parser.parse_args()
+
         email = args['email']
         pwd = args['pwd']
 
         self.log("%s:%s" % (email, pwd))
 
-        u = Usuario.getUsuarioByEmail(email)
-        if u is None:
+        token = None
+
+        u = Email.buscarEmail(email)
+        if u is not None:
+            if u.validPassword(pwd):
+                self.log("%s autenticado" % u)
+                token = makeToken(u)
+            else:
+                self.log("Password incorrecta")        
+        else:
             self.log("Email no existe")
-            return abort(401, message="Bad login")
-        if not u.validPassword(pwd):
-            self.log("Password incorrecta")
-            return abort(401, message="Bad login")
-        self.log("%s autenticado" % u)      
-        return {"status": "ok", "token": str(u.id)}
+
+        return {'token': token}
 
 
 class v2Medidas(NewResource):
@@ -93,26 +117,24 @@ class v2Medidas(NewResource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('token', help="token missing", required=True, location='headers')
+        
+        parser.add_argument('persona', help="persona", required=True, location='headers')
+        
         args = parser.parse_args()
         token = args['token']
+        persona = args['persona']
 
-        self.log("Token %s" % (token))
+        self.log("persona %s" % (persona))
 
-        u = decodeToken(token)
-        if u is None:
-            self.log("Usuario no encontrado")
-            return abort(401, message="Bad token")
-        self.log("%s autorizado" % u)
-        return {"medidas": {
-                    'right_arm': u.right_arm,
-                    'left_arm': u.left_arm,
-                    'right_leg': u.right_leg,
-                    'left_leg': u.left_leg,
-                    'waist': u.waist,
-                    'hip': u.hip,
-                    'chest': u.chest,
-                    'bust': u.bust,}
-        }
+        p = Persona.get(persona)
+        medidas = None
+
+        if p is None:
+            self.log("Persona no encontrada")
+        else:
+            medidas = p.getMedidas()
+
+        return {'medidas': medidas}
 
 class v2Tallas(NewResource):
     LOG_TAG = "Tallas"
@@ -132,69 +154,76 @@ class v2Tallas(NewResource):
         self.log("%s autorizado" % u)
         return getTallas(u)
 
-class v2Perfil(NewResource):
-    LOG_TAG = "Perfil"
 
-    def post(self):
-        parser = reqparse.RequestParser()
-        parser.add_argument('token', help="token missing", required=True, location='headers')
-        args = parser.parse_args()
-        token = args['token']
-
-        self.log("Token %s" % (token))
-
-        u = decodeToken(token)
-        if u is None:
-            self.log("Usuario no encontrado")
-            return abort(401, message="Bad token")
-        self.log("%s autorizado" % u)
-        return {"perfil": {
-                      
-                    'nombre': u.nombre,
-                    'rut': u.rut,
-                    'email': u.email,
-                    'genero': u.gender}
-        }
-
-
-class v2Upload(NewResource):
-    """Docstring"""
-    LOG_TAG = "Upload"
+class apiDatosEmail(NewResource):
+    LOG_TAG = "apiDatosEmail"
 
     def post(self):
         super().post()
 
         parser = reqparse.RequestParser()
-        parser.add_argument('token', required=False, location='headers')
-        from werkzeug.datastructures import FileStorage
+
+        parser.add_argument('token', help="token missing", required=True, location='headers')
+
+        args = parser.parse_args()
+
+        token = args['token']
+
+        datosEmail = None
+
+        email = decodeToken(token)
+        if email is not None:
+            self.log("Token {} con email {}".format(token, email))
+            datosEmail = email.obtenerDatos()
+        else:
+            self.log("Token {} sin email".format(token))
+
+        return {'datosEmail': datosEmail}
+
+
+class apiUpload(NewResource):
+    """Docstring"""
+    LOG_TAG = "apiUpload"
+
+    def post(self):
+        super().post()
+
+        parser = reqparse.RequestParser()
+
+        parser.add_argument('id', required=True, location='headers')
         parser.add_argument("frontalphoto", help="photo missing", type=FileStorage, required=True, location='files')
         parser.add_argument("lateralphoto", help="photo missing", type=FileStorage, required=True, location='files')
         parser.add_argument("height", help="height missing", required=True)
+
         args = parser.parse_args()
-        token = args['token']
+
+        id_persona = args['id']
         frontal_photo = args['frontalphoto']
         lateral_photo = args['lateralphoto']
         height = args['height']
 
-        self.log("Frontal photo: %s,Lateral photo: %s,height: %s, token: %s" % (frontal_photo.filename, lateral_photo.filename, height, token))
+        self.log("id_persona: %s, frontal: %s, lateral: %s, height: %s" %
+                 (id_persona, frontal_photo.filename, lateral_photo.filename, height))
         
-        medidas, mensaje = tf.handle_photo(frontal_photo, lateral_photo, height)
+        mensaje, medidas = tf.handle_photo(frontal_photo, lateral_photo, height)
+
+        datosPersona = None
         
-        if medidas is not None and token is not None:
+        if medidas is not None:
             try:
-                token = int(token)
-                u = decodeToken(token)
-                if u is not None:
-                    u.guardarMedidas(medidas)
-                    self.log("Medidas actualizadas para token %d" % token)
+                p = Persona.get(id_persona)
+                if p is not None:
+                    self.log("Guardando medidas para Persona {}".format(p))
+                    datosPersona = p.guardarMedidas(medidas)
+                    self.log("Medidas guardadas")
                 else:
-                    self.log("Usuario no encontrado")
+                    self.log("Persona no encontrada")
             except:
                 pass
+        else:
+            self.log("Sin medidas")
           
-        
-        
-        return {"response": "upload", "medidas": medidas, "mensaje": mensaje}
+        return {"mensaje": mensaje, "datosPersona": datosPersona}
 
 
 class v2Register(NewResource):
@@ -202,12 +231,15 @@ class v2Register(NewResource):
 
     def post(self):
         parser = reqparse.RequestParser()
+
         parser.add_argument('email', help="email missing", required=True)
         parser.add_argument('pwd', help="pwd missing", required=True)
         parser.add_argument('nombre')
         parser.add_argument('rut')
         parser.add_argument('gender')
+        
         args = parser.parse_args()
+
         email = args['email']
         pwd = args['pwd']
         nombre = args['nombre']
@@ -216,38 +248,104 @@ class v2Register(NewResource):
 
         self.log("%s:%s:%s:%s:%s" % (email, pwd, nombre, rut, gender))
 
-        u = Usuario.getUsuarioByEmail(email)
+        respuesta = 'error'
+        token = None
+
+        u = Email.buscarEmail(email)        
+
         if u is not None:
+            # El email ya existe
             self.log("Email ya existe")
-            return abort(400, message="Email already exists")
+            respuesta = 'ya_existe'
+        else:
+            # Lo creamos
+            self.log("Email disponible")
+            u, p = Email.addEmail(email=email, pwd=pwd, nombre=nombre, rut=rut, gender=gender)
+            token = makeToken(u)
+            respuesta = 'ok'
+
+        return {"respuesta": respuesta, "token": token}
+
+
+class apiValidarToken(NewResource):
+    LOG_TAG = "apiValidarToken"
+
+    def post(self):
+        super().post()
+
+        parser = reqparse.RequestParser()
+
+        parser.add_argument('token', help='token', required=True, location='headers')
+
+        args = parser.parse_args()
+
+        token = args['token']
+        respuesta = ''
+
+        if token is not None:
+            usuario = decodeToken(token)
+            if usuario is not None:
+                respuesta = 'valido'
+                self.log("Token {} valido".format(token))
+            else:
+                respuesta = 'bad_token'
+                self.log("Token {} sin usuario asociado".format(token))
+        else:
+            respuesta = 'bad_token'
+            self.log("Token {} invalido".format(token))
+                
+        return {'respuesta': respuesta}
+
+
+class apiDatosPersona(NewResource):
+    LOG_TAG = "apiDatosPersona"
+
+    def post(self):
+        super().post()
+
+        parser = reqparse.RequestParser()
+
+        parser.add_argument('id', help='id', type=int, required=True, location='headers')
+
+        args = parser.parse_args()
+
+        id_persona = args['id']
         
-        u = Usuario.addUsuario(email=email, pwd=pwd, nombre=nombre, rut=rut, gender=gender)
-        token = makeToken(u)
-        self.log("%s registrado" % u)       
-        return {"response": "registrado", "token": token}
+        datosPersona = None
+        
+        p = Persona.get(id_persona)
+        if p is not None:
+            self.log('Persona: {}'.format(p))
+            datosPersona = p.obtenerDatos()
+        else:
+            self.log('Persona no encontrada')
+
+        return {'datosPersona': datosPersona}
 
 
 api.add_resource(v2Login, '/login')
-api.add_resource(v2Perfil, '/perfil')
+api.add_resource(apiDatosEmail, '/datosEmail')
 api.add_resource(v2Medidas, '/medidas')
 api.add_resource(v2Tallas, '/tallas')
-api.add_resource(v2Upload, '/upload')
+api.add_resource(apiUpload, '/upload')
 api.add_resource(v2Register, '/register')
+api.add_resource(apiValidarToken, '/validarToken')
+api.add_resource(apiDatosPersona, '/datosPersona')
 
 ######################
 # Base de datos
 # Uso de SQLite y SQLAlchemy
 ######################
-from model import Usuario, initModel
+from model import Email, Persona
 from tf import tfManager
 
 ################################################
 # TensorFlow
 # Se instancia a la clase tfManager() para inicializar el modelo retinanet de deteccion de personas
-# TF_ENABLED indica si es que se va a usar TF o no, para ganar tiempo en caso de debugging
+# TF_ENABLED indica si es que se va a usar o no, para ganar tiempo en caso de debugging
 # TODO Requests queue, since TF person_detector can't handle simultaneous requests
 ################################################
-TF_ENABLED = 1
+TF_ENABLED = 0
 tf = tfManager(TF_ENABLED)
 #from scripts.testpersona2 import a, b
 #x = person_detector(photo)
@@ -256,11 +354,8 @@ tf = tfManager(TF_ENABLED)
 
 #from functools import wraps # TODO Implementar decoradores de auth
 
-#initModel() # Si no existe el .sqlite, usar esta funcion para crear la BD segun los modelos definidos
-
 # deja abierto csv de tallas para consultas
 df = pd.read_csv('tallas.csv')
-
 
 # Tokens extremadamente basicos: solo la id del usuario
 def makeToken(user):
@@ -268,17 +363,15 @@ def makeToken(user):
 
 
 def decodeToken(token=None):
-    if token is None: return None
+    if token is None:
+        return None
 
     try:
         id = int(token)
-              
-                    
-        return Usuario.getUsuarioByID(id)
-          
-          
+        return Email.getEmailByID(id)
     except:
         return None
+
 
 def getTallas(usuario):
     print("buscando tallas")
@@ -301,4 +394,5 @@ def page_not_found(e):
     return {"message": "404"}
 
 
-#EOF
+# EOF
+#############################################

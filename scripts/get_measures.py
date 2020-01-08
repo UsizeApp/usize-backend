@@ -17,6 +17,9 @@ import time
 import os
 import math
 
+from datetime import datetime as dt
+import json
+
 MOVE = 0
 
 def plot_line(p1,p2,color = 'orange'):
@@ -202,10 +205,35 @@ def get_measurements(frontal_file, lateral_file, body_height_cm, show = False):
     feeded_lateral_image = transform_image(original_lateral_image, nn_width, nn_height,4)
 
     t = time.time()
-    
+
     #Load Models
-    frontal_model = keras.models.load_model('../models/(BEST_FRONT)UsizeNetConvolutional_front_4-channels_1000-epochs_2019-11-02 06_08_57.h5')    
-    lateral_model = keras.models.load_model('../models/(BEST_SIDE)UsizeNetConvolutional_side_4-channels_100-epochs_2019-11-23 19_15_11.h5')  
+    carpetaActual = os.getcwd()
+    CARPETA = 'models'
+    MODELO_FRONTAL = '(BEST_FRONT)UsizeNetConvolutional_front_4-channels_1000-epochs_2019-11-02 06_08_57.h5'
+    MODELO_LATERAL = '(BEST_SIDE)UsizeNetConvolutional_side_4-channels_100-epochs_2019-11-23 19_15_11.h5'
+    rutaFrontal = ''
+    rutaLateral = ''
+
+    # Si la carpeta del modelo está aqui, la usamos
+    if os.path.isdir(CARPETA):
+        rutaFrontal = os.path.join(carpetaActual, CARPETA, MODELO_FRONTAL)
+        rutaLateral = os.path.join(carpetaActual, CARPETA, MODELO_LATERAL)        
+    else:
+        # Si no, buscamos en la carpeta superior
+        CARPETA = '../' + CARPETA
+        if os.path.isdir(CARPETA):
+            rutaFrontal = os.path.join(carpetaActual, CARPETA, MODELO_FRONTAL)
+            rutaLateral = os.path.join(carpetaActual, CARPETA, MODELO_LATERAL)        
+        else:
+            # Error: la carpeta no se encuentra
+            pass
+
+    if 1:
+        print('rutaFrontal: %s' % rutaFrontal)
+        print('rutaLateral: %s' % rutaLateral)
+
+    frontal_model = keras.models.load_model(rutaFrontal, compile=False)
+    lateral_model = keras.models.load_model(rutaLateral, compile=False)
     
     #Predict Keypoints
     predicted_frontal_keypoints = frontal_model.predict(feeded_frontal_image)
@@ -304,54 +332,69 @@ def get_measurements(frontal_file, lateral_file, body_height_cm, show = False):
     bust        = calculate("bust",       body, frontal_pixelsPerMetric, lateral_pixelsPerMetric)
 
     measures = {
-        "right_arm": right_arm,
         "left_arm": left_arm,
-        "right_leg": right_leg,
+        "right_arm": right_arm,
         "left_leg": left_leg,
-        "waist_length": waist,
-        "hips_length": hips,
-        "chest_length": chest,
-        "bust_length": bust,
-        "path": os.path.abspath('output/Output-Skeleton.jpg'),
-        "time": "{:.3f}".format(time.time() - t)
+        "right_leg": right_leg,
+        "waist": waist,
+        "hips": hips,
+        "chest": chest,
+        "bust": bust,
+        #"time": "{:.3f}".format(time.time() - t)
+        "height": body_height_cm,
+        "lateral_file": lateral_file,
     }
 
+    #Frontal image plot:
+    plt.subplot(1, 2, 1)
+    plt.imshow(original_frontal_image)
+    plt.scatter(predicted_frontal_keypoints[::2], predicted_frontal_keypoints[1::2], s=20, marker='.', c='m')
+    #plt.scatter(original_keypoints[1::2], original_keypoints[::2], s=20, marker='.', c='orange')
+    plot_line(floor,head_upper)
+    plot_line(body["frontal_points"]["right_hips"],body["frontal_points"]["right_knee"])
+    plot_line(body["frontal_points"]["right_knee"],body["frontal_points"]["outer_right_ankle"])
+    plot_line(body["frontal_points"]["left_hips"],body["frontal_points"]["left_knee"])
+    plot_line(body["frontal_points"]["left_knee"],body["frontal_points"]["outer_left_ankle"])
+    plot_line(body["frontal_points"]["right_shoulder1"],body["frontal_points"]["right_elbow"])
+    plot_line(body["frontal_points"]["right_elbow"],body["frontal_points"]["right_wrist"])
+    plot_line(body["frontal_points"]["left_shoulder1"],body["frontal_points"]["left_elbow"])
+    plot_line(body["frontal_points"]["left_elbow"],body["frontal_points"]["left_wrist"])
+    plot_line(body["frontal_points"]["right_hips"],body["frontal_points"]["left_hips"])
+    plot_line(body["frontal_points"]["right_chest"],body["frontal_points"]["left_chest"])
+    plot_line(body["frontal_points"]["right_bust"],body["frontal_points"]["left_bust"])
+
+    #Lateral image plot
+    plt.subplot(1, 2, 2)
+    plt.imshow(original_lateral_image)
+    plt.scatter(predicted_lateral_keypoints[::2], predicted_lateral_keypoints[1::2], s=20, marker='.', c='m')
+    plot_line(body["lateral_points"]["heel"],body["lateral_points"]["head"])
+    plot_line(body["lateral_points"]["frontal_hips"], body["lateral_points"]["back_hips"])
+    plot_line(body["lateral_points"]["chest"], body["lateral_points"]["upper_back"])
+    plot_line(body["lateral_points"]["upper_bust"], body["lateral_points"]["lower_back"])
+
+    # Guardar lo calculado para el histórico
+    szNow = dt.now().strftime("%Y-%m-%d_%H.%M.%S")
+    
+    # Figura
+    RUTA_FIGURA = os.path.abspath('output/%s.jpg' % szNow)
+    plt.savefig(RUTA_FIGURA)
+    
+    # Medidas
+    RUTA_JSON = os.path.abspath('output/%s.json' % szNow)
+    with open(RUTA_JSON, 'w') as f:
+        json.dump(measures, f, indent=4)
+    
+    # Mostrar diagrama del plot
     if show:
-
-        #Frontal image plot:
-        plt.subplot(1, 2, 1)
-        plt.imshow(original_frontal_image)
-        plt.scatter(predicted_frontal_keypoints[::2], predicted_frontal_keypoints[1::2], s=20, marker='.', c='m')
-        #plt.scatter(original_keypoints[1::2], original_keypoints[::2], s=20, marker='.', c='orange')
-        plot_line(floor,head_upper)
-        plot_line(body["frontal_points"]["right_hips"],body["frontal_points"]["right_knee"])
-        plot_line(body["frontal_points"]["right_knee"],body["frontal_points"]["outer_right_ankle"])
-        plot_line(body["frontal_points"]["left_hips"],body["frontal_points"]["left_knee"])
-        plot_line(body["frontal_points"]["left_knee"],body["frontal_points"]["outer_left_ankle"])
-        plot_line(body["frontal_points"]["right_shoulder1"],body["frontal_points"]["right_elbow"])
-        plot_line(body["frontal_points"]["right_elbow"],body["frontal_points"]["right_wrist"])
-        plot_line(body["frontal_points"]["left_shoulder1"],body["frontal_points"]["left_elbow"])
-        plot_line(body["frontal_points"]["left_elbow"],body["frontal_points"]["left_wrist"])
-        plot_line(body["frontal_points"]["right_hips"],body["frontal_points"]["left_hips"])
-        plot_line(body["frontal_points"]["right_chest"],body["frontal_points"]["left_chest"])
-        plot_line(body["frontal_points"]["right_bust"],body["frontal_points"]["left_bust"])
-
-        #Lateral image plot
-        plt.subplot(1, 2, 2)
-        plt.imshow(original_lateral_image)
-        plt.scatter(predicted_lateral_keypoints[::2], predicted_lateral_keypoints[1::2], s=20, marker='.', c='m')
-        plot_line(body["lateral_points"]["heel"],body["lateral_points"]["head"])
-        plot_line(body["lateral_points"]["frontal_hips"], body["lateral_points"]["back_hips"])
-        plot_line(body["lateral_points"]["chest"], body["lateral_points"]["upper_back"])
-        plot_line(body["lateral_points"]["upper_bust"], body["lateral_points"]["lower_back"])
-        plt.savefig(os.path.abspath('output/Skeleton-Keypoints.jpg'))
         plt.show()
 
     return measures
 
+
+def obtenerMedidasManual():
+    measures = get_measurements("test/front.jpg","test/side.jpg", 181, True)
     
-#measures = get_measurements("test_images/front/leo_test.jpeg","test_images/side/leo_test2_right.jpg", 181, True)
-#print("Medidas finales:")
-#for key,value in measures.items():
-#   print("{}: {}".format(key,value))
+    print("Medidas:")
+
+    for k, v in measures.items(): print("{}: {}".format(k,v))
 

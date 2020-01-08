@@ -39,20 +39,20 @@ class Email(db.Model):
         return checkpw(self.hash, pwd)
 
     # Obtiene los datos del email
-    def obtenerDatos(self):
+    def getDatos(self):
         datos = {
             'email': self.email,
             'nombre': self.nombre,
             'rut': self.rut,
 
             'mostrar_bienvenida': self.mostrar_bienvenida,
-            'personas': self.obtenerPersonas()
+            'personas': self.getPersonas()
         }
 
         return datos
 
     # Obtiene las Personas del email
-    def obtenerPersonas(self):
+    def getPersonas(self):
         personas = []
         for persona in self.personas:
             personas.append(str(persona.id))
@@ -162,14 +162,18 @@ class Persona(db.Model):
 
         db.session.commit()
 
-        return self.obtenerDatos()
+        return self.getDatos()
 
     # Obtiene los datos de la persona
-    def obtenerDatos(self):
+    def getDatos(self):
+        fecha_ultimas_medidas = self.fecha_ultimas_medidas
+        
+        if fecha_ultimas_medidas is not None:
+            fecha_ultimas_medidas = fecha_ultimas_medidas.strftime("%d/%m/%Y %H:%M")
         datos = {
             'alias': self.alias,
             'gender': self.gender,
-            'fecha_ultimas_medidas': self.fecha_ultimas_medidas.isoformat(),
+            'fecha_ultimas_medidas': fecha_ultimas_medidas,
             
             'medidas': self.getMedidas(),
         }

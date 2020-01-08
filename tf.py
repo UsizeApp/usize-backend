@@ -2,7 +2,10 @@ import time
 import os
 from datetime import datetime as dt
 
+from utils import printd, enablePrint
+
 DBG = 1
+enablePrint(DBG)
 
 from scripts.testpersona import MyDetector
 from scripts.get_measures import get_measurements
@@ -25,9 +28,9 @@ class tfManager:
             t1 = time.time()
             self.mDetector = MyDetector()
             t2 = time.time()
-            if DBG: print('TF iniciado en %.1f [s]' % (t2-t1))
+            printd('TF iniciado en %.1f [s]' % (t2-t1))
         else:
-            if DBG: print('TF sin iniciarse')
+            printd('TF sin iniciarse')
             pass
 
     def detectarHumano(self, full_frontal_photo_path):
@@ -57,12 +60,12 @@ class tfManager:
 
         full_frontal_photo_path = ''
         full_lateral_photo_path = ''    
-        bUsarFotosLocales = False
-
+        
+        bUsarFotosLocales = True
         if bUsarFotosLocales:
             # Usar fotos locales sin guardar
-            full_frontal_photo_path = os.path.abspath('ruta_foto')
-            full_lateral_photo_path = os.path.abspath('ruta_foto')
+            full_frontal_photo_path = os.path.abspath('samples\\s1_frontal.jpg')
+            full_lateral_photo_path = os.path.abspath('samples\\s1_lateral.jpg')
         else:
             # Preparar las rutas de las fotos y guardarlas
             frontal_photo_path = "%s\\%s_frontal.jpg" % (self.PHOTO_FOLDER, szNow)
@@ -71,34 +74,36 @@ class tfManager:
             frontal_photo.save(frontal_photo_path)
             lateral_photo.save(lateral_photo_path)
 
+            full_frontal_photo_path = os.path.abspath(frontal_photo_path)
+            full_lateral_photo_path = os.path.abspath(lateral_photo_path)
+
+        printd('full_frontal_photo_path:', full_frontal_photo_path)
+        printd('full_lateral_photo_path:', full_lateral_photo_path)
+
         EXTRA_TRIES = 3
         TRIES = 1 or EXTRA_TRIES
 
         # Si pPersona >= 0.7...
         if self.detectarHumano(full_frontal_photo_path):
-            if DBG:
-                print('yes_human')
+            printd('yes_human')
+
             # Intentamos calcular las medidas TRIES veces
             for i in range(1, TRIES+1):
-                print("Intento %d" % i)
+                printd("Intento %d" % i)
+
                 try:
+                    mensaje = 'Éxito al obtener las medidas'
                     medidas = get_measurements(full_frontal_photo_path, full_lateral_photo_path, height)
-                    mensaje = 'success'
-                    if 1:
-                        print(mensaje)
-                        print(medidas)
                     break
                 # Si la medicion falla...
                 except Exception as e:
                     mensaje = "No pudimos tomar las medidas. ¡Intenta otra vez!"
-                    if (DBG):
-                        print(e)
-                        mensaje = "%s %s" % (mensaje, str(e))
+                    printd(e)
         # Si pPersona < 0.7
         else:
             mensaje = "No pudimos detectar a una persona."
-            if DBG:
-                print('no_human')
-                mensaje = "%s %s" % (mensaje, 'no_human')
         
+        printd('mensaje:', mensaje)
+        printd('medidas:', medidas)
+
         return mensaje, medidas

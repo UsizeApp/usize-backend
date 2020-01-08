@@ -136,23 +136,30 @@ class v2Medidas(NewResource):
 
         return {'medidas': medidas}
 
-class v2Tallas(NewResource):
+class apiTallas(NewResource):
     LOG_TAG = "Tallas"
+
+    #TODO mover como columnas a la Persona?
 
     def post(self):
         parser = reqparse.RequestParser()
-        parser.add_argument('token', help="token missing", required=True, location='headers')
+
+        parser.add_argument('id', help="id_persona", required=True, location='headers')
+
         args = parser.parse_args()
-        token = args['token']
 
-        self.log("Token %s" % (token))
+        id_persona = args['id']
 
-        u = decodeToken(token)
-        if u is None:
-            self.log("Usuario no encontrado")
-            return abort(401, message="Bad token")
-        self.log("%s autorizado" % u)
-        return getTallas(u)
+        tallas = None
+
+        p = Persona.get(id_persona)
+        if p is not None:
+            self.log("Persona {}".format(p))
+            tallas = getTallas(p)
+        else:
+            self.log("Persona no encontrada")
+
+        return {'tallas': tallas}
 
 
 class apiDatosEmail(NewResource):
@@ -174,7 +181,7 @@ class apiDatosEmail(NewResource):
         email = decodeToken(token)
         if email is not None:
             self.log("Token {} con email {}".format(token, email))
-            datosEmail = email.obtenerDatos()
+            datosEmail = email.getDatos()
         else:
             self.log("Token {} sin email".format(token))
 
@@ -190,7 +197,7 @@ class apiUpload(NewResource):
 
         parser = reqparse.RequestParser()
 
-        parser.add_argument('id', required=True, location='headers')
+        parser.add_argument('id', help="id_persona missing", required=True, location='headers')
         parser.add_argument("frontalphoto", help="photo missing", type=FileStorage, required=True, location='files')
         parser.add_argument("lateralphoto", help="photo missing", type=FileStorage, required=True, location='files')
         parser.add_argument("height", help="height missing", required=True)
@@ -226,7 +233,7 @@ class apiUpload(NewResource):
         return {"mensaje": mensaje, "datosPersona": datosPersona}
 
 
-class v2Register(NewResource):
+class apiRegister(NewResource):
     LOG_TAG = "Register"
 
     def post(self):
@@ -316,7 +323,7 @@ class apiDatosPersona(NewResource):
         p = Persona.get(id_persona)
         if p is not None:
             self.log('Persona: {}'.format(p))
-            datosPersona = p.obtenerDatos()
+            datosPersona = p.getDatos()
         else:
             self.log('Persona no encontrada')
 
@@ -324,13 +331,21 @@ class apiDatosPersona(NewResource):
 
 
 api.add_resource(v2Login, '/login')
-api.add_resource(apiDatosEmail, '/datosEmail')
-api.add_resource(v2Medidas, '/medidas')
-api.add_resource(v2Tallas, '/tallas')
-api.add_resource(apiUpload, '/upload')
-api.add_resource(v2Register, '/register')
 api.add_resource(apiValidarToken, '/validarToken')
+
+api.add_resource(apiDatosEmail, '/datosEmail')
 api.add_resource(apiDatosPersona, '/datosPersona')
+
+# Sube imagenes y genera las medidas
+api.add_resource(apiUpload, '/upload')
+
+# Registra un Email nuevo
+api.add_resource(apiRegister, '/register')
+
+# Despreciados
+api.add_resource(v2Medidas, '/medidas')
+
+api.add_resource(apiTallas, '/tallas')
 
 ######################
 # Base de datos
@@ -373,21 +388,27 @@ def decodeToken(token=None):
         return None
 
 
-def getTallas(usuario):
+def getTallas(p):
     print("buscando tallas")
-    right_arm = float(usuario.right_arm)
-    left_arm = float(usuario.left_arm)
-    right_leg = float(usuario.right_leg)
-    left_leg = float(usuario.left_leg)
-    waist = float(usuario.waist)
-    hip = float(usuario.hip)
-    chest = float(usuario.chest)
-    bust = float(usuario.bust)
-    gender = usuario.gender
-    table = df.loc[df['genero'] == gender].values.tolist()
-    print(table)
-    return 0
+    left_arm = float(p.left_arm)
+    right_arm = float(p.right_arm)
 
+    left_leg = float(p.left_leg)
+    right_leg = float(p.right_leg)
+
+    waist = float(p.waist)
+    hips = float(p.hips)
+    chest = float(p.chest)
+    bust = float(p.bust)
+
+    medidas = p.getMedidas()
+
+    gender = p.gender
+
+    table = df.loc[df['genero'] == gender].values.tolist()
+
+    print(table)
+    return table
 
 @app.errorhandler(404)
 def page_not_found(e):

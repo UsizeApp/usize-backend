@@ -136,31 +136,6 @@ class v2Medidas(NewResource):
 
         return {'medidas': medidas}
 
-class apiTallas(NewResource):
-    LOG_TAG = "Tallas"
-
-    #TODO mover como columnas a la Persona?
-
-    def post(self):
-        parser = reqparse.RequestParser()
-
-        parser.add_argument('id', help="id_persona", required=True, location='headers')
-
-        args = parser.parse_args()
-
-        id_persona = args['id']
-
-        tallas = None
-
-        p = Persona.get(id_persona)
-        if p is not None:
-            self.log("Persona {}".format(p))
-            tallas = getTallas(p)
-        else:
-            self.log("Persona no encontrada")
-
-        return {'tallas': tallas}
-
 
 class apiDatosEmail(NewResource):
     LOG_TAG = "apiDatosEmail"
@@ -327,6 +302,7 @@ class apiDatosPersona(NewResource):
         else:
             self.log('Persona no encontrada')
 
+        datosPersona["tallas"] = buscaTallas(datosPersona)
         return {'datosPersona': datosPersona}
 
 
@@ -345,14 +321,13 @@ api.add_resource(apiRegister, '/register')
 # Despreciados
 api.add_resource(v2Medidas, '/medidas')
 
-api.add_resource(apiTallas, '/tallas')
-
 ######################
 # Base de datos
 # Uso de SQLite y SQLAlchemy
 ######################
 from model import Email, Persona
 from tf import tfManager
+import statistics
 
 ################################################
 # TensorFlow
@@ -369,8 +344,6 @@ tf = tfManager(TF_ENABLED)
 
 #from functools import wraps # TODO Implementar decoradores de auth
 
-# deja abierto csv de tallas para consultas
-df = pd.read_csv('tallas.csv')
 
 # Tokens extremadamente basicos: solo la id del usuario
 def makeToken(user):
@@ -388,27 +361,90 @@ def decodeToken(token=None):
         return None
 
 
-def getTallas(p):
-    print("buscando tallas")
-    left_arm = float(p.left_arm)
-    right_arm = float(p.right_arm)
+# deja abierto csv de tallas para consultas
+df = pd.read_csv('tallas.csv')
+marcas = ["adidas", "nike"]
+dic_tallas = {
+    "M": {
+        "XXS": 1,
+        "XS":  2,
+        "S":   3,
+        "M":   4,
+        "L":   5,
+        "XL":  6,
+        "2XL": 7,
+        "3XL": 8,
+    },
+    "F": {
+        "XXS": 1,
+        "XS":  2,
+        "S":   3,
+        "M":   4,
+        "L":   5,
+        "XL":  6,
+        "XXL": 7,
+        "1X":  8,
+        "2X":  9,
+        "3X":  10,
+        "4X":  11
+    }
+}
+def buscaTallas(datos):
+    medidas = datos["medidas"]
+    genero =  datos["gender"]
+    tallas = {}
+    for m in marcas:
+        rows = df[(df['genero'] == genero) & (df['codigo'] == m)]
+        tallas_poleras = []
+        tallas_pantalones = []
+        polera_encontrada = "N/A"
+        pantalon_encontrado = "N/A"
+        polera   = rows[(df['prenda'] == 'top')]
+        pantalon = rows[(df['prenda'] == 'inferior')]
 
-    left_leg = float(p.left_leg)
-    right_leg = float(p.right_leg)
+        # busca poleras
+        caderas_polera = polera[(df['parte_cuerpo'] == 'caderas') & (df['limite_inferior'] <= float(medidas['hips'])) & (df['limite_superior'] >= float(medidas['hips']))]
+        cintura_polera = polera[(df['parte_cuerpo'] == 'cintura') & (df['limite_inferior'] <= float(medidas['waist'])) & (df['limite_superior'] >= float(medidas['waist']))]
+        pecho_polera = polera[(df['parte_cuerpo'] == 'pecho') & (df['limite_inferior'] <= float(medidas['chest'])) & (df['limite_superior'] >= float(medidas['chest']))]
+        busto_polera = polera[(df['parte_cuerpo'] == 'busto') & (df['limite_inferior'] <= float(medidas['bust'])) & (df['limite_superior'] >= float(medidas['bust']))]
+        
+        # set poleras
+        if caderas_polera.any().any():
+            tallas_poleras.append(dic_tallas[genero][caderas_polera.iloc[0]["talla"]])
+        if cintura_polera.any().any():
+            tallas_poleras.append(dic_tallas[genero][cintura_polera.iloc[0]["talla"]])
+        if pecho_polera.any().any():
+            tallas_poleras.append(dic_tallas[genero][pecho_polera.iloc[0]["talla"]])
+        if busto_polera.any().any():
+            tallas_poleras.append(dic_tallas[genero][busto_polera.iloc[0]["talla"]])
 
-    waist = float(p.waist)
-    hips = float(p.hips)
-    chest = float(p.chest)
-    bust = float(p.bust)
+        # busca pantalon
+        promedio_pantalon = (float(medidas['left_leg']) + float(medidas['right_leg']))/2
+        caderas_pantalon = pantalon[(df['parte_cuerpo'] == 'caderas')      & (df['limite_inferior'] <= float(medidas['hips']))  & (df['limite_superior'] >= float(medidas['hips']))]
+        cintura_pantalon = pantalon[(df['parte_cuerpo'] == 'cintura')      & (df['limite_inferior'] <= float(medidas['waist'])) & (df['limite_superior'] >= float(medidas['waist']))]
+        largo_pantalon   = pantalon[(df['parte_cuerpo'] == 'largo_pierna') & (df['limite_inferior'] <= promedio_pantalon)       & (df['limite_superior'] >= promedio_pantalon)]
 
-    medidas = p.getMedidas()
+        # set pantalon
+        if caderas_pantalon.any().any():
+            tallas_pantalones.append(dic_tallas[genero][caderas_pantalon.iloc[0]["talla"]])
+        if cintura_pantalon.any().any():
+            tallas_pantalones.append(dic_tallas[genero][cintura_pantalon.iloc[0]["talla"]])
+        if largo_pantalon.any().any():
+            tallas_pantalones.append(dic_tallas[genero][largo_pantalon.iloc[0]["talla"]])
 
-    gender = p.gender
+        for x, y in dic_tallas[genero].items():
+            if y == statistics.median(tallas_poleras):
+                polera_encontrada = x 
+                break
 
-    table = df.loc[df['genero'] == gender].values.tolist()
+        for x, y in dic_tallas[genero].items():
+            if y == statistics.median(tallas_pantalones):
+                pantalon_encontrado = x 
+                break
 
-    print(table)
-    return table
+        tallas[m] = [polera_encontrada, pantalon_encontrado]
+    return tallas
+
 
 @app.errorhandler(404)
 def page_not_found(e):

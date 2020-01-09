@@ -131,16 +131,21 @@ class Persona(db.Model):
     gender = Column(String(1), default='M')
 
     # Medidas
-    left_arm = Column(Integer, default=0)
+    left_arm  = Column(Integer, default=0)
     right_arm = Column(Integer, default=0)
 
-    left_leg = Column(Integer, default=0)
+    left_leg  = Column(Integer, default=0)
     right_leg = Column(Integer, default=0)
 
     waist = Column(Integer, default=0)
-    hips = Column(Integer, default=0)
+    hips  = Column(Integer, default=0)
     chest = Column(Integer, default=0)
-    bust = Column(Integer, default=0)
+    bust  = Column(Integer, default=0)
+
+    # Como me da paja modelar mas inteligente la BD, las marcas son boolean (si el usuario las filtra o no) 
+    adidas = Column(Boolean, default=True)
+    hm     = Column(Boolean, default=True)
+    nike   = Column(Boolean, default=True)
 
     # Indica cuando se tomaron las ultimas medidas, ademas de saber si hay medidas o no
     fecha_ultimas_medidas = Column(DateTime)
@@ -176,6 +181,7 @@ class Persona(db.Model):
             'fecha_ultimas_medidas': fecha_ultimas_medidas,
             
             'medidas': self.getMedidas(),
+            'tallas':  {}
         }
 
         return datos

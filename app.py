@@ -302,7 +302,7 @@ class apiDatosPersona(NewResource):
         else:
             self.log('Persona no encontrada')
 
-        datosPersona["tallas"] = buscaTallas(datosPersona)
+        datosPersona["tallas"] = buscaTallas(p)
         return {'datosPersona': datosPersona}
 
 
@@ -398,7 +398,7 @@ def decodeToken(token=None):
 
 # deja abierto csv de tallas para consultas
 df = pd.read_csv('tallas.csv')
-marcas = ["adidas", "nike"]
+marcas = ["adidas", "hm", "nike"]
 dic_tallas = {
     "M": {
         "XXS": 1,
@@ -424,11 +424,15 @@ dic_tallas = {
         "4X":  11
     }
 }
-def buscaTallas(datos):
+def buscaTallas(persona):
+    datos = persona.getDatos()
     medidas = datos["medidas"]
     genero =  datos["gender"]
     tallas = {}
     for m in marcas:
+        if persona.estaFiltrada(m):
+            tallas[m] = [False, False]
+            continue
         rows = df[(df['genero'] == genero) & (df['codigo'] == m)]
         tallas_poleras = []
         tallas_pantalones = []

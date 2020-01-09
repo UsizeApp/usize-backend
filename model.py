@@ -157,7 +157,7 @@ class Persona(db.Model):
     chest = Column(Integer, default=0)
     bust  = Column(Integer, default=0)
 
-    # Como me da paja modelar mas inteligente la BD, las marcas son boolean (si el usuario las filtra o no) 
+    # Como me da paja modelar mas inteligente la BD, las marcas son boolean (si el usuario las quiere o no) 
     adidas = Column(Boolean, default=True)
     hm     = Column(Boolean, default=True)
     nike   = Column(Boolean, default=True)
@@ -216,6 +216,14 @@ class Persona(db.Model):
         }
 
         return medidas
+
+    def estaFiltrada(self, marca):
+        if marca == "adidas":
+            return not self.adidas
+        elif marca == "hm":
+            return not self.hm
+        elif marca == "nike":
+            return not self.nike
 
     @staticmethod
     def get(id):

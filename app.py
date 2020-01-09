@@ -299,7 +299,7 @@ class apiDatosPersona(NewResource):
         if p is not None:
             self.log('Persona: {}'.format(p))
             datosPersona = p.getDatos()
-            
+
             try:
                 tallas = buscaTallas(datosPersona)
             except:
@@ -340,19 +340,21 @@ class apiMedidasManuales(NewResource):
         
         p = Persona.get(id_persona)
         if p is not None:
-            self.log('Persona: {}'.format(p))
+            self.log('Persona: {}/{}'.format(p, p.alias))
             nuevosDatosPersona = p.guardarMedidas(medidasManuales)
+            self.log('Medidas guardadas: {}'.format(p.fecha_ultimas_medidas))
+
+            try:
+                tallas = buscaTallas(nuevosDatosPersona)
+            except:
+                tallas = None
+
+            nuevosDatosPersona["tallas"] = tallas
         else:
             self.log('Persona no encontrada')
 
-        try:
-            tallas = buscaTallas(nuevosDatosPersona)
-        except:
-            tallas = None
 
-        nuevosDatosPersona["tallas"] = tallas
-
-        return {'datosPersona': nuevosDatosPersona}
+        return {'nuevosDatosPersona': nuevosDatosPersona}
 
 
 class apiNuevaPersona(NewResource):

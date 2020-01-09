@@ -287,7 +287,7 @@ class apiDatosPersona(NewResource):
 
         parser = reqparse.RequestParser()
 
-        parser.add_argument('id', help='id', type=int, required=True, location='headers')
+        parser.add_argument('id', help='id', required=True, location='headers')
 
         args = parser.parse_args()
 
@@ -306,6 +306,38 @@ class apiDatosPersona(NewResource):
         return {'datosPersona': datosPersona}
 
 
+class apiNuevaPersona(NewResource):
+    LOG_TAG = "apiNuevaPersona"
+
+    def post(self):
+        super().post()
+
+        parser = reqparse.RequestParser()
+
+        parser.add_argument('token', help='token', required=True, location='headers')
+        parser.add_argument('alias', help='alias', required=True)
+        parser.add_argument('gender', help='gender', required=True)
+
+        args = parser.parse_args()
+
+        token = args['token']
+        alias = args['alias']
+        gender = args['gender']
+
+        id_persona = None
+        
+        e = decodeToken(token)
+
+        if e is not None:
+            self.log('Email: {}'.format(e))
+            p = e.addPersona(alias, gender)
+            id_persona = p.id
+        else:
+            self.log('Email con token {} no encontrado'.format(token))
+
+        return {'id': id_persona}
+
+
 api.add_resource(v2Login, '/login')
 api.add_resource(apiValidarToken, '/validarToken')
 
@@ -317,6 +349,9 @@ api.add_resource(apiUpload, '/upload')
 
 # Registra un Email nuevo
 api.add_resource(apiRegister, '/register')
+
+# Agrega una Persona a un Email
+api.add_resource(apiNuevaPersona, '/nuevaPersona')
 
 # Despreciados
 api.add_resource(v2Medidas, '/medidas')

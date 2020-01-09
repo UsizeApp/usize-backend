@@ -98,6 +98,7 @@ class Email(db.Model):
         db.session.commit()
 
         p = Persona()
+        # La Persona tiene el mismo nombre del Email
         p.alias = nombre if len(nombre) > 0 else 'Persona'
         p.gender = gender if gender in ['M', 'F'] else 'M'
 
@@ -109,6 +110,20 @@ class Email(db.Model):
         print("Email registrado con ID %d y Persona base %d" % (u.id, p.id))
 
         return u, p
+
+    def addPersona(self, alias, gender):
+        p = Persona()
+        p.alias = alias if len(alias) > 0 else 'Persona'
+        p.gender = gender if gender in ['M', 'F'] else 'M'
+
+        p.id_email = self.id
+
+        db.session.add(p)
+        db.session.commit()
+
+        print("Persona {} registrada bajo Email {}".format(p, self))
+
+        return p
 
     @staticmethod
     def all():

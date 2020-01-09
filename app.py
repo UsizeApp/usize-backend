@@ -299,15 +299,16 @@ class apiDatosPersona(NewResource):
         if p is not None:
             self.log('Persona: {}'.format(p))
             datosPersona = p.getDatos()
+            
+            try:
+                tallas = buscaTallas(datosPersona)
+            except:
+                tallas = None
+
+            datosPersona["tallas"] = tallas
         else:
-            self.log('Persona no encontrada')
+            self.log('Persona con id {} no encontrada'.format(id_persona))
 
-        try:
-            tallas = buscaTallas(datosPersona)
-        except:
-            tallas = None
-
-        datosPersona["tallas"] = tallas
 
         return {'datosPersona': datosPersona}
 

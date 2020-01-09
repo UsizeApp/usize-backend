@@ -46,7 +46,9 @@ class Email(db.Model):
             'rut': self.rut,
 
             'mostrar_bienvenida': self.mostrar_bienvenida,
-            'personas': self.getPersonas()
+            'personas': self.getPersonas(),
+
+            'personas2': self.getPersonas2()
         }
 
         return datos
@@ -56,6 +58,13 @@ class Email(db.Model):
         personas = []
         for persona in self.personas:
             personas.append(str(persona.id))
+
+        return personas
+
+    def getPersonas2(self):
+        personas = {}
+        for persona in self.personas:
+            personas[str(persona.id)] = persona.alias
 
         return personas
 
@@ -146,21 +155,21 @@ class Persona(db.Model):
     gender = Column(String(1), default='M')
 
     # Medidas
-    left_arm  = Column(Integer, default=0)
+    left_arm = Column(Integer, default=0)
     right_arm = Column(Integer, default=0)
 
-    left_leg  = Column(Integer, default=0)
+    left_leg = Column(Integer, default=0)
     right_leg = Column(Integer, default=0)
 
     waist = Column(Integer, default=0)
-    hips  = Column(Integer, default=0)
+    hips = Column(Integer, default=0)
     chest = Column(Integer, default=0)
-    bust  = Column(Integer, default=0)
+    bust = Column(Integer, default=0)
 
-    # Como me da paja modelar mas inteligente la BD, las marcas son boolean (si el usuario las filtra o no) 
+    # Como me da paja modelar mas inteligente la BD, las marcas son boolean (si el usuario las filtra o no)
     adidas = Column(Boolean, default=True)
-    hm     = Column(Boolean, default=True)
-    nike   = Column(Boolean, default=True)
+    hm = Column(Boolean, default=True)
+    nike = Column(Boolean, default=True)
 
     # Indica cuando se tomaron las ultimas medidas, ademas de saber si hay medidas o no
     fecha_ultimas_medidas = Column(DateTime)
@@ -187,14 +196,15 @@ class Persona(db.Model):
     # Obtiene los datos de la persona
     def getDatos(self):
         fecha_ultimas_medidas = self.fecha_ultimas_medidas
-        
+
         if fecha_ultimas_medidas is not None:
-            fecha_ultimas_medidas = fecha_ultimas_medidas.strftime("%d/%m/%Y %H:%M")
+            fecha_ultimas_medidas = fecha_ultimas_medidas.strftime(
+                "%d/%m/%Y %H:%M")
         datos = {
             'alias': self.alias,
             'gender': self.gender,
             'fecha_ultimas_medidas': fecha_ultimas_medidas,
-            
+
             'medidas': self.getMedidas(),
             'tallas':  {}
         }

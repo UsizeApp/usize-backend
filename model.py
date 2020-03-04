@@ -167,9 +167,42 @@ class Persona(db.Model):
     bust = Column(Integer, default=0)
 
     # Como me da paja modelar mas inteligente la BD, las marcas son boolean (si el usuario las filtra o no)
-    adidas = Column(Boolean, default=True)
-    hm = Column(Boolean, default=True)
-    nike = Column(Boolean, default=True)
+    adidas          = Column(Boolean, default=True)
+    hm              = Column(Boolean, default=True)
+    nike            = Column(Boolean, default=True)
+    basement        = Column(Boolean, default=True)
+    universityclub  = Column(Boolean, default=True)
+    sybilla         = Column(Boolean, default=True)
+    americaneagle   = Column(Boolean, default=True)
+    alaniz          = Column(Boolean, default=True)
+    aussie          = Column(Boolean, default=True)
+    cyan            = Column(Boolean, default=True)
+    efesis          = Column(Boolean, default=True)
+    ellus           = Column(Boolean, default=True)
+    espirit         = Column(Boolean, default=True)
+    foster          = Column(Boolean, default=True)
+    greenfield      = Column(Boolean, default=True)
+    io              = Column(Boolean, default=True)
+    jjo             = Column(Boolean, default=True)
+    marittimo       = Column(Boolean, default=True)
+    maui            = Column(Boolean, default=True)
+    opposite        = Column(Boolean, default=True)
+    rainforest      = Column(Boolean, default=True)
+    reef            = Column(Boolean, default=True)
+    umbrale         = Column(Boolean, default=True)
+    viaressa        = Column(Boolean, default=True)
+    wados           = Column(Boolean, default=True)
+    dooaustralia    = Column(Boolean, default=True)
+    polo            = Column(Boolean, default=True)
+    mossimo         = Column(Boolean, default=True)
+    levis           = Column(Boolean, default=True)
+    lacoste         = Column(Boolean, default=True)
+    lamartina       = Column(Boolean, default=True)
+    ecko            = Column(Boolean, default=True)
+    dockers         = Column(Boolean, default=True)
+    americanino     = Column(Boolean, default=True)
+    bearcliff       = Column(Boolean, default=True)
+    topman          = Column(Boolean, default=True)
 
     # Indica cuando se tomaron las ultimas medidas, ademas de saber si hay medidas o no
     fecha_ultimas_medidas = Column(DateTime)
@@ -234,6 +267,74 @@ class Persona(db.Model):
             return not self.hm
         elif marca == "nike":
             return not self.nike
+        elif marca == "basement":
+            return not self.basement
+        elif marca == "universityclub":
+            return not self.universityclub
+        elif marca == "sybilla":
+            return not self.sybilla
+        elif marca == "americaneagle":
+            return not self.americaneagle
+        elif marca == "alaniz":
+            return not self.alaniz
+        elif marca == "alaniz":
+            return not self.alaniz
+        elif marca == "aussie":
+            return not self.aussie
+        elif marca == "cyan":
+            return not self.cyan
+        elif marca == "efesis":
+            return not self.efesis
+        elif marca == "ellus":
+            return not self.ellus
+        elif marca == "espirit":
+            return not self.espirit
+        elif marca == "foster":
+            return not self.foster
+        elif marca == "greenfield":
+            return not self.greenfield
+        elif marca == "io":
+            return not self.io
+        elif marca == "jjo":
+            return not self.jjo
+        elif marca == "marittimo":
+            return not self.marittimo
+        elif marca == "maui":
+            return not self.maui
+        elif marca == "opposite":
+            return not self.opposite
+        elif marca == "rainforest":
+            return not self.rainforest
+        elif marca == "reef":
+            return not self.reef
+        elif marca == "umbrale":
+            return not self.umbrale
+        elif marca == "viaressa":
+            return not self.viaressa
+        elif marca == "wados":
+            return not self.wados
+        elif marca == "dooaustralia":
+            return not self.dooaustralia
+        elif marca == "polo":
+            return not self.polo
+        elif marca == "mossimo":
+            return not self.mossimo
+        elif marca == "levis":
+            return not self.levis
+        elif marca == "lacoste":
+            return not self.lacoste
+        elif marca == "lamartina":
+            return not self.lamartina
+        elif marca == "ecko":
+            return not self.ecko
+        elif marca == "dockers":
+            return not self.dockers
+        elif marca == "americanino":
+            return not self.americanino
+        elif marca == "bearcliff":
+            return not self.bearcliff
+        elif marca == "topman":
+            return not self.topman
 
     @staticmethod
     def get(id):

@@ -447,7 +447,7 @@ def decodeToken(token=None):
 
 # deja abierto csv de tallas para consultas
 df = pd.read_csv('tallas.csv')
-marcas = ["adidas", "hm", "nike"]
+marcas = ["adidas", "hm", "nike", "basement", "universityclub", "sybilla", "americaneagle", "alaniz", "aussie", "cyan", "efesis", "ellus", "espirit", "foster", "greenfield", "io", "jjo", "marittimo", "maui", "opposite", "rainforest", "reef", "umbrale", "viaressa", "wados", "dooaustralia", "mossimo", "polo", "levis", "lacoste", "lamartina", "ecko", "dockers", "americanino", "bearcliff", "topman"] 
 dic_tallas = {
     "M": {
         "XXS": 1,

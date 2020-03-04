@@ -306,6 +306,48 @@ class apiDatosPersona(NewResource):
         return {'datosPersona': datosPersona}
 
 
+class apiMedidasManuales(NewResource):
+    LOG_TAG = "apiMedidasManuales"
+
+    def post(self):
+        super().post()
+
+        parser = reqparse.RequestParser()
+
+        parser.add_argument('id', help='id', required=True, location='headers')
+
+        listaMedidas = ['left_arm','right_arm','left_leg','right_leg','waist','hips','chest','bust']
+
+        for medida in listaMedidas:
+            parser.add_argument(medida, help=medida, required=True, type=float)
+
+        args = parser.parse_args()
+
+        id_persona = args['id']
+
+        medidasManuales = {}
+        for medida in listaMedidas:
+            medidasManuales[medida] = args[medida]
+
+        nuevosDatosPersona = None
+        
+        p = Persona.get(id_persona)
+        if p is not None:
+            self.log('Persona: {}'.format(p))
+            nuevosDatosPersona = p.guardarMedidas(medidasManuales)
+        else:
+            self.log('Persona no encontrada')
+
+        try:
+            tallas = buscaTallas(nuevosDatosPersona)
+        except:
+            tallas = None
+
+        nuevosDatosPersona["tallas"] = tallas
+
+        return {'datosPersona': nuevosDatosPersona}
+
+
 class apiNuevaPersona(NewResource):
     LOG_TAG = "apiNuevaPersona"
 
@@ -331,7 +373,7 @@ class apiNuevaPersona(NewResource):
         if e is not None:
             self.log('Email: {}'.format(e))
             p = e.addPersona(alias, gender)
-            id_persona = p.id
+            id_persona = str(p.id)
         else:
             self.log('Email con token {} no encontrado'.format(token))
 
@@ -352,6 +394,9 @@ api.add_resource(apiRegister, '/register')
 
 # Agrega una Persona a un Email
 api.add_resource(apiNuevaPersona, '/nuevaPersona')
+
+# Actualizar medidas manualmente
+api.add_resource(apiMedidasManuales, '/medidasManuales')
 
 # Despreciados
 api.add_resource(v2Medidas, '/medidas')

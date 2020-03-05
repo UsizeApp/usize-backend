@@ -181,7 +181,6 @@ class Persona(db.Model):
     ellus           = Column(Boolean, default=True)
     espirit         = Column(Boolean, default=True)
     foster          = Column(Boolean, default=True)
-    greenfield      = Column(Boolean, default=True)
     io              = Column(Boolean, default=True)
     jjo             = Column(Boolean, default=True)
     marittimo       = Column(Boolean, default=True)
@@ -291,8 +290,6 @@ class Persona(db.Model):
             return not self.espirit
         elif marca == "foster":
             return not self.foster
-        elif marca == "greenfield":
-            return not self.greenfield
         elif marca == "io":
             return not self.io
         elif marca == "jjo":

@@ -299,12 +299,7 @@ class apiDatosPersona(NewResource):
         if p is not None:
             self.log('Persona: {}'.format(p))
             datosPersona = p.getDatos()
-
-            try:
-                tallas = buscaTallas(datosPersona)
-            except:
-                tallas = None
-
+            tallas = buscaTallas(p)
             datosPersona["tallas"] = tallas
         else:
             self.log('Persona con id {} no encontrada'.format(id_persona))
@@ -342,10 +337,7 @@ class apiMedidasManuales(NewResource):
             self.log('Persona: {}/{}'.format(p, p.alias))
             nuevosDatosPersona = p.guardarMedidas(medidasManuales)
             self.log('Medidas guardadas: {}'.format(p.fecha_ultimas_medidas))
-            try:
-                tallas = buscaTallas(nuevosDatosPersona)
-            except:
-                tallas = None
+            tallas = buscaTallas(p)
             nuevosDatosPersona["tallas"] = tallas
         else:
             self.log('Persona no encontrada')
@@ -447,7 +439,8 @@ def decodeToken(token=None):
 
 # deja abierto csv de tallas para consultas
 df = pd.read_csv('tallas.csv')
-marcas = ["adidas", "hm", "nike", "basement", "universityclub", "sybilla", "americaneagle", "alaniz", "aussie", "cyan", "efesis", "ellus", "espirit", "foster", "greenfield", "io", "jjo", "marittimo", "maui", "opposite", "rainforest", "reef", "umbrale", "viaressa", "wados", "dooaustralia", "mossimo", "polo", "levis", "lacoste", "lamartina", "ecko", "dockers", "americanino", "bearcliff", "topman"] 
+marcas = ["adidas", "hm", "nike", "basement", "universityclub", "sybilla", "americaneagle", "alaniz", "aussie", "cyan", "efesis", "ellus", "espirit", "foster", "io", "jjo", "marittimo", "maui", "opposite", "rainforest", "reef", "umbrale", "viaressa", "wados", "dooaustralia", "mossimo", "polo", "levis", "lacoste", "lamartina", "ecko", "dockers", "americanino", "bearcliff", "topman"] 
+#marcas = ["adidas", "hm", "nike"]
 dic_tallas = {
     "M": {
         "XXS": 1,
@@ -479,6 +472,7 @@ def buscaTallas(persona):
     genero =  datos["gender"]
     tallas = {}
     for m in marcas:
+        print(m)
         if persona.estaFiltrada(m):
             tallas[m] = [False, False]
             continue

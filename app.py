@@ -451,6 +451,21 @@ dic_tallas = {
         "XL":  6,
         "2XL": 7,
         "3XL": 8,
+        "28":  9,
+        "30":  10,
+        "31":  11,
+        "32":  12,
+        "33":  13,
+        "34":  14,
+        "36":  15,
+        "38":  16,
+        "40":  17,
+        "42":  18,
+        "44":  19,
+        "46":  20,
+        "48":  21,
+        "50":  22,
+        "52":  23
     },
     "F": {
         "XXS": 1,
@@ -463,7 +478,22 @@ dic_tallas = {
         "1X":  8,
         "2X":  9,
         "3X":  10,
-        "4X":  11
+        "4X":  11,
+        "28":  12,
+        "30":  13,
+        "31":  14,
+        "32":  15,
+        "33":  16,
+        "34":  17,
+        "36":  18,
+        "38":  19,
+        "40":  20,
+        "42":  21,
+        "44":  22,
+        "46":  23,
+        "48":  24,
+        "50":  25,
+        "52":  26 
     }
 }
 def buscaTallas(persona):
@@ -491,13 +521,19 @@ def buscaTallas(persona):
         busto_polera = polera[(df['parte_cuerpo'] == 'busto') & (df['limite_inferior'] <= float(medidas['bust'])) & (df['limite_superior'] >= float(medidas['bust']))]
         
         # set poleras
+        print(polera)
+        print(pecho_polera)
         if caderas_polera.any().any():
+            print(dic_tallas[genero][caderas_polera.iloc[0]["talla"]])
             tallas_poleras.append(dic_tallas[genero][caderas_polera.iloc[0]["talla"]])
         if cintura_polera.any().any():
+            print(dic_tallas[genero][cintura_polera.iloc[0]["talla"]])
             tallas_poleras.append(dic_tallas[genero][cintura_polera.iloc[0]["talla"]])
         if pecho_polera.any().any():
+            print(dic_tallas[genero][pecho_polera.iloc[0]["talla"]])
             tallas_poleras.append(dic_tallas[genero][pecho_polera.iloc[0]["talla"]])
         if busto_polera.any().any():
+            print(dic_tallas[genero][busto_polera.iloc[0]["talla"]])
             tallas_poleras.append(dic_tallas[genero][busto_polera.iloc[0]["talla"]])
 
         # busca pantalon
@@ -515,12 +551,12 @@ def buscaTallas(persona):
             tallas_pantalones.append(dic_tallas[genero][largo_pantalon.iloc[0]["talla"]])
 
         for x, y in dic_tallas[genero].items():
-            if y == statistics.median(tallas_poleras):
+            if len(tallas_poleras) > 0 and y == statistics.median(tallas_poleras):
                 polera_encontrada = x 
                 break
 
         for x, y in dic_tallas[genero].items():
-            if y == statistics.median(tallas_pantalones):
+            if len(tallas_pantalones) > 0 and y == statistics.median(tallas_pantalones):
                 pantalon_encontrado = x 
                 break
 

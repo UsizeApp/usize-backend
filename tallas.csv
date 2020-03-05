@@ -277,928 +277,928 @@ H&M,hm,largo_pierna,79,79,3XL,F,inferior
 H&M,hm,caderas,147,152,4XL,F,inferior
 H&M,hm,largo_pierna,79,79,4XL,F,inferior
 ,,,,,,,
-Basement,,pecho,0,86,XS,F,top
-Basement,,cintura,0,63,XS,F,top
-Basement,,pecho,86,90,S,F,top
-Basement,,cintura,63,67,S,F,top
-Basement,,pecho,90,94,M,F,top
-Basement,,cintura,67,71,M,F,top
-Basement,,pecho,94,98,L,F,top
-Basement,,cintura,71,75,L,F,top
-Basement,,pecho,98,200,XL,F,top
-Basement,,cintura,75,200,XL,F,top
-Basement,,cintura,0,63,36,F,inferior
-Basement,,caderas,0,92,36,F,inferior
-Basement,,cintura,63,67,38,F,inferior
-Basement,,caderas,92,96,38,F,inferior
-Basement,,cintura,67,71,40,F,inferior
-Basement,,caderas,96,100,40,F,inferior
-Basement,,cintura,71,75,42,F,inferior
-Basement,,caderas,100,104,42,F,inferior
-Basement,,cintura,75,79,44,F,inferior
-Basement,,caderas,104,108,44,F,inferior
-Basement,,cintura,79,200,46,F,inferior
-Basement,,caderas,108,200,46,F,inferior
+Basement,basement,pecho,0,86,XS,F,top
+Basement,basement,cintura,0,63,XS,F,top
+Basement,basement,pecho,86,90,S,F,top
+Basement,basement,cintura,63,67,S,F,top
+Basement,basement,pecho,90,94,M,F,top
+Basement,basement,cintura,67,71,M,F,top
+Basement,basement,pecho,94,98,L,F,top
+Basement,basement,cintura,71,75,L,F,top
+Basement,basement,pecho,98,200,XL,F,top
+Basement,basement,cintura,75,200,XL,F,top
+Basement,basement,cintura,0,63,36,F,inferior
+Basement,basement,caderas,0,92,36,F,inferior
+Basement,basement,cintura,63,67,38,F,inferior
+Basement,basement,caderas,92,96,38,F,inferior
+Basement,basement,cintura,67,71,40,F,inferior
+Basement,basement,caderas,96,100,40,F,inferior
+Basement,basement,cintura,71,75,42,F,inferior
+Basement,basement,caderas,100,104,42,F,inferior
+Basement,basement,cintura,75,79,44,F,inferior
+Basement,basement,caderas,104,108,44,F,inferior
+Basement,basement,cintura,79,200,46,F,inferior
+Basement,basement,caderas,108,200,46,F,inferior
 ,,,,,,,
-University Club,,pecho,0,90,XS,F,top
-University Club,,pecho,90,95,S,F,top
-University Club,,pecho,95,101,M,F,top
-University Club,,pecho,101,106,L,F,top
-University Club,,pecho,106,200,XL,F,top
-University Club,,cintura,0,70,XS,F,top
-University Club,,cintura,70,74,S,F,top
-University Club,,cintura,74,79,M,F,top
-University Club,,cintura,79,84,L,F,top
-University Club,,cintura,84,200,XL,F,top
-University Club,,cintura,0,66,36,F,inferior
-University Club,,cintura,66,70,38,F,inferior
-University Club,,cintura,70,74,40,F,inferior
-University Club,,cintura,74,78,42,F,inferior
-University Club,,cintura,78,82,44,F,inferior
-University Club,,cintura,82,86,46,F,inferior
-University Club,,cintura,86,200,48,F,inferior
-University Club,,caderas,0,92,36,F,inferior
-University Club,,caderas,92,96,38,F,inferior
-University Club,,caderas,96,100,40,F,inferior
-University Club,,caderas,100,104,42,F,inferior
-University Club,,caderas,104,108,44,F,inferior
-University Club,,caderas,108,112,46,F,inferior
-University Club,,caderas,112,200,48,F,inferior
+University Club,universityclub,pecho,0,90,XS,F,top
+University Club,universityclub,pecho,90,95,S,F,top
+University Club,universityclub,pecho,95,101,M,F,top
+University Club,universityclub,pecho,101,106,L,F,top
+University Club,universityclub,pecho,106,200,XL,F,top
+University Club,universityclub,cintura,0,70,XS,F,top
+University Club,universityclub,cintura,70,74,S,F,top
+University Club,universityclub,cintura,74,79,M,F,top
+University Club,universityclub,cintura,79,84,L,F,top
+University Club,universityclub,cintura,84,200,XL,F,top
+University Club,universityclub,cintura,0,66,36,F,inferior
+University Club,universityclub,cintura,66,70,38,F,inferior
+University Club,universityclub,cintura,70,74,40,F,inferior
+University Club,universityclub,cintura,74,78,42,F,inferior
+University Club,universityclub,cintura,78,82,44,F,inferior
+University Club,universityclub,cintura,82,86,46,F,inferior
+University Club,universityclub,cintura,86,200,48,F,inferior
+University Club,universityclub,caderas,0,92,36,F,inferior
+University Club,universityclub,caderas,92,96,38,F,inferior
+University Club,universityclub,caderas,96,100,40,F,inferior
+University Club,universityclub,caderas,100,104,42,F,inferior
+University Club,universityclub,caderas,104,108,44,F,inferior
+University Club,universityclub,caderas,108,112,46,F,inferior
+University Club,universityclub,caderas,112,200,48,F,inferior
 ,,,,,,,
-Sybilla,,pecho,0,84,XS,F,top
-Sybilla,,pecho,84,88,S,F,top
-Sybilla,,pecho,88,91,M,F,top
-Sybilla,,pecho,91,93,L,F,top
-Sybilla,,pecho,93,200,XL,F,top
-Sybilla,,cintura,0,63,XS,F,top
-Sybilla,,cintura,63,67,S,F,top
-Sybilla,,cintura,67,71,M,F,top
-Sybilla,,cintura,71,75,L,F,top
-Sybilla,,cintura,75,200,XL,F,top
-Sybilla,,cintura,0,59,34,F,inferior
-Sybilla,,cintura,59,63,36,F,inferior
-Sybilla,,cintura,63,67,38,F,inferior
-Sybilla,,cintura,67,71,40,F,inferior
-Sybilla,,cintura,71,75,42,F,inferior
-Sybilla,,cintura,75,200,44,F,inferior
-Sybilla,,caderas,0,86,34,F,inferior
-Sybilla,,caderas,86,90,36,F,inferior
-Sybilla,,caderas,90,94,38,F,inferior
-Sybilla,,caderas,94,98,40,F,inferior
-Sybilla,,caderas,98,102,42,F,inferior
-Sybilla,,caderas,102,200,44,F,inferior
+Sybilla,sybilla,pecho,0,84,XS,F,top
+Sybilla,sybilla,pecho,84,88,S,F,top
+Sybilla,sybilla,pecho,88,91,M,F,top
+Sybilla,sybilla,pecho,91,93,L,F,top
+Sybilla,sybilla,pecho,93,200,XL,F,top
+Sybilla,sybilla,cintura,0,63,XS,F,top
+Sybilla,sybilla,cintura,63,67,S,F,top
+Sybilla,sybilla,cintura,67,71,M,F,top
+Sybilla,sybilla,cintura,71,75,L,F,top
+Sybilla,sybilla,cintura,75,200,XL,F,top
+Sybilla,sybilla,cintura,0,59,34,F,inferior
+Sybilla,sybilla,cintura,59,63,36,F,inferior
+Sybilla,sybilla,cintura,63,67,38,F,inferior
+Sybilla,sybilla,cintura,67,71,40,F,inferior
+Sybilla,sybilla,cintura,71,75,42,F,inferior
+Sybilla,sybilla,cintura,75,200,44,F,inferior
+Sybilla,sybilla,caderas,0,86,34,F,inferior
+Sybilla,sybilla,caderas,86,90,36,F,inferior
+Sybilla,sybilla,caderas,90,94,38,F,inferior
+Sybilla,sybilla,caderas,94,98,40,F,inferior
+Sybilla,sybilla,caderas,98,102,42,F,inferior
+Sybilla,sybilla,caderas,102,200,44,F,inferior
 ,,,,,,,
-American Eagle,,cintura,0,61,32,F,inferior
-American Eagle,,cintura,61,64,34,F,inferior
-American Eagle,,cintura,64,66,36,F,inferior
-American Eagle,,cintura,66,69,38,F,inferior
-American Eagle,,cintura,69,71,40,F,inferior
-American Eagle,,cintura,71,74,42,F,inferior
-American Eagle,,cintura,71,78,44,F,inferior
-American Eagle,,cintura,78,200,46,F,inferior
-American Eagle,,caderas,0,85,32,F,inferior
-American Eagle,,caderas,85,88,34,F,inferior
-American Eagle,,caderas,88,90,36,F,inferior
-American Eagle,,caderas,90,93,38,F,inferior
-American Eagle,,caderas,93,96,40,F,inferior
-American Eagle,,caderas,96,99,42,F,inferior
-American Eagle,,caderas,99,102,44,F,inferior
-American Eagle,,caderas,102,200,46,F,inferior
+American Eagle,americaneagle,cintura,0,61,32,F,inferior
+American Eagle,americaneagle,cintura,61,64,34,F,inferior
+American Eagle,americaneagle,cintura,64,66,36,F,inferior
+American Eagle,americaneagle,cintura,66,69,38,F,inferior
+American Eagle,americaneagle,cintura,69,71,40,F,inferior
+American Eagle,americaneagle,cintura,71,74,42,F,inferior
+American Eagle,americaneagle,cintura,71,78,44,F,inferior
+American Eagle,americaneagle,cintura,78,200,46,F,inferior
+American Eagle,americaneagle,caderas,0,85,32,F,inferior
+American Eagle,americaneagle,caderas,85,88,34,F,inferior
+American Eagle,americaneagle,caderas,88,90,36,F,inferior
+American Eagle,americaneagle,caderas,90,93,38,F,inferior
+American Eagle,americaneagle,caderas,93,96,40,F,inferior
+American Eagle,americaneagle,caderas,96,99,42,F,inferior
+American Eagle,americaneagle,caderas,99,102,44,F,inferior
+American Eagle,americaneagle,caderas,102,200,46,F,inferior
 ,,,,,,,
-Alaniz,,pecho,0,82,XS,F,top
-Alaniz,,pecho,82,86,S,F,top
-Alaniz,,pecho,86,90,M,F,top
-Alaniz,,pecho,90,200,L,F,top
-Alaniz,,cintura,0,78,XS,F,top
-Alaniz,,cintura,78,82,S,F,top
-Alaniz,,cintura,82,86,M,F,top
-Alaniz,,cintura,86,200,L,F,top
-Alaniz,,caderas,0,86,XS,F,top
-Alaniz,,caderas,86,90,S,F,top
-Alaniz,,caderas,90,94,M,F,top
-Alaniz,,caderas,94,200,L,F,top
-Alaniz,,cintura,0,64,34,F,inferior
-Alaniz,,cintura,64,68,36,F,inferior
-Alaniz,,cintura,68,72,38,F,inferior
-Alaniz,,cintura,72,76,40,F,inferior
-Alaniz,,cintura,76,81,42,F,inferior
-Alaniz,,cintura,81,86,44,F,inferior
-Alaniz,,cintura,86,200,46,F,inferior
-Alaniz,,caderas,0,92,34,F,inferior
-Alaniz,,caderas,92,96,36,F,inferior
-Alaniz,,caderas,96,100,38,F,inferior
-Alaniz,,caderas,100,104,40,F,inferior
-Alaniz,,caderas,104,108,42,F,inferior
-Alaniz,,caderas,108,112,44,F,inferior
-Alaniz,,caderas,112,200,46,F,inferior
+Alaniz,alaniz,pecho,0,82,XS,F,top
+Alaniz,alaniz,pecho,82,86,S,F,top
+Alaniz,alaniz,pecho,86,90,M,F,top
+Alaniz,alaniz,pecho,90,200,L,F,top
+Alaniz,alaniz,cintura,0,78,XS,F,top
+Alaniz,alaniz,cintura,78,82,S,F,top
+Alaniz,alaniz,cintura,82,86,M,F,top
+Alaniz,alaniz,cintura,86,200,L,F,top
+Alaniz,alaniz,caderas,0,86,XS,F,top
+Alaniz,alaniz,caderas,86,90,S,F,top
+Alaniz,alaniz,caderas,90,94,M,F,top
+Alaniz,alaniz,caderas,94,200,L,F,top
+Alaniz,alaniz,cintura,0,64,34,F,inferior
+Alaniz,alaniz,cintura,64,68,36,F,inferior
+Alaniz,alaniz,cintura,68,72,38,F,inferior
+Alaniz,alaniz,cintura,72,76,40,F,inferior
+Alaniz,alaniz,cintura,76,81,42,F,inferior
+Alaniz,alaniz,cintura,81,86,44,F,inferior
+Alaniz,alaniz,cintura,86,200,46,F,inferior
+Alaniz,alaniz,caderas,0,92,34,F,inferior
+Alaniz,alaniz,caderas,92,96,36,F,inferior
+Alaniz,alaniz,caderas,96,100,38,F,inferior
+Alaniz,alaniz,caderas,100,104,40,F,inferior
+Alaniz,alaniz,caderas,104,108,42,F,inferior
+Alaniz,alaniz,caderas,108,112,44,F,inferior
+Alaniz,alaniz,caderas,112,200,46,F,inferior
 ,,,,,,,
-Aussie,,pecho,0,82,XS,F,top
-Aussie,,pecho,82,86,S,F,top
-Aussie,,pecho,86,90,M,F,top
-Aussie,,pecho,90,200,L,F,top
-Aussie,,cintura,0,78,XS,F,top
-Aussie,,cintura,78,82,S,F,top
-Aussie,,cintura,82,86,M,F,top
-Aussie,,cintura,86,200,L,F,top
-Aussie,,caderas,0,86,XS,F,top
-Aussie,,caderas,86,90,S,F,top
-Aussie,,caderas,90,94,M,F,top
-Aussie,,caderas,94,200,L,F,top
+Aussie,aussie,pecho,0,82,XS,F,top
+Aussie,aussie,pecho,82,86,S,F,top
+Aussie,aussie,pecho,86,90,M,F,top
+Aussie,aussie,pecho,90,200,L,F,top
+Aussie,aussie,cintura,0,78,XS,F,top
+Aussie,aussie,cintura,78,82,S,F,top
+Aussie,aussie,cintura,82,86,M,F,top
+Aussie,aussie,cintura,86,200,L,F,top
+Aussie,aussie,caderas,0,86,XS,F,top
+Aussie,aussie,caderas,86,90,S,F,top
+Aussie,aussie,caderas,90,94,M,F,top
+Aussie,aussie,caderas,94,200,L,F,top
 ,,,,,,,
-Cyan,,pecho,100,106,S,F,top
-Cyan,,pecho,106,112,M,F,top
-Cyan,,pecho,112,118,L,F,top
-Cyan,,pecho,118,124,XL,F,top
-Cyan,,pecho,124,130,XXL,F,top
-Cyan,,cintura,82,88,S,F,top
-Cyan,,cintura,88,94,M,F,top
-Cyan,,cintura,94,100,L,F,top
-Cyan,,cintura,100,106,XL,F,top
-Cyan,,cintura,106,112,XXL,F,top
-Cyan,,caderas,110,116,S,F,top
-Cyan,,caderas,116,122,M,F,top
-Cyan,,caderas,122,128,L,F,top
-Cyan,,caderas,128,134,XL,F,top
-Cyan,,caderas,134,140,XXL,F,top
-Cyan,,cintura,0,86,40,F,inferior
-Cyan,,cintura,86,90,42,F,inferior
-Cyan,,cintura,90,94,44,F,inferior
-Cyan,,cintura,94,99,46,F,inferior
-Cyan,,cintura,99,104,48,F,inferior
-Cyan,,cintura,104,108,50,F,inferior
-Cyan,,cintura,108,200,52,F,inferior
-Cyan,,caderas,0,112,40,F,inferior
-Cyan,,caderas,112,116,42,F,inferior
-Cyan,,caderas,116,120,44,F,inferior
-Cyan,,caderas,120,124,46,F,inferior
-Cyan,,caderas,124,128,48,F,inferior
-Cyan,,caderas,128,132,50,F,inferior
-Cyan,,caderas,132,200,52,F,inferior
+Cyan,cyan,pecho,100,106,S,F,top
+Cyan,cyan,pecho,106,112,M,F,top
+Cyan,cyan,pecho,112,118,L,F,top
+Cyan,cyan,pecho,118,124,XL,F,top
+Cyan,cyan,pecho,124,130,XXL,F,top
+Cyan,cyan,cintura,82,88,S,F,top
+Cyan,cyan,cintura,88,94,M,F,top
+Cyan,cyan,cintura,94,100,L,F,top
+Cyan,cyan,cintura,100,106,XL,F,top
+Cyan,cyan,cintura,106,112,XXL,F,top
+Cyan,cyan,caderas,110,116,S,F,top
+Cyan,cyan,caderas,116,122,M,F,top
+Cyan,cyan,caderas,122,128,L,F,top
+Cyan,cyan,caderas,128,134,XL,F,top
+Cyan,cyan,caderas,134,140,XXL,F,top
+Cyan,cyan,cintura,0,86,40,F,inferior
+Cyan,cyan,cintura,86,90,42,F,inferior
+Cyan,cyan,cintura,90,94,44,F,inferior
+Cyan,cyan,cintura,94,99,46,F,inferior
+Cyan,cyan,cintura,99,104,48,F,inferior
+Cyan,cyan,cintura,104,108,50,F,inferior
+Cyan,cyan,cintura,108,200,52,F,inferior
+Cyan,cyan,caderas,0,112,40,F,inferior
+Cyan,cyan,caderas,112,116,42,F,inferior
+Cyan,cyan,caderas,116,120,44,F,inferior
+Cyan,cyan,caderas,120,124,46,F,inferior
+Cyan,cyan,caderas,124,128,48,F,inferior
+Cyan,cyan,caderas,128,132,50,F,inferior
+Cyan,cyan,caderas,132,200,52,F,inferior
 ,,,,,,,
-Efesis,,pecho,0,82,XS,F,top
-Efesis,,pecho,82,86,S,F,top
-Efesis,,pecho,86,90,M,F,top
-Efesis,,pecho,90,200,L,F,top
-Efesis,,cintura,0,78,XS,F,top
-Efesis,,cintura,78,82,S,F,top
-Efesis,,cintura,82,86,M,F,top
-Efesis,,cintura,86,200,L,F,top
-Efesis,,caderas,0,86,XS,F,top
-Efesis,,caderas,86,90,S,F,top
-Efesis,,caderas,90,94,M,F,top
-Efesis,,caderas,94,200,L,F,top
-Efesis,,cintura,0,62,34,F,inferior
-Efesis,,cintura,62,66,36,F,inferior
-Efesis,,cintura,66,71,38,F,inferior
-Efesis,,cintura,71,76,40,F,inferior
-Efesis,,cintura,76,81,42,F,inferior
-Efesis,,cintura,81,200,44,F,inferior
-Efesis,,caderas,0,88,34,F,inferior
-Efesis,,caderas,88,92,36,F,inferior
-Efesis,,caderas,92,97,38,F,inferior
-Efesis,,caderas,97,102,40,F,inferior
-Efesis,,caderas,102,107,42,F,inferior
-Efesis,,caderas,107,200,44,F,inferior
+Efesis,efesis,pecho,0,82,XS,F,top
+Efesis,efesis,pecho,82,86,S,F,top
+Efesis,efesis,pecho,86,90,M,F,top
+Efesis,efesis,pecho,90,200,L,F,top
+Efesis,efesis,cintura,0,78,XS,F,top
+Efesis,efesis,cintura,78,82,S,F,top
+Efesis,efesis,cintura,82,86,M,F,top
+Efesis,efesis,cintura,86,200,L,F,top
+Efesis,efesis,caderas,0,86,XS,F,top
+Efesis,efesis,caderas,86,90,S,F,top
+Efesis,efesis,caderas,90,94,M,F,top
+Efesis,efesis,caderas,94,200,L,F,top
+Efesis,efesis,cintura,0,62,34,F,inferior
+Efesis,efesis,cintura,62,66,36,F,inferior
+Efesis,efesis,cintura,66,71,38,F,inferior
+Efesis,efesis,cintura,71,76,40,F,inferior
+Efesis,efesis,cintura,76,81,42,F,inferior
+Efesis,efesis,cintura,81,200,44,F,inferior
+Efesis,efesis,caderas,0,88,34,F,inferior
+Efesis,efesis,caderas,88,92,36,F,inferior
+Efesis,efesis,caderas,92,97,38,F,inferior
+Efesis,efesis,caderas,97,102,40,F,inferior
+Efesis,efesis,caderas,102,107,42,F,inferior
+Efesis,efesis,caderas,107,200,44,F,inferior
 ,,,,,,,
-Ellus,,pecho,0,82,XS,F,top
-Ellus,,pecho,82,86,S,F,top
-Ellus,,pecho,86,90,M,F,top
-Ellus,,pecho,90,200,L,F,top
-Ellus,,cintura,0,78,XS,F,top
-Ellus,,cintura,78,82,S,F,top
-Ellus,,cintura,82,86,M,F,top
-Ellus,,cintura,86,200,L,F,top
-Ellus,,caderas,0,86,XS,F,top
-Ellus,,caderas,86,90,S,F,top
-Ellus,,caderas,90,94,M,F,top
-Ellus,,caderas,94,200,L,F,top
-Ellus,,cintura,0,62,34,F,inferior
-Ellus,,cintura,62,66,36,F,inferior
-Ellus,,cintura,66,71,38,F,inferior
-Ellus,,cintura,71,76,40,F,inferior
-Ellus,,cintura,76,81,42,F,inferior
-Ellus,,cintura,81,200,44,F,inferior
-Ellus,,caderas,0,88,34,F,inferior
-Ellus,,caderas,88,92,36,F,inferior
-Ellus,,caderas,92,97,38,F,inferior
-Ellus,,caderas,97,102,40,F,inferior
-Ellus,,caderas,102,107,42,F,inferior
-Ellus,,caderas,107,200,44,F,inferior
+Ellus,ellus,pecho,0,82,XS,F,top
+Ellus,ellus,pecho,82,86,S,F,top
+Ellus,ellus,pecho,86,90,M,F,top
+Ellus,ellus,pecho,90,200,L,F,top
+Ellus,ellus,cintura,0,78,XS,F,top
+Ellus,ellus,cintura,78,82,S,F,top
+Ellus,ellus,cintura,82,86,M,F,top
+Ellus,ellus,cintura,86,200,L,F,top
+Ellus,ellus,caderas,0,86,XS,F,top
+Ellus,ellus,caderas,86,90,S,F,top
+Ellus,ellus,caderas,90,94,M,F,top
+Ellus,ellus,caderas,94,200,L,F,top
+Ellus,ellus,cintura,0,62,34,F,inferior
+Ellus,ellus,cintura,62,66,36,F,inferior
+Ellus,ellus,cintura,66,71,38,F,inferior
+Ellus,ellus,cintura,71,76,40,F,inferior
+Ellus,ellus,cintura,76,81,42,F,inferior
+Ellus,ellus,cintura,81,200,44,F,inferior
+Ellus,ellus,caderas,0,88,34,F,inferior
+Ellus,ellus,caderas,88,92,36,F,inferior
+Ellus,ellus,caderas,92,97,38,F,inferior
+Ellus,ellus,caderas,97,102,40,F,inferior
+Ellus,ellus,caderas,102,107,42,F,inferior
+Ellus,ellus,caderas,107,200,44,F,inferior
 ,,,,,,,
-Espirit,,pecho,0,82,XS,F,top
-Espirit,,pecho,82,86,S,F,top
-Espirit,,pecho,86,90,M,F,top
-Espirit,,pecho,90,200,L,F,top
-Espirit,,cintura,0,78,XS,F,top
-Espirit,,cintura,78,82,S,F,top
-Espirit,,cintura,82,86,M,F,top
-Espirit,,cintura,86,200,L,F,top
-Espirit,,caderas,0,86,XS,F,top
-Espirit,,caderas,86,90,S,F,top
-Espirit,,caderas,90,94,M,F,top
-Espirit,,caderas,94,200,L,F,top
-Espirit,,cintura,0,62,34,F,inferior
-Espirit,,cintura,62,66,36,F,inferior
-Espirit,,cintura,66,71,38,F,inferior
-Espirit,,cintura,71,76,40,F,inferior
-Espirit,,cintura,76,81,42,F,inferior
-Espirit,,cintura,81,200,44,F,inferior
-Espirit,,caderas,0,88,34,F,inferior
-Espirit,,caderas,88,92,36,F,inferior
-Espirit,,caderas,92,97,38,F,inferior
-Espirit,,caderas,97,102,40,F,inferior
-Espirit,,caderas,102,107,42,F,inferior
-Espirit,,caderas,107,200,44,F,inferior
+Espirit,espirit,pecho,0,82,XS,F,top
+Espirit,espirit,pecho,82,86,S,F,top
+Espirit,espirit,pecho,86,90,M,F,top
+Espirit,espirit,pecho,90,200,L,F,top
+Espirit,espirit,cintura,0,78,XS,F,top
+Espirit,espirit,cintura,78,82,S,F,top
+Espirit,espirit,cintura,82,86,M,F,top
+Espirit,espirit,cintura,86,200,L,F,top
+Espirit,espirit,caderas,0,86,XS,F,top
+Espirit,espirit,caderas,86,90,S,F,top
+Espirit,espirit,caderas,90,94,M,F,top
+Espirit,espirit,caderas,94,200,L,F,top
+Espirit,espirit,cintura,0,62,34,F,inferior
+Espirit,espirit,cintura,62,66,36,F,inferior
+Espirit,espirit,cintura,66,71,38,F,inferior
+Espirit,espirit,cintura,71,76,40,F,inferior
+Espirit,espirit,cintura,76,81,42,F,inferior
+Espirit,espirit,cintura,81,200,44,F,inferior
+Espirit,espirit,caderas,0,88,34,F,inferior
+Espirit,espirit,caderas,88,92,36,F,inferior
+Espirit,espirit,caderas,92,97,38,F,inferior
+Espirit,espirit,caderas,97,102,40,F,inferior
+Espirit,espirit,caderas,102,107,42,F,inferior
+Espirit,espirit,caderas,107,200,44,F,inferior
 ,,,,,,,
-Foster,,pecho,0,80,XS,F,top
-Foster,,pecho,80,84,S,F,top
-Foster,,pecho,84,89,M,F,top
-Foster,,pecho,89,94,L,F,top
-Foster,,pecho,94,200,XL,F,top
-Foster,,cintura,0,62,XS,F,top
-Foster,,cintura,62,66,S,F,top
-Foster,,cintura,66,71,M,F,top
-Foster,,cintura,71,76,L,F,top
-Foster,,cintura,76,200,XL,F,top
-Foster,,caderas,0,88,XS,F,top
-Foster,,caderas,88,92,S,F,top
-Foster,,caderas,92,97,M,F,top
-Foster,,caderas,97,102,L,F,top
-Foster,,caderas,102,200,XL,F,top
-Foster,,cintura,0,62,34,F,inferior
-Foster,,cintura,62,66,36,F,inferior
-Foster,,cintura,66,71,38,F,inferior
-Foster,,cintura,71,76,40,F,inferior
-Foster,,cintura,76,81,42,F,inferior
-Foster,,cintura,81,200,44,F,inferior
-Foster,,caderas,0,88,34,F,inferior
-Foster,,caderas,88,92,36,F,inferior
-Foster,,caderas,92,97,38,F,inferior
-Foster,,caderas,97,102,40,F,inferior
-Foster,,caderas,102,107,42,F,inferior
-Foster,,caderas,107,200,44,F,inferior
+Foster,foster,pecho,0,80,XS,F,top
+Foster,foster,pecho,80,84,S,F,top
+Foster,foster,pecho,84,89,M,F,top
+Foster,foster,pecho,89,94,L,F,top
+Foster,foster,pecho,94,200,XL,F,top
+Foster,foster,cintura,0,62,XS,F,top
+Foster,foster,cintura,62,66,S,F,top
+Foster,foster,cintura,66,71,M,F,top
+Foster,foster,cintura,71,76,L,F,top
+Foster,foster,cintura,76,200,XL,F,top
+Foster,foster,caderas,0,88,XS,F,top
+Foster,foster,caderas,88,92,S,F,top
+Foster,foster,caderas,92,97,M,F,top
+Foster,foster,caderas,97,102,L,F,top
+Foster,foster,caderas,102,200,XL,F,top
+Foster,foster,cintura,0,62,34,F,inferior
+Foster,foster,cintura,62,66,36,F,inferior
+Foster,foster,cintura,66,71,38,F,inferior
+Foster,foster,cintura,71,76,40,F,inferior
+Foster,foster,cintura,76,81,42,F,inferior
+Foster,foster,cintura,81,200,44,F,inferior
+Foster,foster,caderas,0,88,34,F,inferior
+Foster,foster,caderas,88,92,36,F,inferior
+Foster,foster,caderas,92,97,38,F,inferior
+Foster,foster,caderas,97,102,40,F,inferior
+Foster,foster,caderas,102,107,42,F,inferior
+Foster,foster,caderas,107,200,44,F,inferior
 ,,,,,,,
-Greenfield,,pecho,0,80,XS,F,top
-Greenfield,,pecho,80,84,S,F,top
-Greenfield,,pecho,84,89,M,F,top
-Greenfield,,pecho,89,94,L,F,top
-Greenfield,,pecho,94,200,XL,F,top
-Greenfield,,cintura,0,62,XS,F,top
-Greenfield,,cintura,62,66,S,F,top
-Greenfield,,cintura,66,71,M,F,top
-Greenfield,,cintura,71,76,L,F,top
-Greenfield,,cintura,76,200,XL,F,top
-Greenfield,,caderas,0,88,XS,F,top
-Greenfield,,caderas,88,92,S,F,top
-Greenfield,,caderas,92,97,M,F,top
-Greenfield,,caderas,97,102,L,F,top
-Greenfield,,caderas,102,200,XL,F,top
-Greenfield,,cintura,0,62,34,F,inferior
-Greenfield,,cintura,62,66,36,F,inferior
-Greenfield,,cintura,66,71,38,F,inferior
-Greenfield,,cintura,71,76,40,F,inferior
-Greenfield,,cintura,76,81,42,F,inferior
-Greenfield,,cintura,81,200,44,F,inferior
-Greenfield,,caderas,0,88,34,F,inferior
-Greenfield,,caderas,88,92,36,F,inferior
-Greenfield,,caderas,92,97,38,F,inferior
-Greenfield,,caderas,97,102,40,F,inferior
-Greenfield,,caderas,102,107,42,F,inferior
-Greenfield,,caderas,107,200,44,F,inferior
+Greenfield,greenfield,pecho,0,80,XS,F,top
+Greenfield,greenfield,pecho,80,84,S,F,top
+Greenfield,greenfield,pecho,84,89,M,F,top
+Greenfield,greenfield,pecho,89,94,L,F,top
+Greenfield,greenfield,pecho,94,200,XL,F,top
+Greenfield,greenfield,cintura,0,62,XS,F,top
+Greenfield,greenfield,cintura,62,66,S,F,top
+Greenfield,greenfield,cintura,66,71,M,F,top
+Greenfield,greenfield,cintura,71,76,L,F,top
+Greenfield,greenfield,cintura,76,200,XL,F,top
+Greenfield,greenfield,caderas,0,88,XS,F,top
+Greenfield,greenfield,caderas,88,92,S,F,top
+Greenfield,greenfield,caderas,92,97,M,F,top
+Greenfield,greenfield,caderas,97,102,L,F,top
+Greenfield,greenfield,caderas,102,200,XL,F,top
+Greenfield,greenfield,cintura,0,62,34,F,inferior
+Greenfield,greenfield,cintura,62,66,36,F,inferior
+Greenfield,greenfield,cintura,66,71,38,F,inferior
+Greenfield,greenfield,cintura,71,76,40,F,inferior
+Greenfield,greenfield,cintura,76,81,42,F,inferior
+Greenfield,greenfield,cintura,81,200,44,F,inferior
+Greenfield,greenfield,caderas,0,88,34,F,inferior
+Greenfield,greenfield,caderas,88,92,36,F,inferior
+Greenfield,greenfield,caderas,92,97,38,F,inferior
+Greenfield,greenfield,caderas,97,102,40,F,inferior
+Greenfield,greenfield,caderas,102,107,42,F,inferior
+Greenfield,greenfield,caderas,107,200,44,F,inferior
 ,,,,,,,
-iO,,pecho,0,82,XS,F,top
-iO,,pecho,82,86,S,F,top
-iO,,pecho,86,90,M,F,top
-iO,,pecho,90,200,L,F,top
-iO,,cintura,0,78,XS,F,top
-iO,,cintura,78,82,S,F,top
-iO,,cintura,82,86,M,F,top
-iO,,cintura,86,200,L,F,top
-iO,,caderas,0,86,XS,F,top
-iO,,caderas,86,90,S,F,top
-iO,,caderas,90,94,M,F,top
-iO,,caderas,94,200,L,F,top
-iO,,cintura,0,62,34,F,inferior
-iO,,cintura,62,66,36,F,inferior
-iO,,cintura,66,71,38,F,inferior
-iO,,cintura,71,76,40,F,inferior
-iO,,cintura,76,81,42,F,inferior
-iO,,cintura,81,200,44,F,inferior
-iO,,caderas,0,88,34,F,inferior
-iO,,caderas,88,92,36,F,inferior
-iO,,caderas,92,97,38,F,inferior
-iO,,caderas,97,102,40,F,inferior
-iO,,caderas,102,107,42,F,inferior
-iO,,caderas,107,200,44,F,inferior
+iO,io,pecho,0,82,XS,F,top
+iO,io,pecho,82,86,S,F,top
+iO,io,pecho,86,90,M,F,top
+iO,io,pecho,90,200,L,F,top
+iO,io,cintura,0,78,XS,F,top
+iO,io,cintura,78,82,S,F,top
+iO,io,cintura,82,86,M,F,top
+iO,io,cintura,86,200,L,F,top
+iO,io,caderas,0,86,XS,F,top
+iO,io,caderas,86,90,S,F,top
+iO,io,caderas,90,94,M,F,top
+iO,io,caderas,94,200,L,F,top
+iO,io,cintura,0,62,34,F,inferior
+iO,io,cintura,62,66,36,F,inferior
+iO,io,cintura,66,71,38,F,inferior
+iO,io,cintura,71,76,40,F,inferior
+iO,io,cintura,76,81,42,F,inferior
+iO,io,cintura,81,200,44,F,inferior
+iO,io,caderas,0,88,34,F,inferior
+iO,io,caderas,88,92,36,F,inferior
+iO,io,caderas,92,97,38,F,inferior
+iO,io,caderas,97,102,40,F,inferior
+iO,io,caderas,102,107,42,F,inferior
+iO,io,caderas,107,200,44,F,inferior
 ,,,,,,,
-JJO,,pecho,0,80,XS,F,top
-JJO,,pecho,80,84,S,F,top
-JJO,,pecho,84,89,M,F,top
-JJO,,pecho,89,94,L,F,top
-JJO,,pecho,94,200,XL,F,top
-JJO,,cintura,0,62,XS,F,top
-JJO,,cintura,62,66,S,F,top
-JJO,,cintura,66,71,M,F,top
-JJO,,cintura,71,76,L,F,top
-JJO,,cintura,76,200,XL,F,top
-JJO,,caderas,0,88,XS,F,top
-JJO,,caderas,88,92,S,F,top
-JJO,,caderas,92,97,M,F,top
-JJO,,caderas,97,102,L,F,top
-JJO,,caderas,102,200,XL,F,top
-JJO,,cintura,0,64,34,F,inferior
-JJO,,cintura,64,68,36,F,inferior
-JJO,,cintura,68,72,38,F,inferior
-JJO,,cintura,72,76,40,F,inferior
-JJO,,cintura,76,81,42,F,inferior
-JJO,,cintura,81,86,44,F,inferior
-JJO,,cintura,86,91,46,F,inferior
-JJO,,cintura,91,200,48,F,inferior
-JJO,,caderas,0,92,34,F,inferior
-JJO,,caderas,92,96,36,F,inferior
-JJO,,caderas,96,100,38,F,inferior
-JJO,,caderas,100,104,40,F,inferior
-JJO,,caderas,104,108,42,F,inferior
-JJO,,caderas,108,112,44,F,inferior
-JJO,,caderas,112,117,46,F,inferior
-JJO,,caderas,117,200,48,F,inferior
+JJO,jjo,pecho,0,80,XS,F,top
+JJO,jjo,pecho,80,84,S,F,top
+JJO,jjo,pecho,84,89,M,F,top
+JJO,jjo,pecho,89,94,L,F,top
+JJO,jjo,pecho,94,200,XL,F,top
+JJO,jjo,cintura,0,62,XS,F,top
+JJO,jjo,cintura,62,66,S,F,top
+JJO,jjo,cintura,66,71,M,F,top
+JJO,jjo,cintura,71,76,L,F,top
+JJO,jjo,cintura,76,200,XL,F,top
+JJO,jjo,caderas,0,88,XS,F,top
+JJO,jjo,caderas,88,92,S,F,top
+JJO,jjo,caderas,92,97,M,F,top
+JJO,jjo,caderas,97,102,L,F,top
+JJO,jjo,caderas,102,200,XL,F,top
+JJO,jjo,cintura,0,64,34,F,inferior
+JJO,jjo,cintura,64,68,36,F,inferior
+JJO,jjo,cintura,68,72,38,F,inferior
+JJO,jjo,cintura,72,76,40,F,inferior
+JJO,jjo,cintura,76,81,42,F,inferior
+JJO,jjo,cintura,81,86,44,F,inferior
+JJO,jjo,cintura,86,91,46,F,inferior
+JJO,jjo,cintura,91,200,48,F,inferior
+JJO,jjo,caderas,0,92,34,F,inferior
+JJO,jjo,caderas,92,96,36,F,inferior
+JJO,jjo,caderas,96,100,38,F,inferior
+JJO,jjo,caderas,100,104,40,F,inferior
+JJO,jjo,caderas,104,108,42,F,inferior
+JJO,jjo,caderas,108,112,44,F,inferior
+JJO,jjo,caderas,112,117,46,F,inferior
+JJO,jjo,caderas,117,200,48,F,inferior
 ,,,,,,,
-Marittimo,,pecho,0,82,XS,F,top
-Marittimo,,pecho,82,86,S,F,top
-Marittimo,,pecho,86,90,M,F,top
-Marittimo,,pecho,90,200,L,F,top
-Marittimo,,cintura,0,78,XS,F,top
-Marittimo,,cintura,78,82,S,F,top
-Marittimo,,cintura,82,86,M,F,top
-Marittimo,,cintura,86,200,L,F,top
-Marittimo,,caderas,0,86,XS,F,top
-Marittimo,,caderas,86,90,S,F,top
-Marittimo,,caderas,90,94,M,F,top
-Marittimo,,caderas,94,200,L,F,top
-Marittimo,,cintura,0,62,34,F,inferior
-Marittimo,,cintura,62,66,36,F,inferior
-Marittimo,,cintura,66,71,38,F,inferior
-Marittimo,,cintura,71,76,40,F,inferior
-Marittimo,,cintura,76,81,42,F,inferior
-Marittimo,,cintura,81,200,44,F,inferior
-Marittimo,,caderas,0,88,34,F,inferior
-Marittimo,,caderas,88,92,36,F,inferior
-Marittimo,,caderas,92,97,38,F,inferior
-Marittimo,,caderas,97,102,40,F,inferior
-Marittimo,,caderas,102,107,42,F,inferior
-Marittimo,,caderas,107,200,44,F,inferior
+Marittimo,marittimo,pecho,0,82,XS,F,top
+Marittimo,marittimo,pecho,82,86,S,F,top
+Marittimo,marittimo,pecho,86,90,M,F,top
+Marittimo,marittimo,pecho,90,200,L,F,top
+Marittimo,marittimo,cintura,0,78,XS,F,top
+Marittimo,marittimo,cintura,78,82,S,F,top
+Marittimo,marittimo,cintura,82,86,M,F,top
+Marittimo,marittimo,cintura,86,200,L,F,top
+Marittimo,marittimo,caderas,0,86,XS,F,top
+Marittimo,marittimo,caderas,86,90,S,F,top
+Marittimo,marittimo,caderas,90,94,M,F,top
+Marittimo,marittimo,caderas,94,200,L,F,top
+Marittimo,marittimo,cintura,0,62,34,F,inferior
+Marittimo,marittimo,cintura,62,66,36,F,inferior
+Marittimo,marittimo,cintura,66,71,38,F,inferior
+Marittimo,marittimo,cintura,71,76,40,F,inferior
+Marittimo,marittimo,cintura,76,81,42,F,inferior
+Marittimo,marittimo,cintura,81,200,44,F,inferior
+Marittimo,marittimo,caderas,0,88,34,F,inferior
+Marittimo,marittimo,caderas,88,92,36,F,inferior
+Marittimo,marittimo,caderas,92,97,38,F,inferior
+Marittimo,marittimo,caderas,97,102,40,F,inferior
+Marittimo,marittimo,caderas,102,107,42,F,inferior
+Marittimo,marittimo,caderas,107,200,44,F,inferior
 ,,,,,,,
-Maui,,pecho,0,82,XS,F,top
-Maui,,pecho,82,86,S,F,top
-Maui,,pecho,86,90,M,F,top
-Maui,,pecho,90,200,L,F,top
-Maui,,cintura,0,78,XS,F,top
-Maui,,cintura,78,82,S,F,top
-Maui,,cintura,82,86,M,F,top
-Maui,,cintura,86,200,L,F,top
-Maui,,caderas,0,86,XS,F,top
-Maui,,caderas,86,90,S,F,top
-Maui,,caderas,90,94,M,F,top
-Maui,,caderas,94,200,L,F,top
+Maui,maui,pecho,0,82,XS,F,top
+Maui,maui,pecho,82,86,S,F,top
+Maui,maui,pecho,86,90,M,F,top
+Maui,maui,pecho,90,200,L,F,top
+Maui,maui,cintura,0,78,XS,F,top
+Maui,maui,cintura,78,82,S,F,top
+Maui,maui,cintura,82,86,M,F,top
+Maui,maui,cintura,86,200,L,F,top
+Maui,maui,caderas,0,86,XS,F,top
+Maui,maui,caderas,86,90,S,F,top
+Maui,maui,caderas,90,94,M,F,top
+Maui,maui,caderas,94,200,L,F,top
 ,,,,,,,
-Opposite,,pecho,0,82,XS,F,top
-Opposite,,pecho,82,86,S,F,top
-Opposite,,pecho,86,90,M,F,top
-Opposite,,pecho,90,200,L,F,top
-Opposite,,cintura,0,78,XS,F,top
-Opposite,,cintura,78,82,S,F,top
-Opposite,,cintura,82,86,M,F,top
-Opposite,,cintura,86,200,L,F,top
-Opposite,,caderas,0,86,XS,F,top
-Opposite,,caderas,86,90,S,F,top
-Opposite,,caderas,90,94,M,F,top
-Opposite,,caderas,94,200,L,F,top
-Opposite,,cintura,0,62,34,F,inferior
-Opposite,,cintura,62,66,36,F,inferior
-Opposite,,cintura,66,71,38,F,inferior
-Opposite,,cintura,71,76,40,F,inferior
-Opposite,,cintura,76,81,42,F,inferior
-Opposite,,cintura,81,200,44,F,inferior
-Opposite,,caderas,0,88,34,F,inferior
-Opposite,,caderas,88,92,36,F,inferior
-Opposite,,caderas,92,97,38,F,inferior
-Opposite,,caderas,97,102,40,F,inferior
-Opposite,,caderas,102,107,42,F,inferior
-Opposite,,caderas,107,200,44,F,inferior
+Opposite,opposite,pecho,0,82,XS,F,top
+Opposite,opposite,pecho,82,86,S,F,top
+Opposite,opposite,pecho,86,90,M,F,top
+Opposite,opposite,pecho,90,200,L,F,top
+Opposite,opposite,cintura,0,78,XS,F,top
+Opposite,opposite,cintura,78,82,S,F,top
+Opposite,opposite,cintura,82,86,M,F,top
+Opposite,opposite,cintura,86,200,L,F,top
+Opposite,opposite,caderas,0,86,XS,F,top
+Opposite,opposite,caderas,86,90,S,F,top
+Opposite,opposite,caderas,90,94,M,F,top
+Opposite,opposite,caderas,94,200,L,F,top
+Opposite,opposite,cintura,0,62,34,F,inferior
+Opposite,opposite,cintura,62,66,36,F,inferior
+Opposite,opposite,cintura,66,71,38,F,inferior
+Opposite,opposite,cintura,71,76,40,F,inferior
+Opposite,opposite,cintura,76,81,42,F,inferior
+Opposite,opposite,cintura,81,200,44,F,inferior
+Opposite,opposite,caderas,0,88,34,F,inferior
+Opposite,opposite,caderas,88,92,36,F,inferior
+Opposite,opposite,caderas,92,97,38,F,inferior
+Opposite,opposite,caderas,97,102,40,F,inferior
+Opposite,opposite,caderas,102,107,42,F,inferior
+Opposite,opposite,caderas,107,200,44,F,inferior
 ,,,,,,,
-Rainforest,,pecho,100,106,S,F,top
-Rainforest,,pecho,106,112,M,F,top
-Rainforest,,pecho,112,118,L,F,top
-Rainforest,,pecho,118,124,XL,F,top
-Rainforest,,pecho,124,130,XXL,F,top
-Rainforest,,cintura,82,88,S,F,top
-Rainforest,,cintura,88,94,M,F,top
-Rainforest,,cintura,94,100,L,F,top
-Rainforest,,cintura,100,106,XL,F,top
-Rainforest,,cintura,106,112,XXL,F,top
-Rainforest,,caderas,110,116,S,F,top
-Rainforest,,caderas,116,122,M,F,top
-Rainforest,,caderas,122,128,L,F,top
-Rainforest,,caderas,128,134,XL,F,top
-Rainforest,,caderas,134,140,XXL,F,top
-Rainforest,,cintura,0,86,40,F,inferior
-Rainforest,,cintura,86,90,42,F,inferior
-Rainforest,,cintura,90,94,44,F,inferior
-Rainforest,,cintura,94,99,46,F,inferior
-Rainforest,,cintura,99,104,48,F,inferior
-Rainforest,,cintura,104,108,50,F,inferior
-Rainforest,,cintura,108,200,52,F,inferior
-Rainforest,,caderas,0,112,40,F,inferior
-Rainforest,,caderas,112,116,42,F,inferior
-Rainforest,,caderas,116,120,44,F,inferior
-Rainforest,,caderas,120,124,46,F,inferior
-Rainforest,,caderas,124,128,48,F,inferior
-Rainforest,,caderas,128,132,50,F,inferior
-Rainforest,,caderas,132,200,52,F,inferior
+Rainforest,rainforest,pecho,100,106,S,F,top
+Rainforest,rainforest,pecho,106,112,M,F,top
+Rainforest,rainforest,pecho,112,118,L,F,top
+Rainforest,rainforest,pecho,118,124,XL,F,top
+Rainforest,rainforest,pecho,124,130,XXL,F,top
+Rainforest,rainforest,cintura,82,88,S,F,top
+Rainforest,rainforest,cintura,88,94,M,F,top
+Rainforest,rainforest,cintura,94,100,L,F,top
+Rainforest,rainforest,cintura,100,106,XL,F,top
+Rainforest,rainforest,cintura,106,112,XXL,F,top
+Rainforest,rainforest,caderas,110,116,S,F,top
+Rainforest,rainforest,caderas,116,122,M,F,top
+Rainforest,rainforest,caderas,122,128,L,F,top
+Rainforest,rainforest,caderas,128,134,XL,F,top
+Rainforest,rainforest,caderas,134,140,XXL,F,top
+Rainforest,rainforest,cintura,0,86,40,F,inferior
+Rainforest,rainforest,cintura,86,90,42,F,inferior
+Rainforest,rainforest,cintura,90,94,44,F,inferior
+Rainforest,rainforest,cintura,94,99,46,F,inferior
+Rainforest,rainforest,cintura,99,104,48,F,inferior
+Rainforest,rainforest,cintura,104,108,50,F,inferior
+Rainforest,rainforest,cintura,108,200,52,F,inferior
+Rainforest,rainforest,caderas,0,112,40,F,inferior
+Rainforest,rainforest,caderas,112,116,42,F,inferior
+Rainforest,rainforest,caderas,116,120,44,F,inferior
+Rainforest,rainforest,caderas,120,124,46,F,inferior
+Rainforest,rainforest,caderas,124,128,48,F,inferior
+Rainforest,rainforest,caderas,128,132,50,F,inferior
+Rainforest,rainforest,caderas,132,200,52,F,inferior
 ,,,,,,,
-Reef,,pecho,0,80,XS,F,top
-Reef,,pecho,80,84,S,F,top
-Reef,,pecho,84,89,M,F,top
-Reef,,pecho,89,94,L,F,top
-Reef,,pecho,94,200,XL,F,top
-Reef,,cintura,0,62,XS,F,top
-Reef,,cintura,62,66,S,F,top
-Reef,,cintura,66,71,M,F,top
-Reef,,cintura,71,76,L,F,top
-Reef,,cintura,76,200,XL,F,top
-Reef,,caderas,0,88,XS,F,top
-Reef,,caderas,88,92,S,F,top
-Reef,,caderas,92,97,M,F,top
-Reef,,caderas,97,102,L,F,top
-Reef,,caderas,102,200,XL,F,top
-Reef,,cintura,0,62,34,F,inferior
-Reef,,cintura,62,66,36,F,inferior
-Reef,,cintura,66,71,38,F,inferior
-Reef,,cintura,71,76,40,F,inferior
-Reef,,cintura,76,81,42,F,inferior
-Reef,,cintura,81,200,44,F,inferior
-Reef,,caderas,0,88,34,F,inferior
-Reef,,caderas,88,92,36,F,inferior
-Reef,,caderas,92,97,38,F,inferior
-Reef,,caderas,97,102,40,F,inferior
-Reef,,caderas,102,107,42,F,inferior
-Reef,,caderas,107,200,44,F,inferior
+Reef,reef,pecho,0,80,XS,F,top
+Reef,reef,pecho,80,84,S,F,top
+Reef,reef,pecho,84,89,M,F,top
+Reef,reef,pecho,89,94,L,F,top
+Reef,reef,pecho,94,200,XL,F,top
+Reef,reef,cintura,0,62,XS,F,top
+Reef,reef,cintura,62,66,S,F,top
+Reef,reef,cintura,66,71,M,F,top
+Reef,reef,cintura,71,76,L,F,top
+Reef,reef,cintura,76,200,XL,F,top
+Reef,reef,caderas,0,88,XS,F,top
+Reef,reef,caderas,88,92,S,F,top
+Reef,reef,caderas,92,97,M,F,top
+Reef,reef,caderas,97,102,L,F,top
+Reef,reef,caderas,102,200,XL,F,top
+Reef,reef,cintura,0,62,34,F,inferior
+Reef,reef,cintura,62,66,36,F,inferior
+Reef,reef,cintura,66,71,38,F,inferior
+Reef,reef,cintura,71,76,40,F,inferior
+Reef,reef,cintura,76,81,42,F,inferior
+Reef,reef,cintura,81,200,44,F,inferior
+Reef,reef,caderas,0,88,34,F,inferior
+Reef,reef,caderas,88,92,36,F,inferior
+Reef,reef,caderas,92,97,38,F,inferior
+Reef,reef,caderas,97,102,40,F,inferior
+Reef,reef,caderas,102,107,42,F,inferior
+Reef,reef,caderas,107,200,44,F,inferior
 ,,,,,,,
-Umbrale,,pecho,0,84,XS,F,top
-Umbrale,,pecho,84,89,S,F,top
-Umbrale,,pecho,89,95,M,F,top
-Umbrale,,pecho,95,101,L,F,top
-Umbrale,,pecho,101,200,XL,F,top
-Umbrale,,cintura,0,94,XS,F,top
-Umbrale,,cintura,94,69,S,F,top
-Umbrale,,cintura,69,75,M,F,top
-Umbrale,,cintura,75,82,L,F,top
-Umbrale,,cintura,82,200,XL,F,top
-Umbrale,,caderas,0,92,XS,F,top
-Umbrale,,caderas,92,97,S,F,top
-Umbrale,,caderas,97,103,M,F,top
-Umbrale,,caderas,103,109,L,F,top
-Umbrale,,caderas,109,200,XL,F,top
-Umbrale,,cintura,0,64,34,F,inferior
-Umbrale,,cintura,64,68,36,F,inferior
-Umbrale,,cintura,68,72,38,F,inferior
-Umbrale,,cintura,72,76,40,F,inferior
-Umbrale,,cintura,76,81,42,F,inferior
-Umbrale,,cintura,81,86,44,F,inferior
-Umbrale,,cintura,86,200,46,F,inferior
-Umbrale,,caderas,0,92,34,F,inferior
-Umbrale,,caderas,92,96,36,F,inferior
-Umbrale,,caderas,96,100,38,F,inferior
-Umbrale,,caderas,100,104,40,F,inferior
-Umbrale,,caderas,104,108,42,F,inferior
-Umbrale,,caderas,108,112,44,F,inferior
-Umbrale,,caderas,112,200,46,F,inferior
+Umbrale,umbrale,pecho,0,84,XS,F,top
+Umbrale,umbrale,pecho,84,89,S,F,top
+Umbrale,umbrale,pecho,89,95,M,F,top
+Umbrale,umbrale,pecho,95,101,L,F,top
+Umbrale,umbrale,pecho,101,200,XL,F,top
+Umbrale,umbrale,cintura,0,94,XS,F,top
+Umbrale,umbrale,cintura,94,69,S,F,top
+Umbrale,umbrale,cintura,69,75,M,F,top
+Umbrale,umbrale,cintura,75,82,L,F,top
+Umbrale,umbrale,cintura,82,200,XL,F,top
+Umbrale,umbrale,caderas,0,92,XS,F,top
+Umbrale,umbrale,caderas,92,97,S,F,top
+Umbrale,umbrale,caderas,97,103,M,F,top
+Umbrale,umbrale,caderas,103,109,L,F,top
+Umbrale,umbrale,caderas,109,200,XL,F,top
+Umbrale,umbrale,cintura,0,64,34,F,inferior
+Umbrale,umbrale,cintura,64,68,36,F,inferior
+Umbrale,umbrale,cintura,68,72,38,F,inferior
+Umbrale,umbrale,cintura,72,76,40,F,inferior
+Umbrale,umbrale,cintura,76,81,42,F,inferior
+Umbrale,umbrale,cintura,81,86,44,F,inferior
+Umbrale,umbrale,cintura,86,200,46,F,inferior
+Umbrale,umbrale,caderas,0,92,34,F,inferior
+Umbrale,umbrale,caderas,92,96,36,F,inferior
+Umbrale,umbrale,caderas,96,100,38,F,inferior
+Umbrale,umbrale,caderas,100,104,40,F,inferior
+Umbrale,umbrale,caderas,104,108,42,F,inferior
+Umbrale,umbrale,caderas,108,112,44,F,inferior
+Umbrale,umbrale,caderas,112,200,46,F,inferior
 ,,,,,,,
-Viaressa,,pecho,100,106,S,F,top
-Viaressa,,pecho,106,112,M,F,top
-Viaressa,,pecho,112,118,L,F,top
-Viaressa,,pecho,118,124,XL,F,top
-Viaressa,,pecho,124,130,XXL,F,top
-Viaressa,,cintura,82,88,S,F,top
-Viaressa,,cintura,88,94,M,F,top
-Viaressa,,cintura,94,100,L,F,top
-Viaressa,,cintura,100,106,XL,F,top
-Viaressa,,cintura,106,112,XXL,F,top
-Viaressa,,caderas,110,116,S,F,top
-Viaressa,,caderas,116,122,M,F,top
-Viaressa,,caderas,122,128,L,F,top
-Viaressa,,caderas,128,134,XL,F,top
-Viaressa,,caderas,134,140,XXL,F,top
-Viaressa,,cintura,0,86,40,F,inferior
-Viaressa,,cintura,86,90,42,F,inferior
-Viaressa,,cintura,90,94,44,F,inferior
-Viaressa,,cintura,94,99,46,F,inferior
-Viaressa,,cintura,99,104,48,F,inferior
-Viaressa,,cintura,104,108,50,F,inferior
-Viaressa,,cintura,108,200,52,F,inferior
-Viaressa,,caderas,0,112,40,F,inferior
-Viaressa,,caderas,112,116,42,F,inferior
-Viaressa,,caderas,116,120,44,F,inferior
-Viaressa,,caderas,120,124,46,F,inferior
-Viaressa,,caderas,124,128,48,F,inferior
-Viaressa,,caderas,128,132,50,F,inferior
-Viaressa,,caderas,132,200,52,F,inferior
+Viaressa,viaressa,pecho,100,106,S,F,top
+Viaressa,viaressa,pecho,106,112,M,F,top
+Viaressa,viaressa,pecho,112,118,L,F,top
+Viaressa,viaressa,pecho,118,124,XL,F,top
+Viaressa,viaressa,pecho,124,130,XXL,F,top
+Viaressa,viaressa,cintura,82,88,S,F,top
+Viaressa,viaressa,cintura,88,94,M,F,top
+Viaressa,viaressa,cintura,94,100,L,F,top
+Viaressa,viaressa,cintura,100,106,XL,F,top
+Viaressa,viaressa,cintura,106,112,XXL,F,top
+Viaressa,viaressa,caderas,110,116,S,F,top
+Viaressa,viaressa,caderas,116,122,M,F,top
+Viaressa,viaressa,caderas,122,128,L,F,top
+Viaressa,viaressa,caderas,128,134,XL,F,top
+Viaressa,viaressa,caderas,134,140,XXL,F,top
+Viaressa,viaressa,cintura,0,86,40,F,inferior
+Viaressa,viaressa,cintura,86,90,42,F,inferior
+Viaressa,viaressa,cintura,90,94,44,F,inferior
+Viaressa,viaressa,cintura,94,99,46,F,inferior
+Viaressa,viaressa,cintura,99,104,48,F,inferior
+Viaressa,viaressa,cintura,104,108,50,F,inferior
+Viaressa,viaressa,cintura,108,200,52,F,inferior
+Viaressa,viaressa,caderas,0,112,40,F,inferior
+Viaressa,viaressa,caderas,112,116,42,F,inferior
+Viaressa,viaressa,caderas,116,120,44,F,inferior
+Viaressa,viaressa,caderas,120,124,46,F,inferior
+Viaressa,viaressa,caderas,124,128,48,F,inferior
+Viaressa,viaressa,caderas,128,132,50,F,inferior
+Viaressa,viaressa,caderas,132,200,52,F,inferior
 ,,,,,,,
-Wados,,pecho,0,82,XS,F,top
-Wados,,pecho,82,86,S,F,top
-Wados,,pecho,86,90,M,F,top
-Wados,,pecho,90,94,L,F,top
-Wados,,pecho,94,200,XL,F,top
-Wados,,cintura,0,78,XS,F,top
-Wados,,cintura,78,82,S,F,top
-Wados,,cintura,82,86,M,F,top
-Wados,,cintura,86,90,L,F,top
-Wados,,cintura,90,200,XL,F,top
-Wados,,caderas,0,86,XS,F,top
-Wados,,caderas,86,90,S,F,top
-Wados,,caderas,90,94,M,F,top
-Wados,,caderas,94,99,L,F,top
-Wados,,caderas,99,200,XL,F,top
-Wados,,cintura,0,70,34,F,inferior
-Wados,,cintura,70,74,36,F,inferior
-Wados,,cintura,74,78,38,F,inferior
-Wados,,cintura,78,82,40,F,inferior
-Wados,,cintura,82,86,42,F,inferior
-Wados,,cintura,86,90,44,F,inferior
-Wados,,cintura,90,200,46,F,inferior
-Wados,,caderas,0,86,34,F,inferior
-Wados,,caderas,86,90,36,F,inferior
-Wados,,caderas,90,94,38,F,inferior
-Wados,,caderas,94,98,40,F,inferior
-Wados,,caderas,98,101,42,F,inferior
-Wados,,caderas,101,103,44,F,inferior
-Wados,,caderas,103,200,46,F,inferior
+Wados,wados,pecho,0,82,XS,F,top
+Wados,wados,pecho,82,86,S,F,top
+Wados,wados,pecho,86,90,M,F,top
+Wados,wados,pecho,90,94,L,F,top
+Wados,wados,pecho,94,200,XL,F,top
+Wados,wados,cintura,0,78,XS,F,top
+Wados,wados,cintura,78,82,S,F,top
+Wados,wados,cintura,82,86,M,F,top
+Wados,wados,cintura,86,90,L,F,top
+Wados,wados,cintura,90,200,XL,F,top
+Wados,wados,caderas,0,86,XS,F,top
+Wados,wados,caderas,86,90,S,F,top
+Wados,wados,caderas,90,94,M,F,top
+Wados,wados,caderas,94,99,L,F,top
+Wados,wados,caderas,99,200,XL,F,top
+Wados,wados,cintura,0,70,34,F,inferior
+Wados,wados,cintura,70,74,36,F,inferior
+Wados,wados,cintura,74,78,38,F,inferior
+Wados,wados,cintura,78,82,40,F,inferior
+Wados,wados,cintura,82,86,42,F,inferior
+Wados,wados,cintura,86,90,44,F,inferior
+Wados,wados,cintura,90,200,46,F,inferior
+Wados,wados,caderas,0,86,34,F,inferior
+Wados,wados,caderas,86,90,36,F,inferior
+Wados,wados,caderas,90,94,38,F,inferior
+Wados,wados,caderas,94,98,40,F,inferior
+Wados,wados,caderas,98,101,42,F,inferior
+Wados,wados,caderas,101,103,44,F,inferior
+Wados,wados,caderas,103,200,46,F,inferior
 ,,,,,,,
-Doo Australia,,pecho,0,84,XS,F,top
-Doo Australia,,pecho,84,88,S,F,top
-Doo Australia,,pecho,88,93,M,F,top
-Doo Australia,,pecho,93,98,L,F,top
-Doo Australia,,pecho,98,200,XL,F,top
-Doo Australia,,cintura,0,84,XS,F,top
-Doo Australia,,cintura,84,86,S,F,top
-Doo Australia,,cintura,86,73,M,F,top
-Doo Australia,,cintura,73,79,L,F,top
-Doo Australia,,cintura,79,200,XL,F,top
-Doo Australia,,caderas,0,90,XS,F,top
-Doo Australia,,caderas,90,94,S,F,top
-Doo Australia,,caderas,94,99,M,F,top
-Doo Australia,,caderas,99,104,L,F,top
-Doo Australia,,caderas,104,200,XL,F,top
-Doo Australia,,cintura,0,60,34,F,inferior
-Doo Australia,,cintura,60,64,36,F,inferior
-Doo Australia,,cintura,64,68,38,F,inferior
-Doo Australia,,cintura,68,73,40,F,inferior
-Doo Australia,,cintura,73,78,42,F,inferior
-Doo Australia,,cintura,78,83,44,F,inferior
-Doo Australia,,cintura,83,200,46,F,inferior
-Doo Australia,,caderas,0,86,34,F,inferior
-Doo Australia,,caderas,86,90,36,F,inferior
-Doo Australia,,caderas,90,94,38,F,inferior
-Doo Australia,,caderas,94,98,40,F,inferior
-Doo Australia,,caderas,98,103,42,F,inferior
-Doo Australia,,caderas,103,109,44,F,inferior
-Doo Australia,,caderas,109,200,46,F,inferior
+Doo Australia,dooaustralia,pecho,0,84,XS,F,top
+Doo Australia,dooaustralia,pecho,84,88,S,F,top
+Doo Australia,dooaustralia,pecho,88,93,M,F,top
+Doo Australia,dooaustralia,pecho,93,98,L,F,top
+Doo Australia,dooaustralia,pecho,98,200,XL,F,top
+Doo Australia,dooaustralia,cintura,0,84,XS,F,top
+Doo Australia,dooaustralia,cintura,84,86,S,F,top
+Doo Australia,dooaustralia,cintura,86,73,M,F,top
+Doo Australia,dooaustralia,cintura,73,79,L,F,top
+Doo Australia,dooaustralia,cintura,79,200,XL,F,top
+Doo Australia,dooaustralia,caderas,0,90,XS,F,top
+Doo Australia,dooaustralia,caderas,90,94,S,F,top
+Doo Australia,dooaustralia,caderas,94,99,M,F,top
+Doo Australia,dooaustralia,caderas,99,104,L,F,top
+Doo Australia,dooaustralia,caderas,104,200,XL,F,top
+Doo Australia,dooaustralia,cintura,0,60,34,F,inferior
+Doo Australia,dooaustralia,cintura,60,64,36,F,inferior
+Doo Australia,dooaustralia,cintura,64,68,38,F,inferior
+Doo Australia,dooaustralia,cintura,68,73,40,F,inferior
+Doo Australia,dooaustralia,cintura,73,78,42,F,inferior
+Doo Australia,dooaustralia,cintura,78,83,44,F,inferior
+Doo Australia,dooaustralia,cintura,83,200,46,F,inferior
+Doo Australia,dooaustralia,caderas,0,86,34,F,inferior
+Doo Australia,dooaustralia,caderas,86,90,36,F,inferior
+Doo Australia,dooaustralia,caderas,90,94,38,F,inferior
+Doo Australia,dooaustralia,caderas,94,98,40,F,inferior
+Doo Australia,dooaustralia,caderas,98,103,42,F,inferior
+Doo Australia,dooaustralia,caderas,103,109,44,F,inferior
+Doo Australia,dooaustralia,caderas,109,200,46,F,inferior
 ,,,,,,,
-Mossimo,,pecho,0,84,XS,F,top
-Mossimo,,pecho,84,88,S,F,top
-Mossimo,,pecho,88,93,M,F,top
-Mossimo,,pecho,93,98,L,F,top
-Mossimo,,pecho,98,200,XL,F,top
-Mossimo,,cintura,0,84,XS,F,top
-Mossimo,,cintura,84,86,S,F,top
-Mossimo,,cintura,86,73,M,F,top
-Mossimo,,cintura,73,79,L,F,top
-Mossimo,,cintura,79,200,XL,F,top
-Mossimo,,caderas,0,90,XS,F,top
-Mossimo,,caderas,90,94,S,F,top
-Mossimo,,caderas,94,99,M,F,top
-Mossimo,,caderas,99,104,L,F,top
-Mossimo,,caderas,104,200,XL,F,top
-Mossimo,,cintura,0,60,34,F,inferior
-Mossimo,,cintura,60,64,36,F,inferior
-Mossimo,,cintura,64,68,38,F,inferior
-Mossimo,,cintura,68,73,40,F,inferior
-Mossimo,,cintura,73,78,42,F,inferior
-Mossimo,,cintura,78,83,44,F,inferior
-Mossimo,,cintura,83,200,46,F,inferior
-Mossimo,,caderas,0,86,34,F,inferior
-Mossimo,,caderas,86,90,36,F,inferior
-Mossimo,,caderas,90,94,38,F,inferior
-Mossimo,,caderas,94,98,40,F,inferior
-Mossimo,,caderas,98,103,42,F,inferior
-Mossimo,,caderas,103,109,44,F,inferior
-Mossimo,,caderas,109,200,46,F,inferior
+Mossimo,mossimo,pecho,0,84,XS,F,top
+Mossimo,mossimo,pecho,84,88,S,F,top
+Mossimo,mossimo,pecho,88,93,M,F,top
+Mossimo,mossimo,pecho,93,98,L,F,top
+Mossimo,mossimo,pecho,98,200,XL,F,top
+Mossimo,mossimo,cintura,0,84,XS,F,top
+Mossimo,mossimo,cintura,84,86,S,F,top
+Mossimo,mossimo,cintura,86,73,M,F,top
+Mossimo,mossimo,cintura,73,79,L,F,top
+Mossimo,mossimo,cintura,79,200,XL,F,top
+Mossimo,mossimo,caderas,0,90,XS,F,top
+Mossimo,mossimo,caderas,90,94,S,F,top
+Mossimo,mossimo,caderas,94,99,M,F,top
+Mossimo,mossimo,caderas,99,104,L,F,top
+Mossimo,mossimo,caderas,104,200,XL,F,top
+Mossimo,mossimo,cintura,0,60,34,F,inferior
+Mossimo,mossimo,cintura,60,64,36,F,inferior
+Mossimo,mossimo,cintura,64,68,38,F,inferior
+Mossimo,mossimo,cintura,68,73,40,F,inferior
+Mossimo,mossimo,cintura,73,78,42,F,inferior
+Mossimo,mossimo,cintura,78,83,44,F,inferior
+Mossimo,mossimo,cintura,83,200,46,F,inferior
+Mossimo,mossimo,caderas,0,86,34,F,inferior
+Mossimo,mossimo,caderas,86,90,36,F,inferior
+Mossimo,mossimo,caderas,90,94,38,F,inferior
+Mossimo,mossimo,caderas,94,98,40,F,inferior
+Mossimo,mossimo,caderas,98,103,42,F,inferior
+Mossimo,mossimo,caderas,103,109,44,F,inferior
+Mossimo,mossimo,caderas,109,200,46,F,inferior
 ,,,,,,,
-Polo,,cintura,66,71,XS,M,top
-Polo,,cintura,71,78,S,M,top
-Polo,,cintura,78,87,M,M,top
-Polo,,cintura,87,100,L,M,top
-Polo,,cintura,100,108,XL,M,top
-Polo,,cintura,108,200,XXL,M,top
-Polo,,cintura,0,74,28,M,inferior
-Polo,,cintura,74,79,30,M,inferior
-Polo,,cintura,79,82,32,M,inferior
-Polo,,cintura,82,85,33,M,inferior
-Polo,,cintura,85,89,34,M,inferior
-Polo,,cintura,89,94,36,M,inferior
-Polo,,cintura,94,99,38,M,inferior
-Polo,,cintura,99,104,40,M,inferior
-Polo,,cintura,104,109,42,M,inferior
-Polo,,cintura,109,200,44,M,inferior
+Polo,polo,cintura,66,71,XS,M,top
+Polo,polo,cintura,71,78,S,M,top
+Polo,polo,cintura,78,87,M,M,top
+Polo,polo,cintura,87,100,L,M,top
+Polo,polo,cintura,100,108,XL,M,top
+Polo,polo,cintura,108,200,XXL,M,top
+Polo,polo,cintura,0,74,28,M,inferior
+Polo,polo,cintura,74,79,30,M,inferior
+Polo,polo,cintura,79,82,32,M,inferior
+Polo,polo,cintura,82,85,33,M,inferior
+Polo,polo,cintura,85,89,34,M,inferior
+Polo,polo,cintura,89,94,36,M,inferior
+Polo,polo,cintura,94,99,38,M,inferior
+Polo,polo,cintura,99,104,40,M,inferior
+Polo,polo,cintura,104,109,42,M,inferior
+Polo,polo,cintura,109,200,44,M,inferior
 ,,,,,,,
-Mossimo,,pecho,0,100,S,M,top
-Mossimo,,pecho,100,106,M,M,top
-Mossimo,,pecho,106,112,L,M,top
-Mossimo,,pecho,112,118,XL,M,top
-Mossimo,,pecho,118,200,XXL,M,top
-Mossimo,,cintura,0,82,S,M,top
-Mossimo,,cintura,82,88,M,M,top
-Mossimo,,cintura,88,94,L,M,top
-Mossimo,,cintura,94,100,XL,M,top
-Mossimo,,cintura,100,200,XXL,M,top
-Mossimo,,caderas,0,102,S,M,top
-Mossimo,,caderas,102,108,M,M,top
-Mossimo,,caderas,108,114,L,M,top
-Mossimo,,caderas,114,120,XL,M,top
-Mossimo,,caderas,120,200,XXL,M,top
-Mossimo,,cintura,0,83,40,M,inferior
-Mossimo,,cintura,83,87,42,M,inferior
-Mossimo,,cintura,87,91,44,M,inferior
-Mossimo,,cintura,91,95,46,M,inferior
-Mossimo,,cintura,95,99,48,M,inferior
-Mossimo,,cintura,99,200,50,M,inferior
-Mossimo,,caderas,0,97,40,M,inferior
-Mossimo,,caderas,97,101,42,M,inferior
-Mossimo,,caderas,101,105,44,M,inferior
-Mossimo,,caderas,105,109,46,M,inferior
-Mossimo,,caderas,109,113,48,M,inferior
-Mossimo,,caderas,113,200,50,M,inferior
+Mossimo,mossimo,pecho,0,100,S,M,top
+Mossimo,mossimo,pecho,100,106,M,M,top
+Mossimo,mossimo,pecho,106,112,L,M,top
+Mossimo,mossimo,pecho,112,118,XL,M,top
+Mossimo,mossimo,pecho,118,200,XXL,M,top
+Mossimo,mossimo,cintura,0,82,S,M,top
+Mossimo,mossimo,cintura,82,88,M,M,top
+Mossimo,mossimo,cintura,88,94,L,M,top
+Mossimo,mossimo,cintura,94,100,XL,M,top
+Mossimo,mossimo,cintura,100,200,XXL,M,top
+Mossimo,mossimo,caderas,0,102,S,M,top
+Mossimo,mossimo,caderas,102,108,M,M,top
+Mossimo,mossimo,caderas,108,114,L,M,top
+Mossimo,mossimo,caderas,114,120,XL,M,top
+Mossimo,mossimo,caderas,120,200,XXL,M,top
+Mossimo,mossimo,cintura,0,83,40,M,inferior
+Mossimo,mossimo,cintura,83,87,42,M,inferior
+Mossimo,mossimo,cintura,87,91,44,M,inferior
+Mossimo,mossimo,cintura,91,95,46,M,inferior
+Mossimo,mossimo,cintura,95,99,48,M,inferior
+Mossimo,mossimo,cintura,99,200,50,M,inferior
+Mossimo,mossimo,caderas,0,97,40,M,inferior
+Mossimo,mossimo,caderas,97,101,42,M,inferior
+Mossimo,mossimo,caderas,101,105,44,M,inferior
+Mossimo,mossimo,caderas,105,109,46,M,inferior
+Mossimo,mossimo,caderas,109,113,48,M,inferior
+Mossimo,mossimo,caderas,113,200,50,M,inferior
 ,,,,,,,
-Levis,,pecho,0,96,S,M,top
-Levis,,pecho,96,104,M,M,top
-Levis,,pecho,104,111,L,M,top
-Levis,,pecho,111,119,XL,M,top
-Levis,,pecho,119,200,XXL,M,top
-Levis,,cintura,0,81,S,M,top
-Levis,,cintura,81,88,M,M,top
-Levis,,cintura,88,96,L,M,top
-Levis,,cintura,96,104,XL,M,top
-Levis,,cintura,104,200,XXL,M,top
-Levis,,caderas,0,96,S,M,top
-Levis,,caderas,96,104,M,M,top
-Levis,,caderas,104,111,L,M,top
-Levis,,caderas,111,119,XL,M,top
-Levis,,caderas,119,200,XXL,M,top
-Levis,,cintura,0,77,28,M,inferior
-Levis,,cintura,77,80,30,M,inferior
-Levis,,cintura,80,82,31,M,inferior
-Levis,,cintura,82,85,32,M,inferior
-Levis,,cintura,85,87,33,M,inferior
-Levis,,cintura,87,92,34,M,inferior
-Levis,,cintura,92,97,36,M,inferior
-Levis,,cintura,97,102,38,M,inferior
-Levis,,cintura,102,107,40,M,inferior
-Levis,,cintura,107,113,42,M,inferior
-Levis,,cintura,113,200,44,M,inferior
-Levis,,caderas,0,91,28,M,inferior
-Levis,,caderas,91,93,30,M,inferior
-Levis,,caderas,93,96,31,M,inferior
-Levis,,caderas,96,98,32,M,inferior
-Levis,,caderas,98,101,33,M,inferior
-Levis,,caderas,101,106,34,M,inferior
-Levis,,caderas,106,111,36,M,inferior
-Levis,,caderas,111,116,38,M,inferior
-Levis,,caderas,116,121,40,M,inferior
-Levis,,caderas,121,126,42,M,inferior
-Levis,,caderas,126,200,44,M,inferior
+Levis,levis,pecho,0,96,S,M,top
+Levis,levis,pecho,96,104,M,M,top
+Levis,levis,pecho,104,111,L,M,top
+Levis,levis,pecho,111,119,XL,M,top
+Levis,levis,pecho,119,200,XXL,M,top
+Levis,levis,cintura,0,81,S,M,top
+Levis,levis,cintura,81,88,M,M,top
+Levis,levis,cintura,88,96,L,M,top
+Levis,levis,cintura,96,104,XL,M,top
+Levis,levis,cintura,104,200,XXL,M,top
+Levis,levis,caderas,0,96,S,M,top
+Levis,levis,caderas,96,104,M,M,top
+Levis,levis,caderas,104,111,L,M,top
+Levis,levis,caderas,111,119,XL,M,top
+Levis,levis,caderas,119,200,XXL,M,top
+Levis,levis,cintura,0,77,28,M,inferior
+Levis,levis,cintura,77,80,30,M,inferior
+Levis,levis,cintura,80,82,31,M,inferior
+Levis,levis,cintura,82,85,32,M,inferior
+Levis,levis,cintura,85,87,33,M,inferior
+Levis,levis,cintura,87,92,34,M,inferior
+Levis,levis,cintura,92,97,36,M,inferior
+Levis,levis,cintura,97,102,38,M,inferior
+Levis,levis,cintura,102,107,40,M,inferior
+Levis,levis,cintura,107,113,42,M,inferior
+Levis,levis,cintura,113,200,44,M,inferior
+Levis,levis,caderas,0,91,28,M,inferior
+Levis,levis,caderas,91,93,30,M,inferior
+Levis,levis,caderas,93,96,31,M,inferior
+Levis,levis,caderas,96,98,32,M,inferior
+Levis,levis,caderas,98,101,33,M,inferior
+Levis,levis,caderas,101,106,34,M,inferior
+Levis,levis,caderas,106,111,36,M,inferior
+Levis,levis,caderas,111,116,38,M,inferior
+Levis,levis,caderas,116,121,40,M,inferior
+Levis,levis,caderas,121,126,42,M,inferior
+Levis,levis,caderas,126,200,44,M,inferior
 ,,,,,,,
-Lacoste,,pecho,0,97,S,M,top
-Lacoste,,pecho,97,105,M,M,top
-Lacoste,,pecho,105,113,L,M,top
-Lacoste,,pecho,113,121,XL,M,top
-Lacoste,,pecho,121,200,XXL,M,top
-Lacoste,,cintura,0,85,S,M,top
-Lacoste,,cintura,85,93,M,M,top
-Lacoste,,cintura,93,101,L,M,top
-Lacoste,,cintura,101,111,XL,M,top
-Lacoste,,cintura,111,200,XXL,M,top
-Lacoste,,caderas,0,96,S,M,top
-Lacoste,,caderas,96,104,M,M,top
-Lacoste,,caderas,104,112,L,M,top
-Lacoste,,caderas,112,118,XL,M,top
-Lacoste,,caderas,118,200,XXL,M,top
-Lacoste,,cintura,0,79,36,M,inferior
-Lacoste,,cintura,79,83,38,M,inferior
-Lacoste,,cintura,83,87,40,M,inferior
-Lacoste,,cintura,87,91,42,M,inferior
-Lacoste,,cintura,91,95,44,M,inferior
-Lacoste,,cintura,95,99,46,M,inferior
-Lacoste,,cintura,99,103,48,M,inferior
-Lacoste,,cintura,103,200,50,M,inferior
-Lacoste,,caderas,0,90,36,M,inferior
-Lacoste,,caderas,90,94,38,M,inferior
-Lacoste,,caderas,94,98,40,M,inferior
-Lacoste,,caderas,98,102,42,M,inferior
-Lacoste,,caderas,102,106,44,M,inferior
-Lacoste,,caderas,106,110,46,M,inferior
-Lacoste,,caderas,110,114,48,M,inferior
-Lacoste,,caderas,114,200,50,M,inferior
+Lacoste,lacoste,pecho,0,97,S,M,top
+Lacoste,lacoste,pecho,97,105,M,M,top
+Lacoste,lacoste,pecho,105,113,L,M,top
+Lacoste,lacoste,pecho,113,121,XL,M,top
+Lacoste,lacoste,pecho,121,200,XXL,M,top
+Lacoste,lacoste,cintura,0,85,S,M,top
+Lacoste,lacoste,cintura,85,93,M,M,top
+Lacoste,lacoste,cintura,93,101,L,M,top
+Lacoste,lacoste,cintura,101,111,XL,M,top
+Lacoste,lacoste,cintura,111,200,XXL,M,top
+Lacoste,lacoste,caderas,0,96,S,M,top
+Lacoste,lacoste,caderas,96,104,M,M,top
+Lacoste,lacoste,caderas,104,112,L,M,top
+Lacoste,lacoste,caderas,112,118,XL,M,top
+Lacoste,lacoste,caderas,118,200,XXL,M,top
+Lacoste,lacoste,cintura,0,79,36,M,inferior
+Lacoste,lacoste,cintura,79,83,38,M,inferior
+Lacoste,lacoste,cintura,83,87,40,M,inferior
+Lacoste,lacoste,cintura,87,91,42,M,inferior
+Lacoste,lacoste,cintura,91,95,44,M,inferior
+Lacoste,lacoste,cintura,95,99,46,M,inferior
+Lacoste,lacoste,cintura,99,103,48,M,inferior
+Lacoste,lacoste,cintura,103,200,50,M,inferior
+Lacoste,lacoste,caderas,0,90,36,M,inferior
+Lacoste,lacoste,caderas,90,94,38,M,inferior
+Lacoste,lacoste,caderas,94,98,40,M,inferior
+Lacoste,lacoste,caderas,98,102,42,M,inferior
+Lacoste,lacoste,caderas,102,106,44,M,inferior
+Lacoste,lacoste,caderas,106,110,46,M,inferior
+Lacoste,lacoste,caderas,110,114,48,M,inferior
+Lacoste,lacoste,caderas,114,200,50,M,inferior
 ,,,,,,,
-La Martina,,pecho,0,102,S,M,top
-La Martina,,pecho,102,108,M,M,top
-La Martina,,pecho,108,114,L,M,top
-La Martina,,pecho,114,120,XL,M,top
-La Martina,,pecho,120,200,XXL,M,top
-La Martina,,cintura,0,84,S,M,top
-La Martina,,cintura,84,90,M,M,top
-La Martina,,cintura,90,96,L,M,top
-La Martina,,cintura,96,102,XL,M,top
-La Martina,,cintura,102,200,XXL,M,top
-La Martina,,caderas,0,104,S,M,top
-La Martina,,caderas,104,110,M,M,top
-La Martina,,caderas,110,116,L,M,top
-La Martina,,caderas,116,122,XL,M,top
-La Martina,,caderas,122,200,XXL,M,top
-La Martina,,cintura,0,84,40,M,inferior
-La Martina,,cintura,84,88,42,M,inferior
-La Martina,,cintura,88,92,44,M,inferior
-La Martina,,cintura,92,96,46,M,inferior
-La Martina,,cintura,96,100,48,M,inferior
-La Martina,,cintura,100,200,50,M,inferior
-La Martina,,caderas,0,98,40,M,inferior
-La Martina,,caderas,98,102,42,M,inferior
-La Martina,,caderas,102,106,44,M,inferior
-La Martina,,caderas,106,110,46,M,inferior
-La Martina,,caderas,110,114,48,M,inferior
-La Martina,,caderas,114,200,50,M,inferior
+La Martina,lamartina,pecho,0,102,S,M,top
+La Martina,lamartina,pecho,102,108,M,M,top
+La Martina,lamartina,pecho,108,114,L,M,top
+La Martina,lamartina,pecho,114,120,XL,M,top
+La Martina,lamartina,pecho,120,200,XXL,M,top
+La Martina,lamartina,cintura,0,84,S,M,top
+La Martina,lamartina,cintura,84,90,M,M,top
+La Martina,lamartina,cintura,90,96,L,M,top
+La Martina,lamartina,cintura,96,102,XL,M,top
+La Martina,lamartina,cintura,102,200,XXL,M,top
+La Martina,lamartina,caderas,0,104,S,M,top
+La Martina,lamartina,caderas,104,110,M,M,top
+La Martina,lamartina,caderas,110,116,L,M,top
+La Martina,lamartina,caderas,116,122,XL,M,top
+La Martina,lamartina,caderas,122,200,XXL,M,top
+La Martina,lamartina,cintura,0,84,40,M,inferior
+La Martina,lamartina,cintura,84,88,42,M,inferior
+La Martina,lamartina,cintura,88,92,44,M,inferior
+La Martina,lamartina,cintura,92,96,46,M,inferior
+La Martina,lamartina,cintura,96,100,48,M,inferior
+La Martina,lamartina,cintura,100,200,50,M,inferior
+La Martina,lamartina,caderas,0,98,40,M,inferior
+La Martina,lamartina,caderas,98,102,42,M,inferior
+La Martina,lamartina,caderas,102,106,44,M,inferior
+La Martina,lamartina,caderas,106,110,46,M,inferior
+La Martina,lamartina,caderas,110,114,48,M,inferior
+La Martina,lamartina,caderas,114,200,50,M,inferior
 ,,,,,,,
-Ecko,,pecho,0,100,S,M,top
-Ecko,,pecho,100,106,M,M,top
-Ecko,,pecho,106,112,L,M,top
-Ecko,,pecho,112,118,XL,M,top
-Ecko,,pecho,118,200,XXL,M,top
-Ecko,,cintura,0,82,S,M,top
-Ecko,,cintura,82,88,M,M,top
-Ecko,,cintura,88,94,L,M,top
-Ecko,,cintura,94,100,XL,M,top
-Ecko,,cintura,100,200,XXL,M,top
-Ecko,,caderas,0,102,S,M,top
-Ecko,,caderas,102,108,M,M,top
-Ecko,,caderas,108,114,L,M,top
-Ecko,,caderas,114,120,XL,M,top
-Ecko,,caderas,120,200,XXL,M,top
-Ecko,,cintura,0,84,40,M,inferior
-Ecko,,cintura,84,88,42,M,inferior
-Ecko,,cintura,88,92,44,M,inferior
-Ecko,,cintura,92,96,46,M,inferior
-Ecko,,cintura,96,100,48,M,inferior
-Ecko,,cintura,100,200,50,M,inferior
-Ecko,,caderas,0,98,40,M,inferior
-Ecko,,caderas,98,102,42,M,inferior
-Ecko,,caderas,102,106,44,M,inferior
-Ecko,,caderas,106,110,46,M,inferior
-Ecko,,caderas,110,114,48,M,inferior
-Ecko,,caderas,114,200,50,M,inferior
+Ecko,ecko,pecho,0,100,S,M,top
+Ecko,ecko,pecho,100,106,M,M,top
+Ecko,ecko,pecho,106,112,L,M,top
+Ecko,ecko,pecho,112,118,XL,M,top
+Ecko,ecko,pecho,118,200,XXL,M,top
+Ecko,ecko,cintura,0,82,S,M,top
+Ecko,ecko,cintura,82,88,M,M,top
+Ecko,ecko,cintura,88,94,L,M,top
+Ecko,ecko,cintura,94,100,XL,M,top
+Ecko,ecko,cintura,100,200,XXL,M,top
+Ecko,ecko,caderas,0,102,S,M,top
+Ecko,ecko,caderas,102,108,M,M,top
+Ecko,ecko,caderas,108,114,L,M,top
+Ecko,ecko,caderas,114,120,XL,M,top
+Ecko,ecko,caderas,120,200,XXL,M,top
+Ecko,ecko,cintura,0,84,40,M,inferior
+Ecko,ecko,cintura,84,88,42,M,inferior
+Ecko,ecko,cintura,88,92,44,M,inferior
+Ecko,ecko,cintura,92,96,46,M,inferior
+Ecko,ecko,cintura,96,100,48,M,inferior
+Ecko,ecko,cintura,100,200,50,M,inferior
+Ecko,ecko,caderas,0,98,40,M,inferior
+Ecko,ecko,caderas,98,102,42,M,inferior
+Ecko,ecko,caderas,102,106,44,M,inferior
+Ecko,ecko,caderas,106,110,46,M,inferior
+Ecko,ecko,caderas,110,114,48,M,inferior
+Ecko,ecko,caderas,114,200,50,M,inferior
 ,,,,,,,
-Dockers,,pecho,0,88,XS,M,top
-Dockers,,pecho,88,96,S,M,top
-Dockers,,pecho,96,104,M,M,top
-Dockers,,pecho,104,111,L,M,top
-Dockers,,pecho,111,200,XL,M,top
-Dockers,,cintura,200,73,XS,M,top
-Dockers,,cintura,73,81,S,M,top
-Dockers,,cintura,81,88,M,M,top
-Dockers,,cintura,88,96,L,M,top
-Dockers,,cintura,96,200,XL,M,top
-Dockers,,caderas,200,89,XS,M,top
-Dockers,,caderas,89,96,S,M,top
-Dockers,,caderas,96,104,M,M,top
-Dockers,,caderas,104,111,L,M,top
-Dockers,,caderas,111,200,XL,M,top
-Dockers,,cintura,0,75,28,M,inferior
-Dockers,,cintura,75,80,30,M,inferior
-Dockers,,cintura,80,83,32,M,inferior
-Dockers,,cintura,83,85,33,M,inferior
-Dockers,,cintura,85,91,34,M,inferior
-Dockers,,cintura,91,96,36,M,inferior
-Dockers,,cintura,96,101,38,M,inferior
-Dockers,,cintura,101,106,40,M,inferior
-Dockers,,cintura,106,111,42,M,inferior
-Dockers,,cintura,111,200,44,M,inferior
-Dockers,,caderas,0,91,28,M,inferior
-Dockers,,caderas,91,96,30,M,inferior
-Dockers,,caderas,96,98,32,M,inferior
-Dockers,,caderas,98,100,33,M,inferior
-Dockers,,caderas,100,105,34,M,inferior
-Dockers,,caderas,105,107,36,M,inferior
-Dockers,,caderas,107,110,38,M,inferior
-Dockers,,caderas,110,113,40,M,inferior
-Dockers,,caderas,113,117,42,M,inferior
-Dockers,,caderas,117,200,44,M,inferior
+Dockers,dockers,pecho,0,88,XS,M,top
+Dockers,dockers,pecho,88,96,S,M,top
+Dockers,dockers,pecho,96,104,M,M,top
+Dockers,dockers,pecho,104,111,L,M,top
+Dockers,dockers,pecho,111,200,XL,M,top
+Dockers,dockers,cintura,200,73,XS,M,top
+Dockers,dockers,cintura,73,81,S,M,top
+Dockers,dockers,cintura,81,88,M,M,top
+Dockers,dockers,cintura,88,96,L,M,top
+Dockers,dockers,cintura,96,200,XL,M,top
+Dockers,dockers,caderas,200,89,XS,M,top
+Dockers,dockers,caderas,89,96,S,M,top
+Dockers,dockers,caderas,96,104,M,M,top
+Dockers,dockers,caderas,104,111,L,M,top
+Dockers,dockers,caderas,111,200,XL,M,top
+Dockers,dockers,cintura,0,75,28,M,inferior
+Dockers,dockers,cintura,75,80,30,M,inferior
+Dockers,dockers,cintura,80,83,32,M,inferior
+Dockers,dockers,cintura,83,85,33,M,inferior
+Dockers,dockers,cintura,85,91,34,M,inferior
+Dockers,dockers,cintura,91,96,36,M,inferior
+Dockers,dockers,cintura,96,101,38,M,inferior
+Dockers,dockers,cintura,101,106,40,M,inferior
+Dockers,dockers,cintura,106,111,42,M,inferior
+Dockers,dockers,cintura,111,200,44,M,inferior
+Dockers,dockers,caderas,0,91,28,M,inferior
+Dockers,dockers,caderas,91,96,30,M,inferior
+Dockers,dockers,caderas,96,98,32,M,inferior
+Dockers,dockers,caderas,98,100,33,M,inferior
+Dockers,dockers,caderas,100,105,34,M,inferior
+Dockers,dockers,caderas,105,107,36,M,inferior
+Dockers,dockers,caderas,107,110,38,M,inferior
+Dockers,dockers,caderas,110,113,40,M,inferior
+Dockers,dockers,caderas,113,117,42,M,inferior
+Dockers,dockers,caderas,117,200,44,M,inferior
 ,,,,,,,
-Americanino,,pecho,0,100,S,M,top
-Americanino,,pecho,100,106,M,M,top
-Americanino,,pecho,106,112,L,M,top
-Americanino,,pecho,112,118,XL,M,top
-Americanino,,pecho,118,200,XXL,M,top
-Americanino,,cintura,0,82,S,M,top
-Americanino,,cintura,82,88,M,M,top
-Americanino,,cintura,88,94,L,M,top
-Americanino,,cintura,94,100,XL,M,top
-Americanino,,cintura,100,200,XXL,M,top
-Americanino,,caderas,0,102,S,M,top
-Americanino,,caderas,102,108,M,M,top
-Americanino,,caderas,108,114,L,M,top
-Americanino,,caderas,114,120,XL,M,top
-Americanino,,caderas,120,200,XXL,M,top
-Americanino,,cintura,0,84,40,M,inferior
-Americanino,,cintura,84,88,42,M,inferior
-Americanino,,cintura,88,92,44,M,inferior
-Americanino,,cintura,92,96,46,M,inferior
-Americanino,,cintura,96,100,48,M,inferior
-Americanino,,cintura,100,200,50,M,inferior
-Americanino,,caderas,0,98,40,M,inferior
-Americanino,,caderas,98,102,42,M,inferior
-Americanino,,caderas,102,106,44,M,inferior
-Americanino,,caderas,106,110,46,M,inferior
-Americanino,,caderas,110,114,48,M,inferior
-Americanino,,caderas,114,200,50,M,inferior
+Americanino,americanino,pecho,0,100,S,M,top
+Americanino,americanino,pecho,100,106,M,M,top
+Americanino,americanino,pecho,106,112,L,M,top
+Americanino,americanino,pecho,112,118,XL,M,top
+Americanino,americanino,pecho,118,200,XXL,M,top
+Americanino,americanino,cintura,0,82,S,M,top
+Americanino,americanino,cintura,82,88,M,M,top
+Americanino,americanino,cintura,88,94,L,M,top
+Americanino,americanino,cintura,94,100,XL,M,top
+Americanino,americanino,cintura,100,200,XXL,M,top
+Americanino,americanino,caderas,0,102,S,M,top
+Americanino,americanino,caderas,102,108,M,M,top
+Americanino,americanino,caderas,108,114,L,M,top
+Americanino,americanino,caderas,114,120,XL,M,top
+Americanino,americanino,caderas,120,200,XXL,M,top
+Americanino,americanino,cintura,0,84,40,M,inferior
+Americanino,americanino,cintura,84,88,42,M,inferior
+Americanino,americanino,cintura,88,92,44,M,inferior
+Americanino,americanino,cintura,92,96,46,M,inferior
+Americanino,americanino,cintura,96,100,48,M,inferior
+Americanino,americanino,cintura,100,200,50,M,inferior
+Americanino,americanino,caderas,0,98,40,M,inferior
+Americanino,americanino,caderas,98,102,42,M,inferior
+Americanino,americanino,caderas,102,106,44,M,inferior
+Americanino,americanino,caderas,106,110,46,M,inferior
+Americanino,americanino,caderas,110,114,48,M,inferior
+Americanino,americanino,caderas,114,200,50,M,inferior
 ,,,,,,,
-Bearcliff,,pecho,0,98,S,M,top
-Bearcliff,,pecho,98,104,M,M,top
-Bearcliff,,pecho,104,110,L,M,top
-Bearcliff,,pecho,110,116,XL,M,top
-Bearcliff,,pecho,116,200,XXL,M,top
-Bearcliff,,cintura,0,80,S,M,top
-Bearcliff,,cintura,80,86,M,M,top
-Bearcliff,,cintura,86,92,L,M,top
-Bearcliff,,cintura,92,98,XL,M,top
-Bearcliff,,cintura,98,200,XXL,M,top
-Bearcliff,,caderas,0,102,S,M,top
-Bearcliff,,caderas,102,108,M,M,top
-Bearcliff,,caderas,108,114,L,M,top
-Bearcliff,,caderas,114,120,XL,M,top
-Bearcliff,,caderas,120,200,XXL,M,top
-Bearcliff,,cintura,0,84,40,M,inferior
-Bearcliff,,cintura,84,88,42,M,inferior
-Bearcliff,,cintura,88,92,44,M,inferior
-Bearcliff,,cintura,92,96,46,M,inferior
-Bearcliff,,cintura,96,100,48,M,inferior
-Bearcliff,,cintura,100,200,50,M,inferior
-Bearcliff,,caderas,0,98,40,M,inferior
-Bearcliff,,caderas,98,102,42,M,inferior
-Bearcliff,,caderas,102,106,44,M,inferior
-Bearcliff,,caderas,106,110,46,M,inferior
-Bearcliff,,caderas,110,114,48,M,inferior
-Bearcliff,,caderas,114,200,50,M,inferior
+Bearcliff,bearcliff,pecho,0,98,S,M,top
+Bearcliff,bearcliff,pecho,98,104,M,M,top
+Bearcliff,bearcliff,pecho,104,110,L,M,top
+Bearcliff,bearcliff,pecho,110,116,XL,M,top
+Bearcliff,bearcliff,pecho,116,200,XXL,M,top
+Bearcliff,bearcliff,cintura,0,80,S,M,top
+Bearcliff,bearcliff,cintura,80,86,M,M,top
+Bearcliff,bearcliff,cintura,86,92,L,M,top
+Bearcliff,bearcliff,cintura,92,98,XL,M,top
+Bearcliff,bearcliff,cintura,98,200,XXL,M,top
+Bearcliff,bearcliff,caderas,0,102,S,M,top
+Bearcliff,bearcliff,caderas,102,108,M,M,top
+Bearcliff,bearcliff,caderas,108,114,L,M,top
+Bearcliff,bearcliff,caderas,114,120,XL,M,top
+Bearcliff,bearcliff,caderas,120,200,XXL,M,top
+Bearcliff,bearcliff,cintura,0,84,40,M,inferior
+Bearcliff,bearcliff,cintura,84,88,42,M,inferior
+Bearcliff,bearcliff,cintura,88,92,44,M,inferior
+Bearcliff,bearcliff,cintura,92,96,46,M,inferior
+Bearcliff,bearcliff,cintura,96,100,48,M,inferior
+Bearcliff,bearcliff,cintura,100,200,50,M,inferior
+Bearcliff,bearcliff,caderas,0,98,40,M,inferior
+Bearcliff,bearcliff,caderas,98,102,42,M,inferior
+Bearcliff,bearcliff,caderas,102,106,44,M,inferior
+Bearcliff,bearcliff,caderas,106,110,46,M,inferior
+Bearcliff,bearcliff,caderas,110,114,48,M,inferior
+Bearcliff,bearcliff,caderas,114,200,50,M,inferior
 ,,,,,,,
-Basement,,pecho,0,98,S,M,top
-Basement,,pecho,98,104,M,M,top
-Basement,,pecho,104,110,L,M,top
-Basement,,pecho,110,116,XL,M,top
-Basement,,pecho,116,200,XXL,M,top
-Basement,,cintura,0,80,S,M,top
-Basement,,cintura,80,86,M,M,top
-Basement,,cintura,86,92,L,M,top
-Basement,,cintura,92,98,XL,M,top
-Basement,,cintura,98,200,XXL,M,top
-Basement,,caderas,0,102,S,M,top
-Basement,,caderas,102,108,M,M,top
-Basement,,caderas,108,114,L,M,top
-Basement,,caderas,114,120,XL,M,top
-Basement,,caderas,120,200,XXL,M,top
-Basement,,cintura,0,84,40,M,inferior
-Basement,,cintura,84,88,42,M,inferior
-Basement,,cintura,88,92,44,M,inferior
-Basement,,cintura,92,96,46,M,inferior
-Basement,,cintura,96,100,48,M,inferior
-Basement,,cintura,100,200,50,M,inferior
-Basement,,caderas,0,98,40,M,inferior
-Basement,,caderas,98,102,42,M,inferior
-Basement,,caderas,102,106,44,M,inferior
-Basement,,caderas,106,110,46,M,inferior
-Basement,,caderas,110,114,48,M,inferior
-Basement,,caderas,114,200,50,M,inferior
+Basement,basement,pecho,0,98,S,M,top
+Basement,basement,pecho,98,104,M,M,top
+Basement,basement,pecho,104,110,L,M,top
+Basement,basement,pecho,110,116,XL,M,top
+Basement,basement,pecho,116,200,XXL,M,top
+Basement,basement,cintura,0,80,S,M,top
+Basement,basement,cintura,80,86,M,M,top
+Basement,basement,cintura,86,92,L,M,top
+Basement,basement,cintura,92,98,XL,M,top
+Basement,basement,cintura,98,200,XXL,M,top
+Basement,basement,caderas,0,102,S,M,top
+Basement,basement,caderas,102,108,M,M,top
+Basement,basement,caderas,108,114,L,M,top
+Basement,basement,caderas,114,120,XL,M,top
+Basement,basement,caderas,120,200,XXL,M,top
+Basement,basement,cintura,0,84,40,M,inferior
+Basement,basement,cintura,84,88,42,M,inferior
+Basement,basement,cintura,88,92,44,M,inferior
+Basement,basement,cintura,92,96,46,M,inferior
+Basement,basement,cintura,96,100,48,M,inferior
+Basement,basement,cintura,100,200,50,M,inferior
+Basement,basement,caderas,0,98,40,M,inferior
+Basement,basement,caderas,98,102,42,M,inferior
+Basement,basement,caderas,102,106,44,M,inferior
+Basement,basement,caderas,106,110,46,M,inferior
+Basement,basement,caderas,110,114,48,M,inferior
+Basement,basement,caderas,114,200,50,M,inferior
 ,,,,,,,
-Top Man,,pecho,0,84,42,M,top
-Top Man,,pecho,84,89,44,M,top
-Top Man,,pecho,89,94,46,M,top
-Top Man,,pecho,94,99,48,M,top
-Top Man,,pecho,99,104,50,M,top
-Top Man,,pecho,104,109,52,M,top
-Top Man,,pecho,109,114,54,M,top
-Top Man,,pecho,114,119,56,M,top
-Top Man,,pecho,119,200,58,M,top
-Top Man,,cintura,0,69,36,M,top
-Top Man,,cintura,69,74,38,M,top
-Top Man,,cintura,74,79,40,M,top
-Top Man,,cintura,79,84,42,M,top
-Top Man,,cintura,84,89,44,M,top
-Top Man,,cintura,89,94,46,M,top
-Top Man,,cintura,94,99,48,M,top
-Top Man,,cintura,99,200,50,M,top
+Top Man,topman,pecho,0,84,42,M,top
+Top Man,topman,pecho,84,89,44,M,top
+Top Man,topman,pecho,89,94,46,M,top
+Top Man,topman,pecho,94,99,48,M,top
+Top Man,topman,pecho,99,104,50,M,top
+Top Man,topman,pecho,104,109,52,M,top
+Top Man,topman,pecho,109,114,54,M,top
+Top Man,topman,pecho,114,119,56,M,top
+Top Man,topman,pecho,119,200,58,M,top
+Top Man,topman,cintura,0,69,36,M,top
+Top Man,topman,cintura,69,74,38,M,top
+Top Man,topman,cintura,74,79,40,M,top
+Top Man,topman,cintura,79,84,42,M,top
+Top Man,topman,cintura,84,89,44,M,top
+Top Man,topman,cintura,89,94,46,M,top
+Top Man,topman,cintura,94,99,48,M,top
+Top Man,topman,cintura,99,200,50,M,top
